@@ -24,8 +24,25 @@ class CreateNewUser implements CreatesNewUsers
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
-            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
-        ])->validate();
+        ], [
+            'name' => [
+                'required' => 'Nama wajib diisi',
+                'max' => 'Nama tidak boleh melewati 255 karakter'
+            ],
+            'email' => [
+                'required' => 'Email wajib diisi',
+                'email' => 'Format email salah',
+                'max' => 'Email tidak boleh melewati 255 karakter',
+                'unique:users' => 'Email sudah digunakan'
+            ],
+            'password' => [
+                'required' => 'Password wajib diisi',
+                'string' => 'Password harus berupa karakter',
+                'min' => 'Password harus memiliki minimal 8 karakter',
+                'uppercase' => 'Password harus memiliki minimal 1 huruf kapital',
+                'confirmed' => 'Konfirmasi password harus cocok'
+                ]
+            ])->validate();
 
         return User::create([
             'name' => $input['name'],
