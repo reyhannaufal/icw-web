@@ -1,90 +1,284 @@
-<div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-    <div>
-        <x-jet-application-logo class="block h-12 w-auto" />
-    </div>
-
-    <div class="mt-8 text-2xl">
-        Welcome to your Jetstream application!
-    </div>
-
-    <div class="mt-6 text-gray-500">
-        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-        to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-        you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-        ecosystem to be a breath of fresh air. We hope you love it.
-    </div>
-</div>
-
-<div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
-    <div class="p-6">
-        <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="https://laravel.com/docs">Documentation</a></div>
-        </div>
-
-        <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the framework or have previous experience, we recommend reading all of the documentation from beginning to end.
-            </div>
-
-            <a href="https://laravel.com/docs">
-                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
-                        <div>Explore the documentation</div>
-
-                        <div class="ml-1 text-indigo-500">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+<div class="min-h-screen bg-gray-100">
+    <main class="-mt-24 pb-8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+            <h1 class="sr-only">Profile</h1>
+            <!-- Main 3 column grid -->
+            <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
+                <!-- Left column -->
+                <div class="grid grid-cols-1 gap-4 lg:col-span-2">
+                    <!-- Welcome panel -->
+                    <section aria-labelledby="profile-overview-title">
+                        <div class="rounded-lg bg-white overflow-hidden shadow">
+                            <h2 class="sr-only" id="profile-overview-title">Profile Overview</h2>
+                            <div class="bg-white p-6">
+                                <div class="sm:flex sm:items-center sm:justify-between">
+                                    <div class="sm:flex sm:space-x-5">
+                                        <div class="flex-shrink-0">
+{{--                                            <img class="mx-auto h-20 w-20 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">--}}
+                                            <div class="mx-auto h-20 w-20 rounded-full bg-indigo-900"></div>
+                                        </div>
+                                        <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
+                                            <p class="text-sm font-medium text-gray-600">Welcome Back,</p>
+                                            <p class="text-xl mt-1 font-bold text-gray-900 sm:text-2xl">{{Auth::user()->name}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5 flex justify-center sm:mt-0">
+                                        <a href="{{ route('profile.show') }}" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            View profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                </div>
-            </a>
-        </div>
-    </div>
+                    </section>
 
-    <div class="p-6 border-t border-gray-200 md:border-t-0 md:border-l">
-        <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="https://laracasts.com">Laracasts</a></div>
-        </div>
+                    <!-- Actions panel -->
+                    <section aria-labelledby="quick-links-title">
+                        <div class="rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px">
+                            <h2 class="sr-only" id="quick-links-title">Quick links</h2>
 
-        <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-            </div>
+                            <div class="rounded-tl-lg    relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-cyan-500">
+                                <div>
+                      <span class="rounded-lg inline-flex p-3 bg-teal-50 text-teal-700 ring-4 ring-white">
+                        <svg class="h-6 w-6" x-description="Heroicon name: clock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                      </span>
+                                </div>
+                                <div class="mt-8">
+                                    <h3 class="text-lg font-medium">
+                                        <a href="#" class="focus:outline-none">
+                                            <!-- Extend touch target to entire panel -->
+                                            <span class="absolute inset-0" aria-hidden="true"></span>
+                                            {{Auth::user()->events[0]->name}}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-500">
+                                        {{Auth::user()->events[0]->description}}
+                                    </p>
+                                </div>
+                                <span class="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"></path>
+                      </svg>
+                    </span>
+                            </div>
 
-            <a href="https://laracasts.com">
-                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
-                        <div>Start watching Laracasts</div>
+                            <div class=" rounded-tr-lg   relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-cyan-500">
+                                <div>
+                      <span class="rounded-lg inline-flex p-3 bg-purple-50 text-purple-700 ring-4 ring-white">
+                        <svg class="h-6 w-6" x-description="Heroicon name: badge-check" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+</svg>
+                      </span>
+                                </div>
+                                <div class="mt-8">
+                                    <h3 class="text-lg font-medium">
+                                        <a href="#" class="focus:outline-none">
+                                            <!-- Extend touch target to entire panel -->
+                                            <span class="absolute inset-0" aria-hidden="true"></span>
+                                            {{Auth::user()->events[1]->name}}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-500">
+                                        {{Auth::user()->events[1]->description}}
+                                    </p>
+                                </div>
+                                <span class="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"></path>
+                      </svg>
+                    </span>
+                            </div>
 
-                        <div class="ml-1 text-indigo-500">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <div class="    relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-cyan-500">
+                                <div>
+                      <span class="rounded-lg inline-flex p-3 bg-light-blue-50 text-light-blue-700 ring-4 ring-white">
+                        <svg class="h-6 w-6" x-description="Heroicon name: users" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+</svg>
+                      </span>
+                                </div>
+                                <div class="mt-8">
+                                    <h3 class="text-lg font-medium">
+                                        <a href="#" class="focus:outline-none">
+                                            <!-- Extend touch target to entire panel -->
+                                            <span class="absolute inset-0" aria-hidden="true"></span>
+                                            {{Auth::user()->events[0]->name}}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-500">
+                                        {{Auth::user()->events[0]->description}}
+                                    </p>
+                                </div>
+                                <span class="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"></path>
+                      </svg>
+                    </span>
+                            </div>
+
+                            <div class="    relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-cyan-500">
+                                <div>
+                      <span class="rounded-lg inline-flex p-3 bg-yellow-50 text-yellow-700 ring-4 ring-white">
+                        <svg class="h-6 w-6" x-description="Heroicon name: cash" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+</svg>
+                      </span>
+                                </div>
+                                <div class="mt-8">
+                                    <h3 class="text-lg font-medium">
+                                        <a href="#" class="focus:outline-none">
+                                            <!-- Extend touch target to entire panel -->
+                                            <span class="absolute inset-0" aria-hidden="true"></span>
+                                            {{Auth::user()->events[0]->name}}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-500">
+                                        {{Auth::user()->events[0]->description}}
+                                    </p>
+                                </div>
+                                <span class="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"></path>
+                      </svg>
+                    </span>
+                            </div>
+
+                            <div class="  rounded-bl-lg  relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-cyan-500">
+                                <div>
+                      <span class="rounded-lg inline-flex p-3 bg-rose-50 text-rose-700 ring-4 ring-white">
+                        <svg class="h-6 w-6" x-description="Heroicon name: receipt-refund" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z"></path>
+</svg>
+                      </span>
+                                </div>
+                                <div class="mt-8">
+                                    <h3 class="text-lg font-medium">
+                                        <a href="#" class="focus:outline-none">
+                                            <!-- Extend touch target to entire panel -->
+                                            <span class="absolute inset-0" aria-hidden="true"></span>
+                                            {{Auth::user()->events[0]->name}}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-500">
+                                        {{Auth::user()->events[0]->description}}
+                                    </p>
+                                </div>
+                                <span class="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"></path>
+                      </svg>
+                    </span>
+                            </div>
+
+                            <div class="   rounded-br-lg relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-cyan-500">
+                                <div>
+                      <span class="rounded-lg inline-flex p-3 bg-indigo-50 text-indigo-700 ring-4 ring-white">
+                        <svg class="h-6 w-6" x-description="Heroicon name: academic-cap" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path fill="#fff" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+  <path fill="#fff" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+</svg>
+                      </span>
+                                </div>
+                                <div class="mt-8">
+                                    <h3 class="text-lg font-medium">
+                                        <a href="#" class="focus:outline-none">
+                                            <!-- Extend touch target to entire panel -->
+                                            <span class="absolute inset-0" aria-hidden="true"></span>
+                                            {{Auth::user()->events[0]->name}}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-500">
+                                        {{Auth::user()->events[0]->description}}
+                                    </p>
+                                </div>
+                                <span class="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z"></path>
+                      </svg>
+                    </span>
+                            </div>
+
                         </div>
+                    </section>
                 </div>
-            </a>
-        </div>
-    </div>
 
-    <div class="p-6 border-t border-gray-200">
-        <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="https://tailwindcss.com/">Tailwind</a></div>
-        </div>
+                <!-- Right column -->
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Announcements -->
+                    <section aria-labelledby="announcements-title">
+                        <div class="rounded-lg bg-white overflow-hidden shadow">
+                            <div class="p-6">
+                                <h2 class="text-base font-medium text-gray-900" id="announcements-title">Announcements</h2>
+                                <div class="flow-root mt-6">
+                                    <ul class="-my-5 divide-y divide-gray-200">
 
-        <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Laravel Jetstream is built with Tailwind, an amazing utility first CSS framework that doesn't get in your way. You'll be amazed how easily you can build and maintain fresh, modern designs with this wonderful framework at your fingertips.
+                                        <li class="py-5">
+                                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                                <h3 class="text-sm font-semibold text-gray-800">
+                                                    <a href="#" class="hover:underline focus:outline-none">
+                                                        <!-- Extend touch target to entire panel -->
+                                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                                        Pendaftaran ditutup 23 Juli!
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">
+                                                    Cum qui rem deleniti. Suscipit in dolor veritatis sequi aut. Vero ut earum quis deleniti. Ut a sunt eum cum ut repudiandae possimus. Nihil ex tempora neque cum consectetur dolores.
+                                                </p>
+                                            </div>
+                                        </li>
+
+                                        <li class="py-5">
+                                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                                <h3 class="text-sm font-semibold text-gray-800">
+                                                    <a href="#" class="hover:underline focus:outline-none">
+                                                        <!-- Extend touch target to entire panel -->
+                                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                                        Event dilaksanakan pada 22 Februari 2021!
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">
+                                                    Alias inventore ut autem optio voluptas et repellendus. Facere totam quaerat quam quo laudantium cumque eaque excepturi vel. Accusamus maxime ipsam reprehenderit rerum id repellendus rerum. Culpa cum vel natus. Est sit autem mollitia.
+                                                </p>
+                                            </div>
+                                        </li>
+
+                                        <li class="py-5">
+                                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                                <h3 class="text-sm font-semibold text-gray-800">
+                                                    <a href="#" class="hover:underline focus:outline-none">
+                                                        <!-- Extend touch target to entire panel -->
+                                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                                       Terdapat bug pada Home tapi bohong!
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">
+                                                    Tenetur libero voluptatem rerum occaecati qui est molestiae exercitationem. Voluptate quisquam iure assumenda consequatur ex et recusandae. Alias consectetur voluptatibus. Accusamus a ab dicta et. Consequatur quis dignissimos voluptatem nisi.
+                                                </p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="mt-6">
+                                    <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                        View all
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="p-6 border-t border-gray-200 md:border-l">
-        <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold">Authentication</div>
+    </main>
+    <footer>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+            <div class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left"><span class="block sm:inline">© 2021 Indonesian Corrosion Week.</span> <span class="block sm:inline">All rights reserved.</span></div>
         </div>
-
-        <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Authentication and registration views are included with Laravel Jetstream, as well as support for user email verification and resetting forgotten passwords. So, you're free to get started what matters most: building your application.
-            </div>
-        </div>
-    </div>
+    </footer>
 </div>
