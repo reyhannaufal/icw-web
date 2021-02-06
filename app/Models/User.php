@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'payment_receipt_path'
     ];
 
     /**
@@ -39,6 +40,8 @@ class User extends Authenticatable
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        'user_type',
+        'payment_receipt_path'
     ];
 
     /**
@@ -50,12 +53,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = [
-        'profile_photo_url',
-    ];
+    public function events()
+    {
+        return $this->belongsToMany(Event::class);
+    }
 }

@@ -16,3 +16,9 @@ templating untuk static pages terdapat pada layouts/guest.blade.php
 semua static pages dikerjakan pada folder pages/
 ```
 
+## Struktur Database
+* Tabel `users` berelasi many-to-many dengan tabel `events`
+    dengan tabel `event_user` sebagai perantara.
+* Tabel `events` berelasi many-to-many dengan tabel `bills`
+    dengan tabel `bill_event` sebagai perantara..
+* Tabel `bills` diisi dengan info rekening.
