@@ -25,6 +25,7 @@ class CreateBillsTable extends Migration
             $table->id();
             $table->foreignId('event_id');
             $table->foreignId('bill_id');
+
             $table->timestamps();
 
             $table->unique(['event_id', 'bill_id']);
