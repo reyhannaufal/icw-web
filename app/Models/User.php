@@ -27,7 +27,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'user_type',
         'payment_receipt_path'
     ];
 

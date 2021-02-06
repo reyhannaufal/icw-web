@@ -20,6 +20,25 @@ class CreateBillsTable extends Migration
             $table->string('account_number');
             $table->timestamps();
         });
+
+        Schema::create('bill_event', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('event_id');
+            $table->unsignedBigInteger('bill_id');
+            $table->timestamps();
+
+            $table->unique(['event_id', 'bill_id']);
+
+            $table->foreign('event_id')
+                ->references('id')
+                ->on('events')
+                ->onDelete('cascade');
+
+            $table->foreign('bill_id')
+                ->references('id')
+                ->on('bills')
+                ->onDelete('cascade');
+        });
     }
 
     /**

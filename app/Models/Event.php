@@ -15,4 +15,9 @@ class Event extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function bills()
+    {
+        return $this->belongsToMany(Bill::class);
+    }
 }

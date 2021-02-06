@@ -18,7 +18,7 @@ semua static pages dikerjakan pada folder pages/
 
 ## Struktur Database
 * Tabel `users` berelasi many-to-many dengan tabel `events`
-    dengan tabel `participates` sebagai perantara.
+    dengan tabel `event_user` sebagai perantara.
 * Tabel `events` berelasi many-to-many dengan tabel `bills`
-    dengan tabel `pays_to` sebagai perantara..
+    dengan tabel `bill_event` sebagai perantara..
 * Tabel `bills` diisi dengan info rekening.

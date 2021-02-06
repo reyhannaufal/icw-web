@@ -23,7 +23,7 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
             'price' => strval($this->faker->randomNumber()),
             'start_date' => $this->faker->date(),
