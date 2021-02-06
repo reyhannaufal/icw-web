@@ -23,8 +23,8 @@ class CreateBillsTable extends Migration
 
         Schema::create('bill_event', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('event_id');
-            $table->unsignedBigInteger('bill_id');
+            $table->foreignId('event_id');
+            $table->foreignId('bill_id');
             $table->timestamps();
 
             $table->unique(['event_id', 'bill_id']);
