@@ -15,7 +15,7 @@ class EventSeeder extends Seeder
     public function run()
     {
         Event::factory()
-            ->count(4)
+            ->count(6)
             ->create();
     }
 }
