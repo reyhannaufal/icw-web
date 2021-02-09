@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
             BillSeeder::class
         ]);
 
-        // Get all user, event, and bill
-        $users = User::all();
+        // Get 10 user, all event, and all bill
+        $users = User::orderBy('id', 'asc')->take(10)->get();
         $events = Event::all();
         $bills = Bill::all();
 
@@ -36,6 +36,11 @@ class DatabaseSeeder extends Seeder
                     $events->random(rand(1, 3))->pluck('id')->toArray(),
                     ['created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
                 );
+                // the first user will get failed verification
+                $user->update([
+                    'payment_status' => ($user == $user->first()) ? 'failed' : 'success'
+                ]);
+
             }
         );
 
@@ -48,5 +53,22 @@ class DatabaseSeeder extends Seeder
                 );
             }
         );
+
+        // Define event name
+        $names = [
+            'Oil Rig Competition',
+            'Stock Trading Competition',
+            'Petrosmart Competition',
+            'Paper Competition',
+            'Business Case Competition',
+            'Business Case Webinar',
+        ];
+        $i = 0;
+
+        // Give each event appropriate name
+        foreach ($events as $event) {
+            $event->update(['name' => $names[$i]]);
+            $i = ($i < count($names)) ? ($i + 1) : 0;
+        }
     }
 }
