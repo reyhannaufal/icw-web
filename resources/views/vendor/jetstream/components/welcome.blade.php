@@ -34,13 +34,13 @@
                     </section>
 
                     <!-- Actions panel -->
-                    @include('dashboard.user._quick-links', $events)
+                    @include('components._quick-links', $events)
                 </div>
 
                 <!-- Right column -->
                 <div class="grid grid-cols-1 gap-4">
                     <!-- Announcements -->
-                    @include('dashboard.user._announcements', $events)
+                    @include('components._announcements', $announcements)
                 </div>
             </div>
         </div>
