@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use App\Models\Event;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -46,6 +47,11 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+        });
+
+
+        Route::bind('event', function($event_name) {
+            return Event::where('name', ucwords(str_replace('-', ' ', $event_name)))->firstOrFail();
         });
     }
 

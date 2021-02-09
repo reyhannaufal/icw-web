@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             EventSeeder::class,
-            BillSeeder::class
+            BillSeeder::class,
+            AnnouncementSeeder::class
         ]);
 
         // Get 10 user, all event, and all bill
@@ -53,22 +54,5 @@ class DatabaseSeeder extends Seeder
                 );
             }
         );
-
-        // Define event name
-        $names = [
-            'Oil Rig Competition',
-            'Stock Trading Competition',
-            'Petrosmart Competition',
-            'Paper Competition',
-            'Business Case Competition',
-            'Business Case Webinar',
-        ];
-        $i = 0;
-
-        // Give each event appropriate name
-        foreach ($events as $event) {
-            $event->update(['name' => $names[$i]]);
-            $i = ($i < count($names)) ? ($i + 1) : 0;
-        }
     }
 }
