@@ -16,7 +16,7 @@
             </div>
             <div class="mt-8">
                 <h3 class="text-lg font-medium">
-                    <a href="{{ route('register', Str::slug($events[0]->name, '-')) }}" class="focus:outline-none">
+                    <a href="{{ route('event-register', Str::slug($events[0]->name, '-')) }}" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
                         <span class="absolute inset-0" aria-hidden="true"></span>
                         {{ $events[0]->name }}
@@ -51,7 +51,7 @@
             </div>
             <div class="mt-8">
                 <h3 class="text-lg font-medium">
-                    <a href="{{ route('register', Str::slug($events[1]->name, '-')) }}" class="focus:outline-none">
+                    <a href="{{ route('event-register', Str::slug($events[1]->name, '-')) }}" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
                         <span class="absolute inset-0" aria-hidden="true"></span>
                         {{ $events[1]->name }}
@@ -86,7 +86,7 @@
             </div>
             <div class="mt-8">
                 <h3 class="text-lg font-medium">
-                    <a href="{{ route('register', Str::slug($events[2]->name, '-')) }}" class="focus:outline-none">
+                    <a href="{{ route('event-register', Str::slug($events[2]->name, '-')) }}" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
                         <span class="absolute inset-0" aria-hidden="true"></span>
                         {{ $events[2]->name }}
@@ -116,7 +116,7 @@
             </div>
             <div class="mt-8">
                 <h3 class="text-lg font-medium">
-                    <a href="{{ route('register', Str::slug($events[3]->name, '-')) }}" class="focus:outline-none">
+                    <a href="{{ route('event-register', Str::slug($events[3]->name, '-')) }}" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
                         <span class="absolute inset-0" aria-hidden="true"></span>
                         {{ $events[3]->name }}
@@ -147,7 +147,7 @@
             </div>
             <div class="mt-8">
                 <h3 class="text-lg font-medium">
-                    <a href="{{ route('register', Str::slug($events[4]->name, '-')) }}" class="focus:outline-none">
+                    <a href="{{ route('event-register', Str::slug($events[4]->name, '-')) }}" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
                         <span class="absolute inset-0" aria-hidden="true"></span>
                         {{ $events[4]->name }}
@@ -181,7 +181,7 @@
             </div>
             <div class="mt-8">
                 <h3 class="text-lg font-medium">
-                    <a href="{{ route('register', Str::slug($events[5]->name, '-')) }}" class="focus:outline-none">
+                    <a href="{{ route('event-register', Str::slug($events[5]->name, '-')) }}" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
                         <span class="absolute inset-0" aria-hidden="true"></span>
                         {{ $events[5]->name }}
