@@ -29,6 +29,8 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('event_id');
+            $table->string('payment_status')->nullable();
+            $table->string('payment_receipt_path')->nullable();
             $table->timestamps();
 
             $table->unique(['user_id', 'event_id']);

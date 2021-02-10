@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
                     ['created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
                 );
                 // the first user will get failed verification
-                $user->update([
+                $user->events()->update([
                     'payment_status' => ($user == $user->first()) ? 'failed' : 'success'
                 ]);
 
