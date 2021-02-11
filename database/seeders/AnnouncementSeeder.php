@@ -31,7 +31,7 @@ class AnnouncementSeeder extends Seeder
         // Give each announcement appropriate title
         foreach ($announcements as $announcement) {
             $announcement->update(['title' => $titles[$i]]);
-            $i = ($i < count($titles)) ? ($i + 1) : 0;
+            $i = ($i + 1 < count($titles)) ? ($i + 1) : 0;
         }
     }
 }
