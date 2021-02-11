@@ -1,11 +1,20 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   important: true,
-  purge: [],
+  purge: [
+    './vendor/laravel/jetstream/**/*.blade.php',
+    './storage/framework/views/*.php',
+    './resources/views/**/*.blade.php',
+    './resources/**/*.blade.php',
+    './resources/**/*.js',
+    './resources/**/*.vue',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily:{
-        body: ['Poppins']
+        body: ['Poppins'],
+        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       },
       screens: {
         'mdl': '809px',
@@ -21,7 +30,12 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled'],
+
+    },
   },
-  plugins: [],
+  plugins: [[require('@tailwindcss/forms'), require('@tailwindcss/typography')],],
 }
+
+

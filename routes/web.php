@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\DashboardController;
+use \App\Http\Controllers\RegisterEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.index');
+    return view('pages.welcome');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('register/{event}', [RegisterEventController::class, 'show'])->name('event-register');
+    Route::post('register/{event}', [RegisterEventController::class, 'store']);
 });
