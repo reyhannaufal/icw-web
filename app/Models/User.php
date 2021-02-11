@@ -27,7 +27,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'payment_receipt_path'
     ];
 
     /**
@@ -40,8 +39,6 @@ class User extends Authenticatable
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
-        'payment_status',
-        'payment_receipt_path'
     ];
 
     /**
@@ -53,8 +50,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function events()
-    {
-        return $this->belongsToMany(Event::class);
+    public function events() {
+        return $this->belongsToMany(Event::class)
+            ->as('participation')
+            ->withTimestamps()
+            ->withPivot('payment_status', 'payment_receipt_path');
+    }
+
+    public function getPaymentStatus(Event $event) {
+        $data = $this->events()
+            ->wherePivot('event_id', $event->id)
+            ->first();
+
+        if ($data != null) {
+            $data = $data->participation->payment_status;
+        }
+        return $data;
     }
 }
