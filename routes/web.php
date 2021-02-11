@@ -25,3 +25,4 @@ Route::middleware('auth')->group(function () {
     Route::get('register/{event}', [RegisterEventController::class, 'show'])->name('event-register');
     Route::post('register/{event}', [RegisterEventController::class, 'store']);
 });
+
