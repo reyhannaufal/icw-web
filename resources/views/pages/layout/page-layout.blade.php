@@ -37,7 +37,7 @@
             <nav class="hidden md:flex space-x-10">
                 <div @click.away="flyoutMenuOpen = false" x-data="{ flyoutMenuOpen: false }" class="relative">
                     <button type="button" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }" class="group rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        <span>Events</span>
+                        <span class="font-bold text-black hover:text-gray-700">Events</span>
                         <svg x-state:on="Item active" x-state:off="Item inactive" class="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500" x-bind:class="{ 'text-gray-600': flyoutMenuOpen, 'text-gray-400': !flyoutMenuOpen }" x-description="Heroicon name: solid/chevron-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                         </svg>
@@ -117,10 +117,10 @@
                     </transition>
                 </div>
 
-                <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a href="#" class="text-base font-bold text-black hover:text-gray-700">
                     About Us
                 </a>
-                <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a href="#" class="text-base font-bold text-black hover:text-gray-700">
                     Contact Us
                 </a>
             </nav>
@@ -159,7 +159,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
                                         </svg>
                                     </div>
-                                    <div class="ml-4 text-base font-medium text-gray-900">
+                                    <div class="ml-4 text-base font-bold text-black hover:text-gray-900">
                                         Events
                                     </div>
                                 </a>
@@ -170,7 +170,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
                                         </svg>
                                     </div>
-                                    <div class="ml-4 text-base font-medium text-gray-900">
+                                    <div class="ml-4 text-base font-bold text-black hover:text-gray-900">
                                         About Us
                                     </div>
                                 </a>
@@ -181,7 +181,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
                                         </svg>
                                     </div>
-                                    <div class="ml-4 text-base font-medium text-gray-900">
+                                    <div class="ml-4 text-base font-bold text-black hover:text-gray-900">
                                         Contact Us
                                     </div>
                                 </a>
@@ -190,21 +190,6 @@
                         </div>
                     </div>
                     <div class="py-6 px-5">
-                        <div class="grid grid-cols-2 gap-4">
-
-                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                                Pricing
-                            </a>
-
-                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                                Partners
-                            </a>
-
-                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                                Company
-                            </a>
-
-                        </div>
                         <div class="mt-6">
                             <a href="{{ route('register') }}" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
                                 Sign up
@@ -253,7 +238,7 @@
                 </div>
 
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <a href="#" class="text-base font-bold text-black hover:text-gray-900">
                         Events
                     </a>
                 </div>

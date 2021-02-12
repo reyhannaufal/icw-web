@@ -288,7 +288,11 @@
                         <strong class="text-2xl">Oil Rig Competition</strong>
 
                         <p class="text-sm py-4 font-extralight">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, qui.
+                            incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi
+                            ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit
+                            esse
                         </p>
                     </main>
 
@@ -320,7 +324,6 @@
                             et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi
                             ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit
                             esse
-
                         </p>
                     </main>
 
@@ -346,7 +349,7 @@
             </div>
             <h1 class="font-bold text-4xl text-white text-center mb-20">Our Last Recap</h1>
             <div >
-                <iframe  class="mx-auto max-w-7xl h-56 md:h-96 lg:h-screen w-full" height="600" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                <iframe  class="mx-auto  h-56 md:h-96 lg:h-screen w-full" width="560" height="315" src="https://www.youtube.com/embed/77KWQExJgaU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
             <div class="flex flex-row justify-between my-40">
