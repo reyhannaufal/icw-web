@@ -354,8 +354,8 @@
         <section class="w-full bg-bgsection-0 mx-auto flex flex-col px-10 sm:px-24 py-24">
 
             <div class="flex flex-row justify-between my-20">
-                <img src="{{'assets/img/garis1.png'}}" alt="" class="md:h-12 h-8">
-                <img src="{{'assets/img/garis2.png'}}" alt="" class="md:h-12 h-8">
+                <img src="{{'assets/img/garis1.png'}}" alt="line" class="md:h-12 h-8 animate-bounce">
+                <img src="{{'assets/img/garis2.png'}}" alt="line" class="md:h-12 h-8 animate-bounce">
             </div>
             <h1 class="font-bold text-4xl text-white text-center mb-20">Our Last Recap</h1>
             <div >
@@ -363,8 +363,8 @@
             </div>
 
             <div class="flex flex-row justify-between my-40">
-                <img src="{{'assets/img/garis1.png'}}" alt="" class="md:h-12 h-8">
-                <img src="{{'assets/img/garis2.png'}}" alt="" class="md:h-12 h-8">
+                <img src="{{'assets/img/garis1.png'}}" alt="line" class="md:h-12 h-8 animate-bounce">
+                <img src="{{'assets/img/garis2.png'}}" alt="line" class="md:h-12 h-8 animate-bounce">
             </div>
         </section>
     </div>
