@@ -35,7 +35,6 @@
                     @endauth
                 </div>
             @endif
-
             <div class=""></div>
         </div>
     </body>

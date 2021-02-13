@@ -11,7 +11,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -128,7 +128,7 @@
                 <a href="{{ route('login') }}" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
                     Sign in
                 </a>
-                <a href="{{ route('register') }}" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
+                <a href="{{ route('register') }}" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-700 border-2 border-solid  hover:from-purple-700 hover:to-indigo-700">
                     Sign up
                 </a>
             </div>
@@ -238,7 +238,7 @@
                 </div>
 
                 <div class="px-5 py-2">
-                    <a href="#" class="text-base font-bold text-black hover:text-gray-900">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
                         Events
                     </a>
                 </div>
@@ -306,4 +306,8 @@
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     }
 </style>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </html>
