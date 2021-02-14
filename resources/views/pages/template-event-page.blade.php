@@ -4,12 +4,7 @@
 <div class="font-body">
 <main class="bg-bgsection-0">
 
-  <section class="lg:h-screen relative overflow-hidden px-6 flex flex-row" style="
-  background-image: url({{ url('') }});
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;">
+  <section class="lg:h-screen relative overflow-hidden px-6 flex flex-row">
 
     <div class="absolute -right-10 md:-right-0 -top-0">
         <img src="{{'assets/img/top-hero.png'}}" alt="jelly-bg" class="h-36 lg:h-52">
@@ -28,7 +23,7 @@
           <h1 class="text-white text-4xl md:text-5xl font-bold text-secondary leading-tight mb-6 md:mb-10">Workshop Career</h1>
           <a href="#" class="text-white bg-primary px-6 md:px-8 py-3 md:py-4 text-lg md:text-xl text-secondary font-bold uppercase rounded bg-indigo-500 bg-opacity-60 hover:bg-opacity-70">More info</a>
         </div>
-        <div class="lg:pr-16 flex-1 flex justify-end ">
+        <div class="lg:pr-16 flex-1 flex justify-end">
           <img class="w-80 max-w-xl sm:max-w-xs sm:max-h-xs" src="{{'assets/img/content2.png'}}">
         </div>
 
@@ -43,9 +38,16 @@
             <div class="w-auto col-span-2 md:col-span-1 ">
                 <img src="{{'assets/img/questions-animate.svg'}}" alt="question-animate"  class="xl:h-96 h-52 w-auto">
             </div>
-            <div class="w-auto col-span-2 md:col-span-1 pt-28 md:pt-0">
+            <div class="w-auto col-span-2 md:col-span-1 pt-28 md:pt-0"
+            data-aos-delay="100"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="false"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-bottom">
                 <h2 class="text-3xl">
-                    <strong>
+                    <strong >
                         What is <abbr title="Indonesia Corrosion Week" class="no-underline">ICW</abbr>?
                     </strong>
                 </h2>
