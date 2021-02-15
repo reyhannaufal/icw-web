@@ -93,7 +93,7 @@
                     </a>
                 </h3>
                 <p class="mt-2 text-sm text-gray-500">
-                    {{ $events[2]->name }}
+                    {{ $events[2]->description }}
                 </p>
             </div>
             <span class="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
@@ -123,7 +123,7 @@
                     </a>
                 </h3>
                 <p class="mt-2 text-sm text-gray-500">
-                    {{ $events[3]->name }}
+                    {{ $events[3]->description }}
                 </p>
             </div>
             <span class="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400"
