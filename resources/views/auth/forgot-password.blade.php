@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-auth-layout>
     <div
             class="min-h-screen bg-white flex flex-col justify-center py-3 sm:px-6 lg:px-8"
             style="font-family: 'Poppins', sans-serif"
@@ -43,5 +43,5 @@
             </div>
         </div>
     </div>
-</x-guest-layout>
+</x-auth-layout>
 
