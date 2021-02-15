@@ -26,5 +26,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/event-page', function () {
-    return view('pages.template-event-page');
+    return view('pages.event.template');
 });

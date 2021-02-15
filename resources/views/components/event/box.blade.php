@@ -1,4 +1,4 @@
-<div class="col-span-4 md:col-span-2 row-span-2 w-full bg-table-0 rounded-xl" data-aos-easing="ease-in-sine"
+<div class="col-span-4 md:col-span-2 row-span-2 w-full bg-table-0 rounded-xl max-w-5xl mx-auto" data-aos-easing="ease-in-sine"
      data-aos-duration="3500" data-aos="{{ $fadeDirection }}">
 
     <header class="flex flex-row pt-4 px-4">
