@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\DashboardController;
+use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\RegisterEventController;
 
 /*
@@ -15,9 +16,7 @@ use \App\Http\Controllers\RegisterEventController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

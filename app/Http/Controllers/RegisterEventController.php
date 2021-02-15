@@ -13,23 +13,23 @@ class RegisterEventController extends Controller
 
         // User hasn't register
         if (!$payment_status) {
-            $view = view('dashboard.event-register-form', [
+            $view = view('dashboard.user.event-register-form', [
                 'event' => $event,
                 'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get()
             ]);
         } // Payment is waiting for verification
         else if ($payment_status == 'pending') {
-            $view = view('dashboard.register-status', [
+            $view = view('dashboard.user.register-status', [
                 'status' => 'pending'
             ]);
         } // Payment failed
         else if ($payment_status == 'failed') {
-            $view = view('dashboard.register-status', [
+            $view = view('dashboard.user.register-status', [
                 'status' => 'failed'
             ]);
         } // Payment success
         else if ($payment_status == 'success') {
-            $view = view('dashboard.register-status', [
+            $view = view('dashboard.user.register-status', [
                 'status' => 'success'
             ]);
         } else {

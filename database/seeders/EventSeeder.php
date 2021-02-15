@@ -32,6 +32,11 @@ class EventSeeder extends Seeder
 
         // Give each event appropriate name
         foreach ($events as $event) {
+
+            // Update type to 'competition' on first row
+            if ($event == $events->first()) {
+                $event->update(['type' => 'competition']);
+            }
             $event->update(['name' => $names[$i]]);
             $i = ($i < count($names)) ? ($i + 1) : 0;
         }

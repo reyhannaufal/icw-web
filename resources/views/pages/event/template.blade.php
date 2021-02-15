@@ -1,4 +1,4 @@
-@extends('pages.layout.page-layout')
+@extends('layouts.guest')
   @section('content')
 
 <div class="font-body">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="container flex flex-row content-center justify-center pb-40 mx-auto z-10">
-      
+
       <div class="flex flex-1 flex-col pt-8 md:flex-row md:pt-16 items-center lg:px-36">
 
         <div class="mb-4 md:w-6/12 md:mb-0 lg:pl-12 lg:w-5/12 sm:mb-16">
@@ -61,7 +61,7 @@
                     culpa qui officia deserunt mollit anim id est laborum
                 </p>
 
-            </div>  
+            </div>
         </div>
           <div class="absolute -left-4 md:-left-0 -top-16">
             <img src="{{'assets/img/event-bubble-1.png'}}" alt="jelly-bg" class="h-40 lg:h-64">
