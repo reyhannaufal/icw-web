@@ -1,5 +1,4 @@
-@extends('pages.layout.page-layout')
-    @section('content')
+<x-guest-layout>
     <div class="font-body overflow-hidden">
         <main class="bg-bgsection-0">
             <!-- Hero section -->
@@ -41,6 +40,4 @@
                 aspect-ratio:16/ 9;
             }
         </style>
-    @endsection
-
-
+</x-guest-layout>
