@@ -18,6 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('price');
+            $table->string('type')->default('non-competition');
             $table->date('start_date');
             $table->time('start_time');
             $table->time('end_time');
