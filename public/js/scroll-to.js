@@ -1,11 +1,6 @@
 function _scrollTo(curr, id) {
-    this.addEventListener(
-        "click", function(e) {
-            e.preventDefault();
-        }
-    );
     let element = document.getElementById(id);
-    let adder = getAdder(id);
+    let adder = 0; // getAdder(id)
 
     window.scroll({
         behavior: 'smooth',
@@ -14,17 +9,17 @@ function _scrollTo(curr, id) {
     });
 }
 
-function getAdder(id) {
-    let adder;
-    switch(id) {
-        case "introduction":
-            adder = 120;
-            break;
-        case "recap":
-            adder = 63
-            break;
-        default:
-            adder = 0;
-    }
-    return adder;
-}
+// function getAdder(id) {
+//     let adder;
+//     switch(id) {
+//         case "introduction":
+//             adder = 120;
+//             break;
+//         case "recap":
+//             adder = 63
+//             break;
+//         default:
+//             adder = 0;
+//     }
+//     return adder;
+// }

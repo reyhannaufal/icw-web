@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <x-slot name="header">
-        <x-guest.navbar :events="$events"/>
+    <x-slot name="navbar">
+        @include('pages._navbar', $events)
     </x-slot>
 
     <div class="font-body overflow-hidden">
@@ -16,7 +16,7 @@
         @include('pages.home._introduction')
 
         <!-- Start : Competition Event -->
-        <section class="w-full bg-bgsection-0 py-24 px-14 sm:px-24 md:px-40">
+        <section id="events" class="w-full bg-bgsection-0 py-24 px-14 sm:px-24 md:px-40">
             @include('pages.home._event-section', [
                 'events' => $events->where('type', 'competition'),
                 'title' => 'Competition Event',

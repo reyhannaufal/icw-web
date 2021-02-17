@@ -8,7 +8,7 @@
             Page ini adalah page
             <br>
             <strong>
-                About Us
+                Contact
             </strong>
         </p>
     </div>

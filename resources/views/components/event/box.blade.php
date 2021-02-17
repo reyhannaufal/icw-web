@@ -22,5 +22,6 @@
     </main>
 
     <footer class="flex justify-start px-4 py-6">
-        <button class="rounded-full py-2 px-6 bg-bgnav-0 text-black ">Learn More</button></footer>
+        <a href="{{ route('event-info', Str::slug($event->name, '-')) }}" class="rounded-full py-2 px-6 bg-bgnav-0 text-black ">Learn More</a>
+    </footer>
 </div>

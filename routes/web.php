@@ -15,13 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/event/{event}', [EventInfoController::class, 'show'])->name('event-info');
 
-Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info');
-
-Route::get('/event-page', function () {
-    return view('pages.event.template');
-});
-
+// Dashboard
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

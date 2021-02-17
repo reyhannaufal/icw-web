@@ -5,11 +5,12 @@
 
     <div class="font-body overflow-hidden bg-bgsection-0">
         <p class="text-center text-white">
-            Page ini adalah page
+            Page ini berisi informasi mengenai event
             <br>
             <strong>
-                About Us
+                {{ $event->name }}
             </strong>
         </p>
     </div>
+
 </x-guest-layout>

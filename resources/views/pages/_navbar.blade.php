@@ -1,9 +1,9 @@
 <div x-data="{ mobileMenuOpen: false }" class="relative bg-bgnav-0">
     <div id="header" class="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
         <div class="flex justify-start lg:w-0 lg:flex-1">
-            <a href="" onclick="scrollTo(this, 'header')">
+            <a href="/" onclick="{{ (Route::current()->uri() != '/') ?: "_scrollTo(this, 'header')" }}">
                 <span class="sr-only">Workflow</span>
-                <img class="h-8 w-auto sm:h-10" src="{{'assets/img/logo_indicor.png'}}" alt="logo-indicor">
+                <img class="h-8 w-auto sm:h-10" src="{{ asset('assets/img/logo_indicor.png') }}" alt="logo-indicor">
             </a>
         </div>
         <div class="-mr-2 -my-2 md:hidden">
@@ -38,10 +38,10 @@
                     </div>
                 </transition>
             </div>
-                <a href="#" class="text-base font-bold text-black hover:text-gray-700">
+                <a href="/about" class="text-base font-bold text-black hover:text-gray-700">
                     About Us
                 </a>
-                <a href="#" class="text-base font-bold text-black hover:text-gray-700">
+                <a href="/contact" class="text-base font-bold text-black hover:text-gray-700">
                     Contact Us
                 </a>
         </nav>
@@ -74,7 +74,7 @@
                     <div class="mt-6">
                         <nav class="grid grid-cols-1 gap-7">
 
-                            <a href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                            <a onclick="_scrollTo(this, 'events')" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                                 <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                     <svg class="h-6 w-6" x-description="Heroicon name: outline/inbox" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
@@ -85,7 +85,7 @@
                                 </div>
                             </a>
 
-                            <a href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                            <a href="/about" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                                 <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                     <svg class="h-6 w-6" x-description="Heroicon name: outline/annotation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
@@ -96,7 +96,7 @@
                                 </div>
                             </a>
 
-                            <a href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                            <a href="/contact" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                                 <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                     <svg class="h-6 w-6" x-description="Heroicon name: outline/chat-alt-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
