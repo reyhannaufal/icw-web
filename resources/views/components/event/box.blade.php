@@ -16,11 +16,12 @@
     </header>
 
     <main class="py-4 px-4 text-white">
-        <strong class="text-2xl">{{ $event->first()->name }}</strong>
+        <strong class="text-2xl">{{ $event->name }}</strong>
 
-        <p class="text-sm py-4 font-extralight">{{ $event->first()->description }}</p>
+        <p class="text-sm py-4 font-extralight">{{ $event->description }}</p>
     </main>
 
     <footer class="flex justify-start px-4 py-6">
-        <button class="rounded-full py-2 px-6 bg-bgnav-0 text-black ">Learn More</button></footer>
+        <a href="{{ route('event-info', Str::slug($event->name, '-')) }}" class="rounded-full py-2 px-6 bg-bgnav-0 text-black ">Learn More</a>
+    </footer>
 </div>

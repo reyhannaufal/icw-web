@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @php echo '<script type="text/javascript"> changeTitleTo("Form Event")</script>' @endphp
+    @php echo '<script type="text/javascript"> changeTitleTo("Info Event")</script>' @endphp
 
 
     <x-slot name="navbar">
@@ -8,7 +8,7 @@
 
     <div class="font-body overflow-hidden bg-bgsection-0">
         <p class="text-center text-white">
-            Page ini berisi form event
+            Page ini berisi informasi mengenai event
             <br>
             <strong>
                 {{ $event->name }}
