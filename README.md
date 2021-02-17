@@ -22,3 +22,5 @@ semua static pages dikerjakan pada folder pages/
 * Tabel `events` berelasi many-to-many dengan tabel `bills`
     dengan tabel `bill_event` sebagai perantara..
 * Tabel `bills` diisi dengan info rekening.
+* Ada empat nilai yang diterima di kolom `payment_status` pada tabel `event_user`,
+    yaitu `failed`, `success`, `pending`, dan ` null` (belum daftar).

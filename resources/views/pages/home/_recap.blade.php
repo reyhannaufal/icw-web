@@ -1,4 +1,4 @@
-<section class="w-full bg-bgsection-0 mx-auto flex flex-col px-10 sm:px-24 py-24">
+<section id="recap" class="w-full bg-bgsection-0 mx-auto flex flex-col px-10 sm:px-24 py-24">
 
     <div class="flex flex-row justify-between my-20">
         <img src="{{'assets/img/garis1.png'}}" alt="line" class="md:h-12 h-8 animate-bounce">
