@@ -16,9 +16,9 @@
     </header>
 
     <main class="py-4 px-4 text-white">
-        <strong class="text-2xl">{{ $event->first()->name }}</strong>
+        <strong class="text-2xl">{{ $event->name }}</strong>
 
-        <p class="text-sm py-4 font-extralight">{{ $event->first()->description }}</p>
+        <p class="text-sm py-4 font-extralight">{{ $event->description }}</p>
     </main>
 
     <footer class="flex justify-start px-4 py-6">

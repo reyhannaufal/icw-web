@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index() {
-        return view('dashboard.user.home.welcome', [
+        return view('dashboard.user.home.user-welcome', [
             'events' => Event::all(),
             'announcements' => Announcement::latest()
                 ->paginate($_ENV['PAGINATE'])
