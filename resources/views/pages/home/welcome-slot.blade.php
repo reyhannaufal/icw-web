@@ -1,4 +1,5 @@
 <x-guest-layout>
+    @php echo '<script type="text/javascript"> changeTitleTo("Home")</script>' @endphp
     <x-slot name="navbar">
         @include('pages._navbar', $events)
     </x-slot>

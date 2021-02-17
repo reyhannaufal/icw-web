@@ -10,7 +10,7 @@ function _scrollTo(curr, id, delayTo = '') {
     window.scroll({
         behavior: 'smooth',
         left: 0,
-        top: element.getBoundingClientRect().top + window.scrollY + adder
+        top: (element) ? element.getBoundingClientRect().top + window.scrollY + adder : 0
     });
 }
 
