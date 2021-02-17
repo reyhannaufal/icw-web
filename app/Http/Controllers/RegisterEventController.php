@@ -7,7 +7,8 @@ use App\Models\Event;
 
 class RegisterEventController extends Controller
 {
-    public function show(Event $event) {
+    public function show(Event $event)
+    {
         $view = null;
         $payment_status = auth()->user()->getPaymentStatus($event);
 
@@ -39,7 +40,8 @@ class RegisterEventController extends Controller
         return $view;
     }
 
-    public function store(Event $event) {
+    public function store(Event $event)
+    {
         dd(1);
     }
 }
