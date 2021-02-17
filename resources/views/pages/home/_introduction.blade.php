@@ -2,7 +2,7 @@
 <section class=" bg-bgsection-0 mx-auto flex px-10 sm:px-24 pt-40 pb-24">
     <div class="inline-grid max-w-7xl mx-auto grid grid-cols-2 text-white md:gap-32 relative place-items-center">
         <div class="w-auto col-span-2 md:col-span-1 ">
-            <img src="{{'assets/img/questions-animate.svg'}}" alt="question-animate"  class="xl:h-96 h-52 w-auto">
+            <img src="{{'assets/img/questions-animate.svg'}}" alt="question-animate" class="xl:h-96 h-52 w-auto">
         </div>
         <div class="w-auto col-span-2 md:col-span-1 pt-28 md:pt-0">
             <h2 class="text-3xl">

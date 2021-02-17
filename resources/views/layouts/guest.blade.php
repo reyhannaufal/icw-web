@@ -23,7 +23,7 @@
         {{ $navbar }}
     </header>
 
-    <div class="antialiased">
+    <div class="antialiased bg-bgsection-0">
         {{ $slot }}
     </div>
 

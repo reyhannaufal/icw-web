@@ -1,5 +1,5 @@
-<div class="col-span-4 md:col-span-2 row-span-2 w-full bg-table-0 rounded-xl max-w-5xl mx-auto" data-aos-easing="ease-in-sine"
-     data-aos-duration="3500" data-aos="{{ $fadeDirection }}">
+<div class="col-span-4 md:col-span-2 row-span-2 w-full bg-table-0 rounded-xl max-w-5xl mx-auto"
+     data-aos-duration="4500" data-aos="{{ $fadeDirection }}">
 
     <header class="flex flex-row pt-4 px-4">
         <svg class="px-1" width="33" height="29" viewBox="0 0 33 29" fill="none"
