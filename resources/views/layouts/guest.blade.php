@@ -15,9 +15,9 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/scroll-to.js') }}" defer></script>
+    <script src="{{ asset('js/scroll-to.js') }}"></script>
 </head>
-<body>
+<body onload="reScroll(this)">
     <header>
         {{ $navbar }}
     </header>

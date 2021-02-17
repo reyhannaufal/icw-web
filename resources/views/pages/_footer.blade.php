@@ -5,7 +5,7 @@
     >
         @include('pages._footer-link', [
             'name' => 'Home',
-            'route' => 'scrollTo: header' // scrollTo: <HTML element id>
+            'route' => '/' // scrollTo: <HTML element id>
         ])
 
         @include('pages._footer-link', [
@@ -20,7 +20,7 @@
 
         @include('pages._footer-link', [
             'name' => 'Events',
-            'route' => 'scrollTo: events'
+            'route' => '/ scrollTo: events'
         ])
 
     </nav>
