@@ -16,6 +16,13 @@ templating untuk static pages terdapat pada layouts/guest.blade.php
 semua static pages dikerjakan pada folder pages/
 ```
 
+## Info Akun Admin
+* Akun admin adalah akun users dengan id = 1.
+* Jika menggunakan seeder yang ada di program ini, maka profil dari akun admin adalah:
+    * Nama: `Admin`
+    * Email: `admin@admin.com`
+    * Password: `12345678`
+
 ## Struktur Database
 * Tabel `users` berelasi many-to-many dengan tabel `events`
     dengan tabel `event_user` sebagai perantara.

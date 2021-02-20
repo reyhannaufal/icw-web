@@ -5,7 +5,9 @@ namespace App\Providers;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use App\Models\Event;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,7 +18,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**
@@ -36,5 +37,9 @@ class AppServiceProvider extends ServiceProvider
                         ->withPath('');
                 });
         }
+
+        View::composer('layouts.guest', function ($view) {
+            $view->with('events', Event::all());
+        });
     }
 }

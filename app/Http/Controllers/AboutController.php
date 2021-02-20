@@ -9,8 +9,6 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return view('pages.about.about', [
-            'events' => Event::all()
-        ]);
+        return view('pages.about.about');
     }
 }

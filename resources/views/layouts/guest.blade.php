@@ -24,7 +24,7 @@
     <x-alerts/>
 
     <header>
-        {{ $navbar }}
+        @include('pages._navbar', $events)
     </header>
 
     <div class="antialiased bg-bgsection-0">

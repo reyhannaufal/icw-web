@@ -16,19 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::get('/event/{event}', [EventInfoController::class, 'show'])->name('event-info');
+Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info');
+
+Route::get('/contact', [MessagesController::class, 'create'])->name('contact');
+Route::post('/messages', [MessagesController::class, 'store']);
 
 Route::post('/messages', [MessagesController::class, 'store']);
 
 // Dashboard
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/announcements', [AnnouncementsController::class, 'index'])->name('announcements');
+//    Route::get('/announcements/{announcement}', [AnnouncementsController::class, 'show']);
 
-    Route::get('register/{event}', [RegisterEventController::class, 'show'])->name('event-register');
-    Route::post('register/{event}', [RegisterEventController::class, 'store']);
+    Route::get('register/{event}', [EventController::class, 'create'])->name('event-register');
+    Route::post('register/{event}', [EventController::class, 'store']);
 
-    Route::get('/messages', [MessagesController::class, 'index'])->name('messages');
+//    Route::get('/messages', [MessagesController::class, 'index'])->name('messages'); in progress (for admin panel.blade.php)
 });
 
 Route::get('/event-page', function () {

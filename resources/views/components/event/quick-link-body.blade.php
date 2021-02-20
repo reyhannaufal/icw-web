@@ -1,7 +1,7 @@
 <div class="mt-8">
     <h3 class="text-lg font-medium">
         <a href="{{ route('event-register', Str::slug($event->name, '-')) }}" class="focus:outline-none">
-            <!-- Extend touch target to entire panel -->
+            <!-- Extend touch target to entire panel.blade.php -->
             <span class="absolute inset-0" aria-hidden="true"></span>
             {{ $event->name }}
         </a>

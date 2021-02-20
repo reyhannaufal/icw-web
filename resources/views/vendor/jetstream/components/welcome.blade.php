@@ -6,7 +6,7 @@
             <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
                 <!-- Left column -->
                 <div class="grid grid-cols-1 gap-4 lg:col-span-2">
-                    <!-- Welcome panel -->
+                    <!-- Welcome panel.blade.php -->
                     <section aria-labelledby="profile-overview-title">
                         <div class="rounded-lg bg-white overflow-hidden shadow">
                             <h2 class="sr-only" id="profile-overview-title">Profile Overview</h2>
@@ -33,14 +33,14 @@
                         </div>
                     </section>
 
-                    <!-- Actions panel -->
-                    @include('dashboard.user.home._quick-links', $events)
+                    <!-- Actions panel.blade.php -->
+                    @include('dashboard.home._quick-links', $events)
                 </div>
 
                 <!-- Right column -->
                 <div class="grid grid-cols-1 gap-4">
                     <!-- Announcements -->
-                    @include('dashboard.user.home._announcements', $announcements)
+                    @include('dashboard.home._announcements', $announcements)
                 </div>
             </div>
         </div>

@@ -10,9 +10,12 @@ class MessagesController extends Controller
 {
     public function index()
     {
-        return view('pages.messages.msg-index', [
-            'events' => Event::all()
-        ]);
+        return view('pages.messages.msg-index');
+    }
+
+    public function create()
+    {
+        return view('pages.contact');
     }
 
     public function store()
