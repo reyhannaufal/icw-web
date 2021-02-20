@@ -30,5 +30,5 @@ Route::middleware('auth')->group(function () {
     Route::get('register/{event}', [EventController::class, 'create'])->name('event-register');
     Route::post('register/{event}', [EventController::class, 'store']);
 
-//    Route::get('/messages', [MessagesController::class, 'index'])->name('messages'); in progress (for admin panel)
+//    Route::get('/messages', [MessagesController::class, 'index'])->name('messages'); in progress (for admin panel.blade.php)
 });
