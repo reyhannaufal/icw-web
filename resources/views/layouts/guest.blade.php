@@ -11,14 +11,18 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/scroll-to.js') }}" defer></script>
     <script src="{{ asset('js/change-title.js') }}"></script>
+    <script src="{{ asset('js/alert.js') }}" defer></script>
 </head>
 <body onload="reScroll(this)">
+    <x-alerts/>
+
     <header>
         {{ $navbar }}
     </header>
