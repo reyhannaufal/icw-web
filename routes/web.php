@@ -30,3 +30,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/messages', [MessagesController::class, 'index'])->name('messages');
 });
+
+Route::get('/event-page', function () {
+    return view('pages.template-event-page');
+});
