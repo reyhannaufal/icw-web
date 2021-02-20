@@ -28,7 +28,7 @@
     </div>
 
     <footer class="bg-bgnav-0">
-        @include('pages._footer')
+        @include('pages.footer._footer')
     </footer>
 </body>
 <style>
