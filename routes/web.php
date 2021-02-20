@@ -21,6 +21,8 @@ Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info
 Route::get('/contact', [MessagesController::class, 'create'])->name('contact');
 Route::post('/messages', [MessagesController::class, 'store']);
 
+Route::post('/messages', [MessagesController::class, 'store']);
+
 // Dashboard
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
