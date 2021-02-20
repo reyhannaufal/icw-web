@@ -13,6 +13,6 @@
     </div>
 
     <div class="col-start-3 lg:col-start-2 w-64 lg:w-3/5 place-self-start">
-        <img src="{{'assets/img/noncom.png'}}" alt="" class="">
+        <img src="{{'assets/img/noncom.png'}}" alt="noncom" />
     </div>
 </div>
