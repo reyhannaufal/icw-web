@@ -92,6 +92,8 @@
                                     name="email"
                                     type="email"
                                     autocomplete="email"
+                                    oninvalid="setCustomValidity('Mohon masukkan alamat email yang valid')"
+                                    oninput="setCustomValidity('')"
                                     class="py-3 bg-gray-400  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
@@ -111,6 +113,8 @@
                                 type="tel"
                                 placeholder="+62"
                                 pattern="(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+"
+                                oninvalid="setCustomValidity('Input tidak sesuai dengan format. Contoh: 0858123456')"
+                                oninput="setCustomValidity('')"
                                 class="py-3 bg-gray-400  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                         />
                         @error('phone_number')

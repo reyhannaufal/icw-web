@@ -1,4 +1,4 @@
-<x-event.section-header :title="$title" :description="$description"/>
+ <x-event.section-header :title="$title" :description="$description"/>
 
 @if (count($events) == 1)
     @php $fade_direction = 'fade-right' @endphp
