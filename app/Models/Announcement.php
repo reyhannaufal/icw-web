@@ -13,6 +13,6 @@ class Announcement extends Model
 
     public function timeline() {
         return self::latest()
-            ->paginate($_ENV['PAGINATE']);
+            ->paginate(config('pagination'));
     }
 }

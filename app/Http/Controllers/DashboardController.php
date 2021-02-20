@@ -12,7 +12,7 @@ class DashboardController extends Controller
         return view('dashboard.user.home.user-welcome', [
             'events' => Event::all(),
             'announcements' => Announcement::latest()
-                ->paginate($_ENV['PAGINATE'])
+                ->paginate(config('pagination'))
         ]);
     }
 }

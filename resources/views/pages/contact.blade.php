@@ -1,10 +1,6 @@
 <x-guest-layout>
     @php echo '<script type="text/javascript"> changeTitleTo("Contact")</script>' @endphp
 
-    <x-slot name="navbar">
-        @include('pages._navbar', $events)
-    </x-slot>
-
     <div class="text-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-40">
         <div class="relative max-w-xl mx-auto">
             <div class="text-center">

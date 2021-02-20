@@ -9,8 +9,6 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('pages.contact', [
-            'events' => Event::all()
-        ]);
+        return view('pages.contact');
     }
 }
