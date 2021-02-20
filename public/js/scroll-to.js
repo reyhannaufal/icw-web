@@ -5,12 +5,13 @@ function _scrollTo(curr, id, delayTo = '') {
         return;
     }
     let element = document.getElementById(id);
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     let adder = 0; // getAdder(id)
 
     window.scroll({
         behavior: 'smooth',
         left: 0,
-        top: (element) ? element.getBoundingClientRect().top + window.scrollY + adder : 0
+        top: (element) ? element.getBoundingClientRect().top + window.scrollY + adder : scrollTop
     });
 }
 

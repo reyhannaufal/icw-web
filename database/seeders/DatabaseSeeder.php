@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Event;
 use App\Models\Bill;
+use App\Models\Messages;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -22,7 +23,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             EventSeeder::class,
             BillSeeder::class,
-            AnnouncementSeeder::class
+            AnnouncementSeeder::class,
+            MessagesSeeder::class
         ]);
 
         // Get 10 user, all event, and all bill
