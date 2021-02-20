@@ -10,7 +10,7 @@
                         <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
                             <h3 class="text-sm font-semibold text-gray-800">
                                 <a href="#" class="hover:underline focus:outline-none">
-                                    <!-- Extend touch target to entire panel -->
+                                    <!-- Extend touch target to entire panel.blade.php -->
                                     <span class="absolute inset-0" aria-hidden="true"></span>
                                     {{ $announcement->title }}
                                 </a>

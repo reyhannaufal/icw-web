@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Event;
 use App\Models\Bill;
+use App\Models\Messages;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -22,11 +23,19 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             EventSeeder::class,
             BillSeeder::class,
-            AnnouncementSeeder::class
+            AnnouncementSeeder::class,
+            MessagesSeeder::class
         ]);
 
-        // Get 10 user, all event, and all bill
-        $users = User::orderBy('id', 'asc')->take(10)->get();
+        // Update the account with id = 1 (admin account) with admin credentials
+        User::first()->update([
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+            'password' => bcrypt('12345678')
+        ]);
+
+        // Get 10 user excluding the first user, all event, and all bill
+        $users = User::orderBy('id', 'asc')->where('id', '>', '1')->take(10)->get();
         $events = Event::all();
         $bills = Bill::all();
 

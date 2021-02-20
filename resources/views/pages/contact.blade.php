@@ -1,10 +1,6 @@
 <x-guest-layout>
     @php echo '<script type="text/javascript"> changeTitleTo("Contact")</script>' @endphp
 
-    <x-slot name="navbar">
-        @include('pages._navbar', $events)
-    </x-slot>
-
     <div class="text-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-40">
         <div class="relative max-w-xl mx-auto">
             <div class="text-center">
@@ -20,10 +16,11 @@
             </div>
             <div class="mt-12">
                 <form
-                        action="#"
+                        action="/messages"
                         method="POST"
                         class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                 >
+                    @csrf
                     <div>
                         <label
                                 for="first_name"
@@ -39,6 +36,9 @@
                                     class="py-3 px-4 block bg-gray-400 w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
+                        @error('first_name')
+                            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <label
@@ -55,22 +55,28 @@
                                     class="py-3 bg-gray-400  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
+                        @error('last_name')
+                            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="sm:col-span-2">
                         <label
-                                for="company"
+                                for="institution"
                                 class="block text-sm font-medium text-gray-100"
                         >Institution</label
                         >
                         <div class="mt-1">
                             <input
                                     type="text"
-                                    name="company"
-                                    id="company"
+                                    name="institution"
+                                    id="institution"
                                     autocomplete="organization"
                                     class="py-3 px-4 bg-gray-400  block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
+                        @error('institution')
+                            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="sm:col-span-2">
                         <label for="email" class="block text-sm font-medium text-gray-100"
@@ -82,9 +88,14 @@
                                     name="email"
                                     type="email"
                                     autocomplete="email"
+                                    oninvalid="setCustomValidity('Mohon masukkan alamat email yang valid')"
+                                    oninput="setCustomValidity('')"
                                     class="py-3 bg-gray-400  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
+                        @error('email')
+                            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="sm:col-span-2">
                         <label
@@ -93,13 +104,18 @@
                         >Phone Number</label
                         >
                         <input
-                                id="telephone"
-                                name="phone"
+                                id="phone_number"
+                                name="phone_number"
                                 type="tel"
                                 placeholder="+62"
                                 pattern="(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+"
+                                oninvalid="setCustomValidity('Input tidak sesuai dengan format. Contoh: 0858123456')"
+                                oninput="setCustomValidity('')"
                                 class="py-3 bg-gray-400  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                         />
+                        @error('phone_number')
+                            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="sm:col-span-2">
                         <label
@@ -108,13 +124,16 @@
                         >Message</label
                         >
                         <div class="mt-1">
-                <textarea
-                        id="message"
-                        name="message"
-                        rows="4"
-                        class="py-3 bg-gray-400 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                ></textarea>
+                            <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    class="py-3 bg-gray-400 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                            ></textarea>
                         </div>
+                        @error('message')
+                            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="sm:col-span-2">
                         <button
@@ -128,6 +147,4 @@
             </div>
         </div>
     </div>
-
-
 </x-guest-layout>
