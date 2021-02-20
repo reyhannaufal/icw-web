@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Http\Request;
 
-class RegisterEventController extends Controller
+class EventController extends Controller
 {
     public function show(Event $event)
+    {
+        return view('pages.event.info', [
+            'events' => Event::all(),
+            'event' => $event
+        ]);
+    }
+
+    public function create(Event $event)
     {
         $view = null;
         $payment_status = auth()->user()->getPaymentStatus($event);

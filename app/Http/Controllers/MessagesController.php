@@ -13,6 +13,11 @@ class MessagesController extends Controller
         return view('pages.messages.msg-index');
     }
 
+    public function create()
+    {
+        return view('pages.contact');
+    }
+
     public function store()
     {
         $attributes = request()->validate([
