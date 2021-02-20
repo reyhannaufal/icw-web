@@ -26,6 +26,7 @@ class EventFactory extends Factory
             'name' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
             'price' => strval($this->faker->randomNumber()),
+//            'type' => $this->faker->randomElement(['competition', 'non-competition']),
             'start_date' => $this->faker->date(),
             'start_time' => $this->faker->time(),
             'end_time' => $this->faker->time(),

@@ -1,8 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\DashboardController;
-use \App\Http\Controllers\RegisterEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +14,12 @@ use \App\Http\Controllers\RegisterEventController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/event/{event}', [EventInfoController::class, 'show'])->name('event-info');
 
+// Dashboard
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

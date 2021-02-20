@@ -5,40 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title></title>
+    <title>Home</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/scroll-to.js') }}" defer></script>
-    <script src="{{ asset('js/change-title.js') }}"></script>
 </head>
-<body onload="reScroll(this)">
-    <header>
-        {{ $navbar }}
-    </header>
+<body>
 
-    <div class="antialiased bg-bgsection-0">
-        {{ $slot }}
-    </div>
+<div class="antialiased">
+    {{ $slot }}
+</div>
 
-    <footer class="bg-bgnav-0">
-        @include('pages._footer')
-    </footer>
 </body>
 <style>
     *{
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     }
 </style>
-{{--<script src="https://unpkg.com/turbolinks"></script>--}}
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 </html>
