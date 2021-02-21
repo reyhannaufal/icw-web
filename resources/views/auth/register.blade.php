@@ -5,7 +5,7 @@
         >
             <div class="mx-auto w-full max-w-sm lg:w-96">
                 <div>
-                    <a>
+                    <a href="/">
                         <img
                                 class="h-12 w-auto"
                                 src="{{'assets/img/logo_indicor.png'}}"
@@ -16,7 +16,7 @@
                     <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
                         Sign Up Now!
                     </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, sed.</p>
+                    <p class="pt-4 text-gray-700">Create your account by filling up the form below.</p>
                 </div>
 
                 <div class="mt-8">
@@ -63,7 +63,7 @@
                             @endif
 
                             <div class="flex-col items-center justify-end mt-4">
-                                <button class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button class="w-full flex  justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600">
                                     {{ __('Sign Up') }}
                                 </button>
                             </div>

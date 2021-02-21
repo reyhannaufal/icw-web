@@ -10,8 +10,8 @@
                     Contact Us
                 </h2>
                 <p class="mt-4 text-lg leading-6 text-gray-200" data-aos="fade-up" data-aos-duration="2000">
-                    Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat
-                    massa dictumst amet. Sapien tortor lacus arcu.
+                    We are here to help and answer any questions you might have <br>
+                    We look forward to hearing from you!
                 </p>
             </div>
             <div class="mt-12">
@@ -33,7 +33,7 @@
                                     name="first_name"
                                     id="first_name"
                                     autocomplete="given-name"
-                                    class="py-3 px-4 block bg-gray-400 w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                    class="py-3 px-4 block text-black  w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
                         @error('first_name')
@@ -52,7 +52,7 @@
                                     name="last_name"
                                     id="last_name"
                                     autocomplete="family-name"
-                                    class="py-3 bg-gray-400  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                    class="py-3 text-black bg-gray-100 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
                         @error('last_name')
@@ -71,7 +71,7 @@
                                     name="institution"
                                     id="institution"
                                     autocomplete="organization"
-                                    class="py-3 px-4 bg-gray-400  block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                    class="py-3 px-4 text-black bg-gray-100  block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
                         @error('institution')
@@ -90,7 +90,7 @@
                                     autocomplete="email"
                                     oninvalid="setCustomValidity('Mohon masukkan alamat email yang valid')"
                                     oninput="setCustomValidity('')"
-                                    class="py-3 bg-gray-400  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                    class="py-3 text-black bg-gray-100  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                         </div>
                         @error('email')
@@ -111,7 +111,7 @@
                                 pattern="(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+"
                                 oninvalid="setCustomValidity('Input tidak sesuai dengan format. Contoh: 0858123456')"
                                 oninput="setCustomValidity('')"
-                                class="py-3 bg-gray-400  px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                class="py-3 text-black bg-gray-100 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                         />
                         @error('phone_number')
                             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -128,7 +128,7 @@
                                     id="message"
                                     name="message"
                                     rows="4"
-                                    class="py-3 bg-gray-400 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                    class="py-3 text-black bg-gray-100 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             ></textarea>
                         </div>
                         @error('message')

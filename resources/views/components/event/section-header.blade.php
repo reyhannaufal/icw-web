@@ -1,5 +1,5 @@
-<div class="grid grid-cols-2 relative py-6 max-w-7xl mx-auto" data-aos-easing="ease-in-sine"
-     data-aos-duration="3500" data-aos="fade-right">
+<div class="grid grid-cols-2 relative py-6 max-w-7xl mx-auto"
+     data-aos-duration="3000" data-aos="fade-right">
     <div class="w-full col-span-2 text-white text-center absolute place-self-center">
         <header class="text-3xl sm:text-4xl mdl:text-5xl lg:text-6xl">
             <strong>
