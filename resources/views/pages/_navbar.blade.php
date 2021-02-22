@@ -1,5 +1,5 @@
 <div x-data="{ mobileMenuOpen: false }" class="relative bg-bgnav-0">
-    <div id="header" class="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
+    <div id="header" class="flex justify-between items-center  max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
         <div class="flex justify-start lg:w-0 lg:flex-1">
             <a href="/" onclick="{{ (Route::current()->uri() != '/') ?: "_scrollTo(this, 'header')" }}">
                 <span class="sr-only">Workflow</span>
@@ -60,7 +60,7 @@
                 <div class="pt-5 pb-6 px-5">
                     <div class="flex items-center justify-between">
                         <div>
-                            <img class="h-8 w-auto" src="{{'assets/img/logo_indicor.png'}}" alt="Workflow">
+                            <img class="h-8 w-auto" src="{{URL::to('assets/img/logo_indicor.png')}}" alt="Workflow">
                         </div>
                         <div class="-mr-2">
                             <button @click="mobileMenuOpen = false" type="button" class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

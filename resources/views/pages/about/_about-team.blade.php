@@ -3,8 +3,8 @@
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
             <div class="space-y-5 sm:space-y-4">
                 <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Meet our website team</h2>
-                <p class="text-xl text-gray-500">Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae
-                    elementum enim vitae ullamcorper suspendisse. Vivamus fringilla.</p>
+                <p class="text-xl text-gray-400">Perfection is achieved not when there is nothing more to add, but
+                    rather when there is nothing more to take away.</p>
             </div>
             <div class="lg:col-span-2">
                 <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
@@ -24,7 +24,7 @@
                     @include('pages.about._team-box', [
                         'img' => 'https://i.pravatar.cc/100?u=b3',
                         'name' => 'Axel Briano Suherik',
-                        'role' => 'UI/UX & Front-end'
+                        'role' => 'Front-end'
                     ])
 
                     @include('pages.about._team-box', [
