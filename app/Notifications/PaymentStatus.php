@@ -50,25 +50,25 @@ class PaymentStatus extends Notification
 
         switch ($this->status) {
             case "pending":
-                $text = "Bukti pembayaran Anda telah terkirim." .
-                    "Tunggu beberapa saat hingga pembayaran diverifikasi oleh admin." .
-                    "Jika ada kendala, silahkan hubungi kami melalui tombol di bawah ini.";
+                $text = "Bukti pembayaran Anda telah terkirim. " .
+                    "Tunggu beberapa saat hingga pembayaran diverifikasi oleh admin. " .
+                    "Jika ada kendala, silahkan hubungi kami melalui tombol di bawah ini. ";
                 break;
             case "failed":
-                $text = "Bukti pembayaran anda tidak valid." .
-                    "Upload ulang bukti pembayaran Anda." .
-                    "Jika Anda merasa bukti pembayaran anda sudah valid, silahkan hubungi kami dengan tombol di bawah ini";
+                $text = "Bukti pembayaran anda tidak valid. " .
+                    "Upload ulang bukti pembayaran Anda. " .
+                    "Jika Anda merasa bukti pembayaran anda sudah valid, silahkan hubungi kami dengan tombol di bawah ini. ";
                 break;
             case "success":
-                $text = "Selamat, bukti pembayaran anda telah terverifikasi" .
-                    "Segera kunjungi menu dashboard event di website kami untuk info lebih lanjut." .
-                    "Jika ada kendala, silahkan hubungi kami melalui tombol di bawah ini.";
+                $text = "Selamat, anda dapat mengikuti event ini. " .
+                    "Segera kunjungi menu dashboard event di website kami untuk info lebih lanjut. " .
+                    "Jika ada kendala, silahkan hubungi kami melalui tombol di bawah ini. ";
                 break;
             default:
-                $text = 'Error, status tidak valid. Abaikan pesan ini atau hubungi kami jika ada kendala lain.';
+                $text = 'Error, status tidak valid. Abaikan pesan ini atau hubungi kami jika ada kendala lain. ';
         }
         return (new MailMessage)
-            ->subject("Status Pembayaran Event " . $this->event_name)
+            ->subject("Status Event " . $this->event_name)
             ->greeting("Hallo, " . $this->user_name)
             ->line($text)
             ->action('Hubungi Kami', url('#'))

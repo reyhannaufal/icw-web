@@ -35,3 +35,4 @@ selalu perhatikan env.example
 * Tabel `messages` diisi dengan pesan yang dikirim di halaman `Contact Us`
 * Ada empat nilai yang diterima di kolom `payment_status` pada tabel `event_user`,
     yaitu `failed`, `success`, dan `pending`.
+* Jika eventnya gratis, maka nilai kolom `price` pada tabel `events` sama dengan `0`.

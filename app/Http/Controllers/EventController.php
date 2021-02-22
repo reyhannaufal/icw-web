@@ -21,30 +21,41 @@ class EventController extends Controller
         $view = null;
         $payment_status = auth()->user()->getPaymentStatus($event);
 
-        // User hasn't register
-        if (!$payment_status) {
-            $view = view('dashboard.user.event-register-form', [
-                'event' => $event,
-                'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get()
-            ]);
-        } // Payment is waiting for verification
-        else if ($payment_status == 'pending') {
-            $view = view('dashboard.user.register-status', [
-                'status' => 'pending',
-                'payment_receipt' => Auth::user()->getPaymentReceipt($event)
-            ]);
-        } // Payment failed
-        else if ($payment_status == 'failed') {
-            $view = view('dashboard.user.register-status', [
-                'status' => 'failed'
-            ]);
-        } // Payment success
-        else if ($payment_status == 'success') {
+        // If event isn't free
+        if ($event->price != 0) { // User hasn't register
+            if (!$payment_status) {
+                $view = view('dashboard.user.event-register-form', [
+                    'event' => $event,
+                    'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get()
+                ]);
+            } // Payment is waiting for verification
+            else if ($payment_status == 'pending') {
+                $view = view('dashboard.user.register-status', [
+                    'status' => 'pending',
+                    'payment_receipt' => Auth::user()->getPaymentReceipt($event)
+                ]);
+            } // Payment failed
+            else if ($payment_status == 'failed') {
+                $view = view('dashboard.user.register-status', [
+                    'status' => 'failed'
+                ]);
+            } // Payment success
+            else if ($payment_status == 'success') {
+                $view = view('dashboard.user.register-status', [
+                    'status' => 'success'
+                ]);
+            } else {
+                abort(403, 'Status pembayaran tidak terdifinisi');
+            }
+        } else {
+            if (is_null($event->users()->where('user_id', Auth::user()->id)->first())) {
+                Auth::user()->events()->attach($event->id, [
+                    'payment_status' => 'success',
+                ]);
+            }
             $view = view('dashboard.user.register-status', [
                 'status' => 'success'
             ]);
-        } else {
-            abort(403, 'Status pembayaran tidak terdifinisi');
         }
 
         return $view;
@@ -68,9 +79,8 @@ class EventController extends Controller
             'payment_status' => 'pending',
             'payment_receipt_path' => $attributes['payment_receipt']
         ]);
-
         request()->user()->notify(new PaymentStatus('pending', $event->name, Auth::user()->name));
 
-        return back()->with('success','Image posted successfully!');
+        return back()->with('success','Register successfully!');
     }
 }
