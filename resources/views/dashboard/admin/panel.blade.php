@@ -1,3 +1,3 @@
 <x-app-layout>
-    Ini adalah admin panel
+    Ini menu admin.
 </x-app-layout>

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\PaymentStatus;
 use App\Models\Event;
 use Auth;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Str;
 
 class EventController extends Controller
@@ -69,6 +68,9 @@ class EventController extends Controller
             'payment_status' => 'pending',
             'payment_receipt_path' => $attributes['payment_receipt']
         ]);
+
+        request()->user()->notify(new PaymentStatus('pending', $event->name, Auth::user()->name));
+
         return back()->with('success','Image posted successfully!');
     }
 }

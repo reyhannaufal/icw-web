@@ -225,8 +225,8 @@
                 Excuses will always be there for you. Opportunity won’t.
             </p>
             <a
-                    href="#"
-                    class="mt-8 w-full inline-flex bg-bgsection-0 items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-gray-800 sm:w-auto"
+                    onclick="_scrollTo(this, 'header')"
+                    class="cursor-pointer mt-8 w-full inline-flex bg-bgsection-0 items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-gray-800 sm:w-auto"
             >
                 Sign up now
             </a>
