@@ -11,6 +11,10 @@ class Event extends Model
     use HasFactory;
 
     protected $guarded = [];
+    /**
+     * @var mixed
+     */
+    private $id;
 
     public function users()
     {

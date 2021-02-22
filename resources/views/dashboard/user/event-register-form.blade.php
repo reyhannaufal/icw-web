@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <form method="POST" action="{{ route('event-register', Str::slug($event->name, '-')) }}">
+            <form method="POST" action="{{ route('event-register', Str::slug($event->name, '-')) }}" enctype="multipart/form-data">
                 @csrf
 
                 <div>

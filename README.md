@@ -8,6 +8,7 @@ composer install
 npm install
 php artisan generate key
 php artisan migrate:fresh --seed (untuk clear & seeding database)
+php artisan storage:link (untuk menyimpan & akses gambar)
 php artisan serve
 ```
 

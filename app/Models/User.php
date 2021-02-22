@@ -67,4 +67,9 @@ class User extends Authenticatable
         }
         return $data;
     }
+
+    public function getPaymentReceipt(Event $event) {
+        $path = $this->events()->where('event_id', $event->id)->pluck('payment_receipt_path')->first();
+        return asset('storage/' . $path);
+    }
 }

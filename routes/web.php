@@ -16,11 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
-
 Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info');
-Route::get('/event-page', function () {
-    return view('pages.template-event-page');
-});
 
 Route::get('/contact', [MessagesController::class, 'create'])->name('contact');
 Route::post('/messages', [MessagesController::class, 'store']);
