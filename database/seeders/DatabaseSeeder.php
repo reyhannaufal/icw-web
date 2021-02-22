@@ -43,14 +43,17 @@ class DatabaseSeeder extends Seeder
         $users->each(
             function ($user) use ($events) {
                 $user->events()->attach(
-                    $events->random(rand(1, 3))->pluck('id')->toArray(),
-                    ['created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+                    $events->random(rand(1, 3))->pluck('id')->toArray(), [
+                        'payment_status' => 'success',
+                        'payment_receipt_path' => 'payment_receipts/default.png',
+                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now()
+                    ]
                 );
-                // the first user will get failed verification
+                // the second user will get failed verification
                 $user->events()->update([
-                    'payment_status' => ($user == $user->first()) ? 'failed' : 'success'
+                    'payment_status' => ($user->id == 2) ? 'pending' : 'success'
                 ]);
-
             }
         );
 

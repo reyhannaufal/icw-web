@@ -23,6 +23,9 @@ selalu perhatikan env.example
     * Email: `admin@admin.com`
     * Password: `12345678`
 
+## Info Akun User
+* Semua akun user yang dibuat seeder memiliki password `12345678`
+
 ## Struktur Database
 * Tabel `users` berelasi many-to-many dengan tabel `events`
     dengan tabel `event_user` sebagai perantara.
@@ -31,4 +34,4 @@ selalu perhatikan env.example
 * Tabel `bills` diisi dengan info rekening.
 * Tabel `messages` diisi dengan pesan yang dikirim di halaman `Contact Us`
 * Ada empat nilai yang diterima di kolom `payment_status` pada tabel `event_user`,
-    yaitu `failed`, `success`, `pending`, dan ` null` (belum daftar).
+    yaitu `failed`, `success`, dan `pending`.
