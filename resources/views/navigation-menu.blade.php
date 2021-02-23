@@ -17,6 +17,17 @@
                         {{ __('Home') }}
                     </x-jet-nav-link>
                 </div>
+                {{-- Only viewable by admin --}}
+
+                @can ('interact', $event)
+                    @if (!$event->isFree())
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
+                                Verifikasi peserta
+                            </x-jet-nav-link>
+                        </div>
+                    @endif
+                @endcan
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

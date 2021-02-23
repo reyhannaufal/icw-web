@@ -25,4 +25,9 @@ class Event extends Model
     {
         return $this->belongsToMany(Bill::class);
     }
+
+    public function isFree()
+    {
+        return $this->price == 0;
+    }
 }

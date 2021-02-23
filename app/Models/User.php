@@ -77,4 +77,8 @@ class User extends Authenticatable
     public function isRegistered(Event $event) {
         return !isNull($event->users()->where('user_id', $this->id)->first());
     }
+
+    public function isAdmin() {
+        return $this->id <= Event::all()->count();
+    }
 }

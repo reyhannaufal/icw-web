@@ -17,10 +17,10 @@ selalu perhatikan env.example
 ```
 
 ## Info Akun Admin
-* Akun admin adalah akun users dengan id = 1.
+* Akun admin adalah akun users dengan id = 1, 2, dan 3.
 * Jika menggunakan seeder yang ada di program ini, maka profil dari akun admin adalah:
-    * Nama: `Admin`
-    * Email: `admin@admin.com`
+    * Nama: `Admin <nama event>` (contoh: `Admin event xxx`)
+    * Email: `admin<index>@admin.com` (contoh: `admin1@admin.com`)
     * Password: `12345678`
 
 ## Info Akun User

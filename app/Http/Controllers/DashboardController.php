@@ -10,8 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // go to admin panel
-        if (auth()->user()->id == 1) {
+        if (auth()->user()->isAdmin()) {
             return view('dashboard.admin.panel');
         }
         else { // go to user dashboard
@@ -21,5 +20,11 @@ class DashboardController extends Controller
                     ->paginate(config('pagination'))
             ]);
         }
+    }
+
+    public function show(Event $event)
+    {
+        $this->authorize('interact', $event);
+        dd(1);
     }
 }

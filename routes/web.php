@@ -27,10 +27,13 @@ Route::post('/messages', [MessagesController::class, 'store']);
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/announcements', [AnnouncementsController::class, 'index'])->name('announcements');
-//    Route::get('/announcements/{announcement}', [AnnouncementsController::class, 'show']);
 
     Route::get('register/{event}', [EventController::class, 'create'])->name('event-register');
     Route::post('register/{event}', [EventController::class, 'store']);
 
+    // Admin section
+    Route::get('/verify/{event}', [DashboardController::class, 'show'])->name('verification');
+
+//    Route::get('/announcements/{announcement}', [AnnouncementsController::class, 'show']);
 //    Route::get('/messages', [MessagesController::class, 'index'])->name('messages'); in progress (for admin panel.blade.php)
 });
