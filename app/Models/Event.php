@@ -21,6 +21,14 @@ class Event extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function usersWithPivot()
+    {
+        return $this->belongsToMany(User::class)
+            ->as('participation')
+            ->withTimestamps()
+            ->withPivot('payment_status', 'payment_receipt_path');
+    }
+
     public function bills()
     {
         return $this->belongsToMany(Bill::class);
