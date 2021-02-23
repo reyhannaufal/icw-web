@@ -41,5 +41,9 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.guest', function ($view) {
             $view->with('events', Event::all());
         });
+
+        View::composer('layouts.app', function ($view) {
+            $view->with('events', Event::where('price', 0)->get()->toarray()); // get free events
+        });
     }
 }

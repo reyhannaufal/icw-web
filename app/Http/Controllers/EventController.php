@@ -48,10 +48,8 @@ class EventController extends Controller
                 abort(403, 'Status pembayaran tidak terdifinisi');
             }
         } else {
-            if (is_null($event->users()->where('user_id', Auth::user()->id)->first())) {
-                Auth::user()->events()->attach($event->id, [
-                    'payment_status' => 'success',
-                ]);
+            if (Auth::user()->isRegistered($event)) {
+                Auth::user()->events()->attach($event->id);
             }
             $view = view('dashboard.user.register-status', [
                 'status' => 'success'

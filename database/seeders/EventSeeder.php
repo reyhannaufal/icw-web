@@ -15,8 +15,14 @@ class EventSeeder extends Seeder
     public function run()
     {
         Event::factory()
-            ->count(6)
+            ->count(3)
             ->create();
+
+        // Make 3 free events
+        Event::factory()
+            ->count(3)
+            ->create(['price' => 0]);
+
         $events = Event::all();
 
         // Define event name
