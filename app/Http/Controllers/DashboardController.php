@@ -30,7 +30,7 @@ class DashboardController extends Controller
         $this->authorize('interact', $event); // If false, it'll display 403
 
         return view('dashboard.admin.verification', [
-            'users' => $event->usersWithPivot()->get(),
+            'users' => $event->usersWithPivot()->latest()->paginate(6),
         ]);
     }
 
