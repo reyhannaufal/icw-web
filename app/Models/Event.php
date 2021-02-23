@@ -30,4 +30,9 @@ class Event extends Model
     {
         return $this->price == 0;
     }
+
+    public function countRowsOnStatus($status)
+    {
+        return $this->users()->where('payment_status', $status)->count();
+    }
 }

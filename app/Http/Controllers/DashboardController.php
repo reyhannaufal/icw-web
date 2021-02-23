@@ -24,7 +24,7 @@ class DashboardController extends Controller
 
     public function show(Event $event)
     {
-        $this->authorize('interact', $event);
+        $this->authorize('interact', $event); // If false, it'll display 403
         dd(1);
     }
 }
