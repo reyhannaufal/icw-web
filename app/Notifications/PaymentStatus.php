@@ -52,26 +52,24 @@ class PaymentStatus extends Notification
             case "pending":
                 $text = "Bukti pembayaran Anda telah terkirim. " .
                     "Tunggu beberapa saat hingga pembayaran diverifikasi oleh admin. " .
-                    "Jika ada kendala, silahkan hubungi kami melalui tombol di bawah ini. ";
+                    "Notifikasi selanjutnya akan dikirim menuju email ini.";
                 break;
             case "failed":
                 $text = "Bukti pembayaran anda tidak valid. " .
-                    "Upload ulang bukti pembayaran Anda. " .
-                    "Jika Anda merasa bukti pembayaran anda sudah valid, silahkan hubungi kami dengan tombol di bawah ini. ";
+                    "Upload ulang bukti pembayaran Anda.";
                 break;
             case "success":
                 $text = "Selamat, anda dapat mengikuti event " . $this->event_name . '. ' .
-                    "Segera kunjungi menu dashboard event di website kami untuk info lebih lanjut. " .
-                    "Jika ada kendala, silahkan hubungi kami melalui tombol di bawah ini. ";
+                    "Segera kunjungi menu dashboard event di website kami untuk info lebih lanjut.";
                 break;
             default:
                 $text = 'Error, status tidak valid. Abaikan pesan ini atau hubungi kami jika ada kendala lain. ';
         }
         return (new MailMessage)
-            ->subject("Status Event " . $this->event_name)
-            ->greeting("Hallo, " . $this->user_name)
+            ->subject("Status Pembayaran Event " . $this->event_name)
+            ->greeting("Halo, " . $this->user_name)
             ->line($text)
-            ->action('Hubungi Kami', url('#'))
+            ->action('Dashboard Events', url('http://127.0.0.1:8000/dashboard'))
             ->line('Terima kasih sudah berpartisipasi dalam event kami.');
     }
 
