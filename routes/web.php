@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('error/{number}', [ErrorsController::class, 'show'])->name('error');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info');
@@ -30,10 +32,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('register/{event}', [EventController::class, 'create'])->name('event-register');
     Route::post('register/{event}', [EventController::class, 'store']);
+    Route::post('update/{event}', [EventController::class, 'resetStatus'])->name('reset-status');
 
     // Admin section
     Route::get('/verify/{event}', [DashboardController::class, 'edit'])->name('verification');
-    Route::get('/verify/{event}/{user}', [DashboardController::class, 'update']);
+    Route::post('/verify/{event}', [DashboardController::class, 'update']);
 
     Route::get('/message', [MessagesController::class, 'index']);
     Route::get('/announcement', [AnnouncementsController::class, 'index']);

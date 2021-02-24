@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Notifications\PaymentStatus;
 use App\Models\Event;
 use Auth;
+use Carbon\Carbon;
 use Str;
 
 class EventController extends Controller
@@ -31,28 +32,52 @@ class EventController extends Controller
             } // Payment is waiting for verification
             else if ($payment_status == 'pending') {
                 $view = view('dashboard.user.register-status', [
-                    'status' => 'pending',
+                    'data' => [
+                        'event_name' => $event->name,
+                        'status' => ucfirst($payment_status),
+                        'price' => 'Rp. 75,000',
+                        'text' => 'Pembayaran Anda sedang diproses',
+                        'rgba' => 'rgba(227, 232, 255, 0.5)'
+                    ],
                     'payment_receipt' => Auth::user()->getPaymentReceipt($event)
                 ]);
             } // Payment failed
             else if ($payment_status == 'failed') {
                 $view = view('dashboard.user.register-status', [
-                    'status' => 'failed'
+                    'data' => [
+                        'event_name' => $event->name,
+                        'status' => ucfirst($payment_status),
+                        'price' => 'Rp. 75,000',
+                        'text' => 'Pembayaran Anda ditolak, hubungi penanggung jawab event ini untuk info lebih lanjut',
+                        'rgba' => 'rgba(240, 174, 172, 0.6)'
+                    ],
                 ]);
             } // Payment success
             else if ($payment_status == 'success') {
                 $view = view('dashboard.user.register-status', [
-                    'status' => 'success'
+                    'data' => [
+                        'event_name' => $event->name,
+                        'status' => ucfirst($payment_status),
+                        'price' => 'Rp. 75,000',
+                        'text' => 'Pembayaran Anda telah diterima, buka menu dashboard events untuk info lebih lanjut',
+                        'rgba' => 'rgba(183, 221, 213, 0.7)'
+                    ],
                 ]);
             } else {
-                abort(403, 'Status pembayaran tidak terdifinisi');
+                abort(403, 'Status pembayaran tidak terdefinisi');
             }
         } else {
             if (Auth::user()->isRegistered($event)) {
                 Auth::user()->events()->attach($event->id);
             }
             $view = view('dashboard.user.register-status', [
-                'status' => 'success'
+                'data' => [
+                    'event_name' => $event->name,
+                    'status' => '',
+                    'price' => 'Free',
+                    'text' => 'Buka menu dashboard events untuk info lebih lanjut',
+                    'rgba' => 'rgba(183, 221, 213, 0.6)'
+                ],
             ]);
         }
 
@@ -80,5 +105,15 @@ class EventController extends Controller
         request()->user()->notify(new PaymentStatus('pending', $event->name, Auth::user()->name));
 
         return back()->with('success','Register successfully!');
+    }
+
+    public function resetStatus(Event $event)
+    {
+        $event->usersWithPivot()->updateExistingPivot(auth()->user()->id, [
+            'payment_status' => null,
+            'updated_at' => Carbon::now()
+        ]);
+
+        return back()->with('success','Reset status successfully!');
     }
 }

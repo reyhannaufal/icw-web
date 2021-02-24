@@ -26,13 +26,14 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="/announcement" :active="request()->routeIs('/message')">
-                        {{ __('Penguguman') }}
+                        {{ __('Pengumuman') }}
                     </x-jet-nav-link>
                 </div>
-                {{-- Only viewable by admin --}}
 
-                @can ('interact', $event)
-                    @if (!$event->isFree())
+
+                <!-- Only viewable by admins -->
+                @if (isset($event) && !$event->isFree())
+                    @can ('interact', $event)
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
                                 Verifikasi peserta
@@ -41,8 +42,8 @@
                                 </span>
                             </x-jet-nav-link>
                         </div>
-                    @endif
-                @endcan
+                    @endcan
+                @endif
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -118,18 +119,19 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
-            @can ('interact', $event)
-                @if (!$event->isFree())
-                    <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-responsive-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
-                            Verifikasi peserta
-                            <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
-                                {{ $event->countRowsOnStatus('pending')  }}
-                            </span>
-                        </x-jet-responsive-nav-link>
-                    </div>
-                @endif
-            @endcan
+            <!-- Only viewable by admins -->
+            @if (isset($event) && !$event->isFree())
+                @can ('interact', $event)
+                        <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-responsive-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
+                                Verifikasi peserta
+                                <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
+                                    {{ $event->countRowsOnStatus('pending')  }}
+                                </span>
+                            </x-jet-responsive-nav-link>
+                        </div>
+                @endcan
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

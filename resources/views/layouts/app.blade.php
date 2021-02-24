@@ -14,13 +14,18 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css" integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
 
-    @livewireStyles
+@livewireStyles
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/alert.js') }}" defer></script>
+    <script src="{{ asset('js/card-action.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" defer></script>
 </head>
 <body class="font-sans antialiased">
 <x-jet-banner/>
@@ -40,6 +45,7 @@
 <!-- Page Content -->
     <main>
         <x-alerts/>
+        <x-admin.loading/>
         {{ $slot }}
     </main>
 </div>
@@ -48,7 +54,6 @@
 
 @livewireScripts
 </body>
-
 <style>
     *{
         font-family: 'Poppins', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
