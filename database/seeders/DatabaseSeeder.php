@@ -66,7 +66,6 @@ class DatabaseSeeder extends Seeder
                 $user->events()->attach(
                     $events->random(rand(1, 3))->pluck('id')->toArray(), [
                         'payment_status' => $status[array_rand($status)],
-                        'payment_receipt_path' => 'payment_receipts/default.png',
                         'created_at' => Carbon::now(),
                         'updated_at' => Carbon::now()
                     ]
