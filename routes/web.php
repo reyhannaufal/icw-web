@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('error/{number}', [ErrorsController::class, 'show'])->name('error');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info');

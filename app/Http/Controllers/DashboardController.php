@@ -36,7 +36,7 @@ class DashboardController extends Controller
         return view('dashboard.admin.verification', [
             'users' => $event->usersWithPivot()
                 ->where('payment_status', 'pending')
-                ->latest()->paginate(4),
+                ->oldest()->paginate(4),
         ]);
     }
 

@@ -5,7 +5,7 @@
     <div class="w-full card__media hover:opacity-50">
         <a href="{{ asset('storage/' . $user->participation->payment_receipt_path) }}" target="_blank">
             <img src="{{ asset('storage/' . $user->participation->payment_receipt_path) }}"
-                class="h96 w-96 card-img"
+                class="h-96 w-96 card-img object-fill"
             >
         </a>
     </div>

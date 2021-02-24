@@ -67,19 +67,7 @@ function changePStatus(eventId, userId, userName, status) {
 }
 
 function displayErrorAlert(status) {
-    switch (status) {
-        case 404:
-            alert('Error 404 (Not Found).\n' + 'Laman target tidak ditemukan.');
-            break;
-        case 403:
-            alert('Error 403 (Forbidden).\n' + 'Anda tidak memiliki akses untuk melakukan tindakan tersebut.');
-            break;
-        case 500:
-            alert('Error 500 (Internal Server Error).\n' + 'Ada kesalahan di server. Hubungi admin untuk proses perbaikan.');
-            break;
-        default:
-            alert('Error ' + status + '.');
-    }
+    window.location.href = '/error/' + status;
 }
 
 function disableScroll() {
