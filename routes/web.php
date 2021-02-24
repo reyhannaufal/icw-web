@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('register/{event}', [EventController::class, 'create'])->name('event-register');
     Route::post('register/{event}', [EventController::class, 'store']);
+    Route::post('update/{event}', [EventController::class, 'resetStatus'])->name('reset-status');
 
     // Admin section
     Route::get('/verify/{event}', [DashboardController::class, 'edit'])->name('verification');

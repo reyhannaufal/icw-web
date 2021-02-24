@@ -55,11 +55,11 @@ class PaymentStatus extends Notification
                     "Notifikasi selanjutnya akan dikirim menuju email ini.";
                 break;
             case "failed":
-                $text = "Bukti pembayaran anda tidak valid. " .
-                    "Upload ulang bukti pembayaran Anda.";
+                $text = "Maaf, bukti pembayaran Anda tidak valid. " .
+                    "Upload bukti pembayaran valid Anda atau hubungi kami untuk bantuan lebih lanjut.";
                 break;
             case "success":
-                $text = "Selamat, anda dapat mengikuti event " . $this->event_name . '. ' .
+                $text = "Selamat, Anda dapat mengikuti event " . $this->event_name . '. ' .
                     "Segera kunjungi menu dashboard event di website kami untuk info lebih lanjut.";
                 break;
             default:

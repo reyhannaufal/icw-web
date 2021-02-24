@@ -2,9 +2,12 @@
             transition-shadow shadow-xl hover:shadow-xl min-w-max"
 >
     <!---->
-    <div class="w-full card__media">
-        <img src="{{ asset('storage/' . $user->participation->payment_receipt_path) }}"
-             class="h-48 w-96 card-img">
+    <div class="w-full card__media hover:opacity-50">
+        <a href="{{ asset('storage/' . $user->participation->payment_receipt_path) }}" target="_blank">
+            <img src="{{ asset('storage/' . $user->participation->payment_receipt_path) }}"
+                class="h96 w-96 card-img"
+            >
+        </a>
     </div>
 
     <div class="flex items-center p-4">
