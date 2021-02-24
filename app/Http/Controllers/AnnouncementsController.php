@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class AnnouncementsController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('dashboard.admin.announcement');
+    }
 }

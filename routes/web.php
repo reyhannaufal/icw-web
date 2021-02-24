@@ -35,6 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/verify/{event}', [DashboardController::class, 'edit'])->name('verification');
     Route::get('/verify/{event}/{user}', [DashboardController::class, 'update']);
 
+    Route::get('/message', [MessagesController::class, 'index']);
+    Route::get('/announcement', [AnnouncementsController::class, 'index']);
+
 //    Route::get('/announcements/{announcement}', [AnnouncementsController::class, 'show']);
 //    Route::get('/messages', [MessagesController::class, 'index'])->name('messages'); in progress (for admin panel.blade.php)
 });
