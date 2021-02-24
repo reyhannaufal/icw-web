@@ -60,7 +60,7 @@ class PaymentStatus extends Notification
                     "Jika Anda merasa bukti pembayaran anda sudah valid, silahkan hubungi kami dengan tombol di bawah ini. ";
                 break;
             case "success":
-                $text = "Selamat, anda dapat mengikuti event ini. " .
+                $text = "Selamat, anda dapat mengikuti event " . $this->event_name . '. ' .
                     "Segera kunjungi menu dashboard event di website kami untuk info lebih lanjut. " .
                     "Jika ada kendala, silahkan hubungi kami melalui tombol di bawah ini. ";
                 break;

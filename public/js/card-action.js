@@ -17,6 +17,8 @@ function showRejectModal(eventId, userId, userName) {
 }
 
 window.onload = function() {
+    document.getElementById("loading-screen").style = "display: none !important";
+
     // Initialize sessionStorage
     if (typeof sessionStorage.alertAfterPageLoad === 'undefined') {
         sessionStorage.alertAfterPageLoad = 'false';
@@ -41,12 +43,20 @@ function changePStatus(eventId, userId, userName, status) {
     $.ajax({
         type: 'POST',
         url: window.location.pathname,
-        data: {eventId: eventId, userId: userId, status: status},
+        data: {eventId: eventId, userId: userId, status: status, username: userName},
+        beforeSend: function(){
+            $('#loading-screen').show();
+            disableScroll();
+        },
+        complete: function(){
+            $('#loading-screen').hide();
+            enableScroll();
+        },
         success:function(data) {
+            location.reload();
             sessionStorage.alertAfterPageLoad = 'true';
             sessionStorage._status = (status === 'success') ? 'success' : 'warning';
             sessionStorage.text = 'Bukti pembayaran ' + userName + ((status === 'success') ? ' diterima !' : ' ditolak !');
-            location.reload();
         },
         error:function(jqXHR, textStatus, errorThrown) {
             if (errorThrown === 'Forbidden') {
@@ -56,4 +66,18 @@ function changePStatus(eventId, userId, userName, status) {
             }
         }
     });
+}
+
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    (scrollLeft = window.pageXOffset || document.documentElement.scrollLeft),
+        // if any scroll is attempted, set this to the previous value
+        (window.onscroll = function () {
+            window.scrollTo(scrollLeft, scrollTop);
+        });
+}
+
+function enableScroll() {
+    window.onscroll = function () {};
 }
