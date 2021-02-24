@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
@@ -40,6 +41,10 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('layouts.guest', function ($view) {
             $view->with('events', Event::all());
+        });
+
+        View::composer('navigation-menu', function ($view) {
+            $view->with('event', Event::where('id', auth()->user()->id)->first());
         });
     }
 }

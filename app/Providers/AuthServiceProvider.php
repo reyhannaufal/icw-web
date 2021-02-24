@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Event;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use App\Models\User;
@@ -26,10 +27,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::before(function (User $user) {
-            if ($user->id == 1) { // is admin
-                return true;
-            }
+        Gate::define('interact', function (User $user, Event $event) {
+            return ($user->isAdmin() && $user->id == $event->id);
         });
     }
 }

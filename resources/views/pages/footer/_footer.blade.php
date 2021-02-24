@@ -5,7 +5,7 @@
     >
         @include('pages.footer._footer-link', [
             'name' => 'Home',
-            'route' => '/' // scrollTo: <HTML element id>
+            'route' => '/ scrollTo: header' // scrollTo: <HTML element id>
         ])
 
         @include('pages.footer._footer-link', [

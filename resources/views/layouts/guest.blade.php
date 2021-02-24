@@ -23,7 +23,7 @@
 <body onload="reScroll(this)">
     <x-alerts/>
 
-    <header>
+    <header id="header">
         @include('pages._navbar', $events)
     </header>
 

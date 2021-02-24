@@ -12,17 +12,21 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/card.css') }}">
 
     @livewireStyles
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/alert.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body class="font-sans antialiased">
 <x-jet-banner/>
 
 <div class="min-h-screen bg-gray-100">
-    @livewire('navigation-menu')
+    <livewire:navigation-menu/>
 
     <!-- Page Heading -->
     @if (isset($header))
@@ -35,6 +39,7 @@
 
 <!-- Page Content -->
     <main>
+        <x-alerts/>
         {{ $slot }}
     </main>
 </div>

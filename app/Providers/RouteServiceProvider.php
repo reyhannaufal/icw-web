@@ -49,7 +49,6 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
 
-
         Route::bind('event', function($event_name) {
             return Event::where('name', ucwords(str_replace('-', ' ', $event_name)))->firstOrFail();
         });

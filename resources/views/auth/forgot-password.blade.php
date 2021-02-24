@@ -19,7 +19,7 @@
         <div class=" sm:mx-auto sm:w-full sm:max-w-md">
             <div class="bg-yellow-100 py-8 px-4 shadow sm:rounded-lg sm:px-10">
                 <div class="mb-4 text-sm text-black">
-                    {{ __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, porro.') }}
+                    {{ __('Mohon isi email anda agar kami dapat mengirim link untuk mereset password anda.') }}
                 </div>
                 <form method="POST" action="{{ route('password.email') }}">
                     @csrf
@@ -29,7 +29,7 @@
                     </div>
                     <x-jet-validation-errors class="mb-4" />
                     @if (session('status'))
-                        <div class="mb-4 font-medium text-sm text-green-600">
+                        <div class="mt-1 mb-4 font-medium text-sm text-green-600">
                             {{ session('status') }}
                         </div>
                     @endif
