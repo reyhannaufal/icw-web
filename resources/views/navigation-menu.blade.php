@@ -18,6 +18,19 @@
                     </x-jet-nav-link>
                 </div>
 
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="/message" :active="request()->routeIs('/message')">
+                        {{ __('Pesan') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="/announcement" :active="request()->routeIs('/message')">
+                        {{ __('Pengumuman') }}
+                    </x-jet-nav-link>
+                </div>
+
+
                 <!-- Only viewable by admins -->
                 @if (isset($event) && !$event->isFree())
                     @can ('interact', $event)

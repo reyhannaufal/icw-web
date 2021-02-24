@@ -1,6 +1,5 @@
 <x-guest-layout>
     @php echo '<script type="text/javascript"> changeTitleTo("Info Event ")</script>' @endphp
-
     <div class="font-body">
         <main class="bg-bgsection-0  overflow-hidden">
             <section class="lg:h-screen relative px-6 flex flex-row">
@@ -39,7 +38,7 @@
                 </div>
             </section>
 
-            <section class="mx-auto flex px-10 py-48 text-black sm:px-24 bg-white relative">
+            <section class="mx-auto flex px-10 py-28 md:py-48 text-black sm:px-24 bg-white relative">
                 <div class="inline-grid max-w-7xl mx-auto grid grid-cols-2 md:gap-32 relative place-items-center">
                     <div class="w-auto col-span-2 md:col-span-1 ">
                         <img src="{{URL::to('assets/img/notes.svg')}}" alt="question-animate"
@@ -217,7 +216,7 @@
         <div
                 class="max-w-2xl mx-auto text-center py-24 px-4 md:py-36 sm:px-6 lg:px-8"
         >
-            <h2 class="text-3xl font-extrabold  sm:text-4xl animate-bounce">
+            <h2 class="text-3xl font-extrabold  md:text-4xl animate-bounce">
                 <span class="block">Challenge Yourself</span>
                 <span class="block">Sign up today!</span>
             </h2>
@@ -233,14 +232,13 @@
         </div>
     </div>
 
-    <section class="w-full py-40 px-20 sm:px-24 md:px-24">
-        <div class="grid grid-cols-2 gap-10 relative pt-6 max-w-7xl mx-auto md:my-10">
+    <section class="w-full py-36 px-20 sm:px-24 md:px-24">
+        <div class="grid grid-cols-2 gap-28 relative pt-2 max-w-7xl mx-auto md:my-10">
             <div class="w-full col-span-2 text-white text-center">
-                <header class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    <strong>
-                        Competition Prize
-                    </strong>
-                </header>
+                <h2 class="text-3xl font-extrabold  md:text-4xl">
+                    <span class="block">Competition</span>
+                    <span class="block">Prize!</span>
+                </h2>
             </div>
 
             <div class="col-span-2">
@@ -251,21 +249,21 @@
 
         <div class="grid grid-cols-3 gap-4 lg:gap-10 bg-table py-10 md:py-20 max-w-7xl mx-auto">
 
-            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-xl">
+            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
                 <main class="py-4 px-4 text-white text-center">
                     <strong class="text-2xl">1st Place</strong>
                     <p class="text-md py-4 font-extralight">3000 USD</p>
                 </main>
             </div>
 
-            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-xl">
+            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
                 <main class="py-4 px-4 text-white text-center">
                     <strong class="text-2xl">2nd Place</strong>
                     <p class="text-md py-4 font-extralight">1000 USD</p>
                 </main>
             </div>
 
-            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-xl">
+            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
                 <main class="py-4 px-4 text-white text-center">
                     <strong class="text-2xl">3rd Place</strong>
                     <p class="text-md py-4 font-extralight">500 USD</p>

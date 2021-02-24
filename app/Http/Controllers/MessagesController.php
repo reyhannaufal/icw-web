@@ -10,7 +10,9 @@ class MessagesController extends Controller
 {
     public function index()
     {
-        return view('pages.messages.msg-index');
+        $messages = Messages::all();
+//        dd($messages);
+        return view('dashboard.admin.message');
     }
 
     public function create()
