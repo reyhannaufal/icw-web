@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\User;
 use App\Models\Announcement;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Log;
+use Throwable;
 
 class DashboardController extends Controller
 {
@@ -34,9 +37,15 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function update(Event $event, User $user)
+    public function update(Request $request)
     {
-        $this->authorize('interact', $event); // If false, it'll display 403
-        dd(1);
+        Event::where('id', $request->eventId)
+            ->first()->users()
+            ->updateExistingPivot($request->userId, [
+                'payment_status' => $request->action,
+                'updated_at' => Carbon::now()
+            ]);
+
+        return response()->json(['success'=>'Got Simple Ajax Request.']);
     }
 }

@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 
     // Admin section
     Route::get('/verify/{event}', [DashboardController::class, 'edit'])->name('verification');
-    Route::get('/verify/{event}/{user}', [DashboardController::class, 'update']);
+    Route::post('/verify/{event}', [DashboardController::class, 'update']);
 
 //    Route::get('/announcements/{announcement}', [AnnouncementsController::class, 'show']);
 //    Route::get('/messages', [MessagesController::class, 'index'])->name('messages'); in progress (for admin panel.blade.php)

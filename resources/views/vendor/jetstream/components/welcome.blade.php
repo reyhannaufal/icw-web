@@ -31,7 +31,6 @@
                             </div>
                         </div>
                     </section>
-
                     <!-- Actions panel.blade.php -->
                     @include('dashboard.home._quick-links', $events)
                 </div>
