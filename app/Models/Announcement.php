@@ -9,6 +9,11 @@ class Announcement extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'body'
+    ];
+
     protected $guarded = [];
 
     public function timeline() {

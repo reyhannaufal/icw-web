@@ -18,18 +18,21 @@
                     </x-jet-nav-link>
                 </div>
 
+                @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
+
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="/message" :active="request()->routeIs('/message')">
+                    <x-jet-nav-link href="/message" :active="request()->routeIs('message.index')">
                         {{ __('Pesan') }}
                     </x-jet-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="/announcement" :active="request()->routeIs('/message')">
+                    <x-jet-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
                         {{ __('Pengumuman') }}
                     </x-jet-nav-link>
                 </div>
 
+                @endif
 
                 <!-- Only viewable by admins -->
                 @if (isset($event) && !$event->isFree())

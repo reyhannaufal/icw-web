@@ -11,13 +11,8 @@ class MessagesController extends Controller
     public function index()
     {
         $messages = Messages::all();
-//        dd($messages);
-        return view('dashboard.admin.message');
-    }
 
-    public function create()
-    {
-        return view('pages.contact');
+        return view('dashboard.admin.message.index', compact('messages'));
     }
 
     public function store()
