@@ -36,12 +36,27 @@
                             </div>
 
                             <div class="mt-4">
+                                <x-jet-label for="phone_number" class="block text-sm font-medium text-gray-700" value="{{ __('Phone Number') }}" />
+                                <x-jet-input id="phone_number"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                             type="tel"
+                                             placeholder="+62"
+                                             pattern="(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+"
+                                             oninvalid="setCustomValidity('Input tidak sesuai dengan format. Contoh: 0858123456')"
+                                             oninput="setCustomValidity('')" name="phone_number" :value="old('phone_number')" required />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-jet-label for="institution" class="block text-sm font-medium text-gray-700" value="{{ __('Institution') }}" />
+                                <x-jet-input id="institution"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="text" name="institution" :value="old('institution')" required />
+                            </div>
+
+                            <div class="mt-4">
                                 <x-jet-label for="password" class="block text-sm font-medium text-gray-700" value="{{ __('Password') }}" />
                                 <x-jet-input id="password"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="password" name="password" required autocomplete="new-password" />
                             </div>
 
                             <div class="mt-4">
-                                <x-jet-label for="password_confirmation"  class="block text-sm font-medium text-gray-700" value="{{ __('Confirm') }}" />
+                                <x-jet-label for="password_confirmation"  class="block text-sm font-medium text-gray-700" value="{{ __('Confirm Password') }}" />
                                 <x-jet-input id="password_confirmation"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="password" name="password_confirmation" required autocomplete="new-password" />
                             </div>
 

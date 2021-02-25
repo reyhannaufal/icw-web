@@ -26,6 +26,7 @@
     <script src="{{ asset('js/card-action.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" defer></script>
+    <script src="https://use.fontawesome.com/a9e78479ce.js"></script>
 </head>
 <body class="font-sans antialiased">
 <x-jet-banner/>

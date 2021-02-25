@@ -15,18 +15,22 @@ class MessagesController extends Controller
         return view('dashboard.admin.message.index', compact('messages'));
     }
 
+    public function create() {
+        return view('pages.contact');
+    }
+
     public function store()
     {
         $attributes = request()->validate([
             'first_name' => [
                 'required',
                 'string',
-                'max:125',
+                'max:255',
             ],
             'last_name' => [
                 'required',
                 'string',
-                'max:125',
+                'max:255',
             ],
             'institution' => [
                 'required',
@@ -36,6 +40,7 @@ class MessagesController extends Controller
             'email' => 'required | email',
             'phone_number' => [
                 'required',
+                'max: 63',
                 'regex:/\+62\s\d{3}[-\.\s]??\d{3}[-\.\s]??\d{3,4}|\(0\d{2,3}\)\s?\d+|0\d{2,3}\s?\d{6,7}|\+62\s?361\s?\d+|\+62\d+|\+62\s?(?:\d{3,}-)*\d{3,5}/'
             ],
             'message' => [

@@ -15,7 +15,6 @@
     </div>
 
     {{--    table--}}
-
     <div class="bg-gray-100 py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-col">
@@ -33,6 +32,7 @@
                                             scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                     >
+                                        Nama
                                     </th>
                                     <th
                                             scope="col"

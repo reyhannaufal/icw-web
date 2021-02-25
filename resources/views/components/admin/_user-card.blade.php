@@ -25,7 +25,7 @@
                                 focus:border-blue-300 rounded max-w-max border bg-transparent border-purple-400
                                 text-purple-400 hover:border-purple-800 hover:border-purple-500 px-4 py-1 flex
                                 items-center hover:shadow-lg"
-                        onclick="showRejectModal({{ $user->participation->event_id  }}, {{ $user->participation->user_id }}, '{{ $user->name }}')"
+                        onclick="showRejectModal({{ $user->participation->event_id  }}, {{ $user->participation->user_id }}, '{{ $user->name }}', '{{ $user->email }}')"
                     >
                         <span class="mr-2"></span>TOLAK<span class="ml-2"></span>
                     </button>
@@ -33,7 +33,7 @@
                         class="flex justify-center  max-h-max whitespace-nowrap focus:outline-none  focus:ring
                                focus:border-blue-300 rounded max-w-max text-gray-100 bg-green-500 hover:bg-green-600
                                px-4 py-1 flex items-center hover:shadow-lg"
-                        onclick="changePStatus({{ $user->participation->event_id  }}, {{ $user->participation->user_id }}, '{{ $user->name }}', 'success')"
+                        onclick="changePStatus({{ $user->participation->event_id  }}, {{ $user->participation->user_id }}, '{{ $user->name }}', '{{ $user->email }}', 'success')"
                     >
                         <span class="mr-2"><svg height="20" width="20" viewBox="0 0 32 32"
                                                 class="fill-current text-red-100"><path
