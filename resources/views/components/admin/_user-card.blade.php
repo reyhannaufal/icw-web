@@ -19,6 +19,9 @@
                 <span class="text-md whitespace-nowrap text-gray-100">
                     {{ $user->email }}
                 </span>
+                <span class="text-md whitespace-nowrap text-gray-100">
+                    {{ $user->phone_number }}
+                </span>
                 <div class="py-4 flex space-x-2">
                     <button
                         class="flex justify-center  max-h-max whitespace-nowrap focus:outline-none  focus:ring

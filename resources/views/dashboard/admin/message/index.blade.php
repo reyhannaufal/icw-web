@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="pb-10">
+    <div class="md:pb-10 sm:pb-5">
         {{-- Section Heading --}}
         <div class="px-2 py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="pb-5 border-b border-gray-200 sm:flex sm:items-center sm:justify-between">

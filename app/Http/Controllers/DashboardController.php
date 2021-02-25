@@ -21,6 +21,7 @@ class DashboardController extends Controller
             $event = Event::where('id', auth()->user()->id)->first();
 
             return view('dashboard.admin.panel', [
+                'users' => $event->usersWithPivot()->get(),
                 'event_name' => $event->name,
                 'pending_count' => $event->countRowsOnStatus('pending'),
                 'failed_count' => $event->countRowsOnStatus('failed'),
@@ -59,6 +60,17 @@ class DashboardController extends Controller
                 'payment_status' => $request->status,
                 'updated_at' => Carbon::now()
             ]);
+
+        // If payment receipt not default image --> delete payment receipt
+        $curr_pivot_row = $pivot_table->first()->participation;
+        $delete_success = $this->deleteLocalFile($curr_pivot_row->payment_receipt_path);
+
+        // change path to null if image is deleted successfully
+        if ($delete_success) {
+            $pivot_table->updateExistingPivot($request->userId, [
+                'payment_receipt_path' => null,
+            ]);
+        }
 
         // send mail
         Notification::route('mail', $request->usermail)
