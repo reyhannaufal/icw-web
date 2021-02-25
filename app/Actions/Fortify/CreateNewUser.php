@@ -54,14 +54,16 @@ class CreateNewUser implements CreatesNewUsers
                 'required' => 'Nama institusi wajib diisi',
                 'string' => 'Nama institusi harus berupa karakter',
                 'max' => 'Nomor telepon tidak boleh melewati 255 karakter'
+                ]
             ])->validate();
 
+//        dd($input);
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-            'phone_number' => $input(['phone_number']),
-            'institution' => $input(['institution'])
+            'phone_number' => $input['phone_number'],
+            'institution' => $input['institution']
         ]);
     }
 }

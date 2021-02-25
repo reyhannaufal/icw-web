@@ -22,6 +22,7 @@ class CreateMessagesTable extends Migration
             $table->string('email');
             $table->string('phone_number');
             $table->text('message');
+            $table->string('status')->default('Belum diproses');
         });
     }
 

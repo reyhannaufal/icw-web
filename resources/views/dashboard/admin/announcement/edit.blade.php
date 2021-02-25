@@ -1,40 +1,44 @@
 <x-app-layout>
-    <div>
-        <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
-            <div class="mt-5 md:mt-0 md:col-span-2">
-                <form method="POST" action="{{ route('announcement.update', $announcement->id) }}">
-                    @csrf
-                    @method('PATCH')
-                    <div class="shadow overflow-hidden sm:rounded-md py-3">
-                        <div class="px-4 py-5 bg-gray-200 sm:p-6">
-                            <label for="title" class="block font-medium text-sm text-gray-700">Judul Pengumuman</label>
-                            <input type="text" name="title" id="title" type="text"
-                                   class="mt-1 form-input  py-1 shadow-sm mt-2 block w-full rounded-md"
-                                   value="{{ $announcement->title }}"/>
-                            @error('title')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-gray-200 sm:p-6">
-                            <label for="body" class="block font-medium text-sm text-gray-700">Isi Pengumuman</label>
-                            <textarea type="text" name="body" id="body" type="text"
-                                   class="mt-2 form-input shadow-sm py-6 mt-1  w-full rounded-md"
-                            >{{ $announcement->body }}</textarea>
-                            @error('description')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
+    <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
+        <div class="mt-5 md:mt-0 md:col-span-2">
+            <form method="POST" action="{{ route('announcement.update', $announcement->id) }}">
+                @csrf
+                @method('PATCH')
+                <div class="shadow overflow-hidden sm:rounded-md">
+                    <div class="px-4 py-5 bg-white sm:p-6">
+                        <div class="grid grid-cols-6 gap-6">
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="title" class="block text-sm font-medium text-gray-700">Judul</label>
+                                <input type="text" name="title" id="title" autocomplete="title"
+                                       class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                       value="{{ $announcement->title }}"
+                                >
+                                @error('title')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
 
-                        <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                            <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
-                                Submit Pengumuman
-                            </button>
+                            <div class="col-span-6">
+                                <label for="body" class="block text-sm font-medium text-gray-700">Isi Pengumuman</label>
+                                <textarea type="text" name="body" id="body"
+                                          autocomplete="body" rows="5"
+                                          class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                >{{ $announcement->body }}</textarea>
+                                @error('body')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
                         </div>
                     </div>
-                </form>
-            </div>
-
+                    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                        <a class="mr-8" href="javascript:history.back()">Kembali</a>
+                        <button type="submit"
+                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Simpan
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-
     </div>
 </x-app-layout>

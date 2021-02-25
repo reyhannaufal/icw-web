@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         $adm_users = User::where('id', '<=', $count_event + 1)->get();
 
         // Get 20 users excluding the admin account
-        $users = User::orderBy('id', 'asc')->where('id', '>', $count_event)->take(20)->get();
+        $users = User::orderBy('id', 'asc')->where('id', '>', $count_event + 1)->take(20)->get();
 
         // Update admin and master admin account with its credentials
         for ($i = 0; $i < $count_event + 1; $i++) {

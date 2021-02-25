@@ -41,7 +41,7 @@ class AnnouncementsController extends Controller
 
     public function destroy(Announcement $announcement)
     {
-       $announcement->delete();
+        $announcement->delete();
 
         return redirect()->route('announcement.index');
     }
