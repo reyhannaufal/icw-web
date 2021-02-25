@@ -1,103 +1,72 @@
 <x-app-layout>
-
-    {{--    section headings--}}
-    <div>
-        <div class="px-4 py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="pb-5 border-b border-gray-200">
+    <div class="md:pb-10 sm:pb-5">
+        {{-- Section Heading --}}
+        <div class="px-2 py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="pb-5 border-b border-gray-200 sm:flex sm:items-center sm:justify-between">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
-                    Pesan Masuk
+                    <strong>Pesan Masuk</strong>
                 </h3>
                 <p class="mt-2 max-w-4xl text-sm text-gray-500">
-                    Table dibawah ini merupakan data-data yang masuk pada bagian contact us.
+                    Tabel dibawah ini merupakan data-data yang masuk pada bagian contact us.
                 </p>
             </div>
         </div>
-    </div>
 
-    {{--    table--}}
-
-    <div class="bg-gray-100 py-6">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex flex-col">
-                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div
-                            class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"
-                    >
-                        <div
-                                class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
-                        >
-                            <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-gray-50">
-                                <tr>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                    </th>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                        Institusi
-                                    </th>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                        Email
-                                    </th>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                        No Telepon
-                                    </th>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                        Pesan
-                                    </th>
-
-
-                                </tr>
-                                </thead>
-                                <tbody x-max="2">
-                                @foreach($messages as $message)
-                                <tr class="bg-white" x-description="Odd row">
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                                    >
-                                        {{$message->first_name}} {{$message->last_name}}
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        {{$message->institution}}
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        {{$message->email}}
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                       {{$message->phone_number}}
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 text-sm text-gray-500"
-                                    >
-                                        {{$message->message}}
-                                    </td>
-                                </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+        <div class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
+            <!--Container-->
+            <div class="container max-w-7xl mx-auto px-2">
+                <!--Card-->
+                <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+                    <table id="example" class="stripe hover"
+                           style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                        <thead>
+                        <tr>
+                            <th data-priority="1">Nama</th>
+                            <th data-priority="2">Pesan</th>
+                            <th data-priority="3">Tanggal Kirim</th>
+                            <th data-priority="4">Status</th>
+                            <th data-priority="5">Show</th>
+                            <th data-priority="6">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($messages as $message)
+                            <tr>
+                                <td>{{ $message->first_name }}  {{ $message->last_name }}</td>
+                                <td>{{ $message->message }}</td>
+                                <td>{{ $message->created_at }}</td>
+                                <td>{{ $message->status }}</td>
+                                <td>
+                                    <form class="inline-block"
+                                          action="{{ route('message.show', $message->id) }}"
+                                          method="GET">
+                                        @csrf
+                                        <button
+                                            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded">
+                                            Show
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form class="inline-block"
+                                          action="{{ route('message.destroy', $message->id) }}"
+                                          method="POST" onsubmit="return confirm('Are you sure?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button
+                                            class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
+                <!--/Card-->
             </div>
+            <!--/container-->
         </div>
     </div>
 </x-app-layout>

@@ -1,291 +1,95 @@
 <x-app-layout>
-
-    {{--status--}}
+    {{-- status --}}
     <div class="bg-gray-100">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-12 lg:px-0 px-4 sm:px-6">
             <div>
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                    Statistik
                 </h3>
-                <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="px-4 py-5 sm:p-6">
-                            <dt class="text-sm font-medium text-gray-500 truncate">
-                                Total Peserta Event A
-                            </dt>
-                            <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                                10
-                            </dd>
-                        </div>
-                    </div>
-
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="px-4 py-5 sm:p-6">
-                            <dt class="text-sm font-medium text-gray-500 truncate">
-                                Total Peserta Event B
-                            </dt>
-                            <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                                10
-                            </dd>
-                        </div>
-                    </div>
-
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="px-4 py-5 sm:p-6">
-                            <dt class="text-sm font-medium text-gray-500 truncate">
-                                Total Keseluruhan Peserta
-                            </dt>
-                            <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                                20
-                            </dd>
-                        </div>
-                    </div>
-                </dl>
-            </div>
-        </div>
-    </div>
-
-    {{-- table--}}
-    <div class="bg-gray-100 py-6">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex flex-col">
-                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div
-                            class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"
-                    >
-                        <div
-                                class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
-                        >
-                            <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-gray-50">
-                                <tr>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                        Name
-                                    </th>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                        Title
-                                    </th>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                        Email
-                                    </th>
-                                    <th
-                                            scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                    >
-                                        Role
-                                    </th>
-                                    <th scope="col" class="relative px-6 py-3">
-                                        <span class="sr-only">Edit</span>
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody x-max="2">
-                                <tr class="bg-white" x-description="Odd row">
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                                    >
-                                        Jane Cooper
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Regional Paradigm Technician
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        jane.cooper@example.com
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Admin
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-                                    >
-                                        <a
-                                                href="#"
-                                                class="text-indigo-600 hover:text-indigo-900"
-                                        >Edit</a
-                                        >
-                                    </td>
-                                </tr>
-
-                                <tr class="bg-gray-50" x-description="Even row">
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                                    >
-                                        Cody Fisher
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Product Directives Officer
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        cody.fisher@example.com
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Owner
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-                                    >
-                                        <a
-                                                href="#"
-                                                class="text-indigo-600 hover:text-indigo-900"
-                                        >Edit</a
-                                        >
-                                    </td>
-                                </tr>
-
-                                <tr class="bg-white" x-description="Odd row">
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                                    >
-                                        Esther Howard
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Forward Response Developer
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        esther.howard@example.com
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Member
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-                                    >
-                                        <a
-                                                href="#"
-                                                class="text-indigo-600 hover:text-indigo-900"
-                                        >Edit</a
-                                        >
-                                    </td>
-                                </tr>
-
-                                <tr class="bg-gray-50" x-description="Even row">
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                                    >
-                                        Jenny Wilson
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Central Security Manager
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        jenny.wilson@example.com
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Member
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-                                    >
-                                        <a
-                                                href="#"
-                                                class="text-indigo-600 hover:text-indigo-900"
-                                        >Edit</a
-                                        >
-                                    </td>
-                                </tr>
-
-                                <tr class="bg-white" x-description="Odd row">
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                                    >
-                                        Kristin Watson
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Lead Implementation Liaison
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        kristin.watson@example.com
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Admin
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-                                    >
-                                        <a
-                                                href="#"
-                                                class="text-indigo-600 hover:text-indigo-900"
-                                        >Edit</a
-                                        >
-                                    </td>
-                                </tr>
-
-                                <tr class="bg-gray-50" x-description="Even row">
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                                    >
-                                        Cameron Williamson
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Internal Applications Engineer
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        cameron.williamson@example.com
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Member
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-                                    >
-                                        <a
-                                                href="#"
-                                                class="text-indigo-600 hover:text-indigo-900"
-                                        >Edit</a
-                                        >
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div class="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    @include('dashboard.admin._stats-card', [
+                        'title' => 'Event',
+                        'count' => $event_name,
+                        'icon' => 'fas fa-users',
+                        'border_color' => 'border-blue-600',
+                        'text_color' => 'text-blue-600'
+                    ])
+                    @include('dashboard.admin._stats-card', [
+                        'title' => 'Jumlah Peserta Tertolak',
+                        'count' => $failed_count,
+                        'icon' => 'fa fa-exclamation-triangle',
+                        'border_color' => 'border-red-500',
+                        'text_color' => 'text-red-500'
+                    ])
+                    @include('dashboard.admin._stats-card', [
+                        'title' => 'Jumlah Peserta Terkonfirmasi',
+                        'count' => $success_count,
+                        'icon' => 'fas fa-dollar-sign',
+                        'border_color' => 'border-green-500',
+                        'text_color' => 'text-green-500'
+                    ])
+                    @include('dashboard.admin._stats-card', [
+                        'title' => 'Jumlah Peserta Pending',
+                        'count' => $pending_count,
+                        'icon' => 'fas fa-envelope-open-text',
+                        'border_color' => 'border-yellow-500',
+                        'text_color' => 'text-yellow-500'
+                    ])
                 </div>
             </div>
         </div>
     </div>
+
+    {{-- table --}}
+    <div class="md:pb-10 sm:pb-5">
+        {{-- Section Heading --}}
+        <div class="px-2 py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="pb-5 border-b border-gray-200 sm:flex sm:items-center sm:justify-between">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">
+                    <strong>Daftar Peserta</strong>
+                </h3>
+                <div class="mt-3 sm:mt-0 sm:ml-4">
+                    <button type="button"
+                            class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Cetak Peserta
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
+            <!--Container-->
+            <div class="container max-w-7xl mx-auto px-2">
+                <!--Card-->
+                <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+                    <table id="example" class="stripe hover"
+                           style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                        <thead>
+                        <tr>
+                            <th data-priority="1">Nama</th>
+                            <th data-priority="2">Email</th>
+                            <th data-priority="3">Institusi</th>
+                            <th data-priority="4">No. Telepon</th>
+                            <th data-priority="5">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($users as $user)
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->institution }}</td>
+                                    <td>{{ $user->phone_number }}</td>
+                                    <td>{{ ucfirst($user->participation->payment_status) }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <!--/Card-->
+            </div>
+            <!--/container-->
+        </div>
+    </div>
+
 </x-app-layout>

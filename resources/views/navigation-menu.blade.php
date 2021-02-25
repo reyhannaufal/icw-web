@@ -31,7 +31,6 @@
                         {{ __('Pengumuman') }}
                     </x-jet-nav-link>
                 </div>
-
                 @endif
 
                 <!-- Only viewable by admins -->

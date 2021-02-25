@@ -29,7 +29,6 @@ class AnnouncementsController extends Controller
 
     public function edit(Announcement $announcement)
     {
-
         return view('dashboard.admin.announcement.edit', compact('announcement'));
     }
 
@@ -42,8 +41,7 @@ class AnnouncementsController extends Controller
 
     public function destroy(Announcement $announcement)
     {
-
-       $announcement->delete();
+        $announcement->delete();
 
         return redirect()->route('announcement.index');
     }

@@ -1,4 +1,4 @@
-function showRejectModal(eventId, userId, userName) {
+function showRejectModal(eventId, userId, userName, userMail) {
     swal({
         type: 'warning',
         title: "Apakah anda yakin?",
@@ -11,7 +11,7 @@ function showRejectModal(eventId, userId, userName) {
         dangerMode: true,
     }, function(result) {
         if (result) {
-            changePStatus(eventId, userId, userName, 'failed')
+            changePStatus(eventId, userId, userName, userMail,'failed')
         }
     });
 }
@@ -39,11 +39,11 @@ $.ajaxSetup({
     }
 });
 
-function changePStatus(eventId, userId, userName, status) {
+function changePStatus(eventId, userId, userName, userMail, status) {
     $.ajax({
         type: 'POST',
         url: window.location.pathname,
-        data: {eventId: eventId, userId: userId, status: status, username: userName},
+        data: {eventId: eventId, userId: userId, status: status, username: userName, usermail:userMail},
         beforeSend: function(){
             $('#loading-screen').show();
             disableScroll();

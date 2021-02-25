@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMessageRequest;
 use App\Models\Messages;
-use App\Models\Event;
 use Illuminate\Http\Request;
 
 class MessagesController extends Controller
@@ -15,35 +15,31 @@ class MessagesController extends Controller
         return view('dashboard.admin.message.index', compact('messages'));
     }
 
-    public function store()
+    public function show(Messages $message)
     {
-        $attributes = request()->validate([
-            'first_name' => [
+        return view('dashboard.admin.message.show', compact('message'));
+    }
+
+    public function create() {
+        return view('pages.contact');
+    }
+
+    public function update(Request $request, Messages $message)
+    {
+        $message->update($request->validate([
+            'status' => [
                 'required',
                 'string',
-                'max:125',
-            ],
-            'last_name' => [
-                'required',
-                'string',
-                'max:125',
-            ],
-            'institution' => [
-                'required',
-                'string',
-                'max: 255'
-            ],
-            'email' => 'required | email',
-            'phone_number' => [
-                'required',
-                'regex:/\+62\s\d{3}[-\.\s]??\d{3}[-\.\s]??\d{3,4}|\(0\d{2,3}\)\s?\d+|0\d{2,3}\s?\d{6,7}|\+62\s?361\s?\d+|\+62\d+|\+62\s?(?:\d{3,}-)*\d{3,5}/'
-            ],
-            'message' => [
-                'required',
-                'string',
-                'max:65535'
+                'max:63'
             ]
-        ]);
+        ]));
+
+        return redirect()->route('message.index');
+    }
+
+    public function store(StoreMessageRequest $request)
+    {
+        $attributes = $request->validated();
 
         Messages::create([
             'first_name' => $attributes['first_name'],
@@ -56,5 +52,12 @@ class MessagesController extends Controller
 
         return redirect()->route('contact')
             ->with('success', 'Message sended successfully!');
+    }
+
+    public function destroy(Messages $message)
+    {
+        $message->delete();
+
+        return redirect()->route('message.index');
     }
 }
