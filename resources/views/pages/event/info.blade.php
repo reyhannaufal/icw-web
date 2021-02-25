@@ -1,5 +1,6 @@
 <x-guest-layout>
-    @php echo '<script type="text/javascript"> changeTitleTo("Info Event ")</script>' @endphp
+    @section('title', $event->name)
+    @section('description', 'Detail About '. $event->name)
     <div class="font-body">
         <main class="bg-bgsection-0  overflow-hidden">
             <section class="lg:h-screen relative px-6 flex flex-row">

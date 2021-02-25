@@ -1,5 +1,6 @@
 <x-guest-layout>
-    @php echo '<script type="text/javascript"> changeTitleTo("Home")</script>' @endphp
+    @section('title', 'Home Page')
+    @section('description', 'Home ICW')
 
     <div class="font-body overflow-hidden">
         <main class="bg-bgsection-0">

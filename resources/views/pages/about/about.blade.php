@@ -1,5 +1,6 @@
 <x-guest-layout>
-    @php echo '<script type="text/javascript"> changeTitleTo("About")</script>' @endphp
+    @section('title', 'About Page')
+    @section('description', 'About ICW')
 
     @include('pages.about._about-intro')
 
