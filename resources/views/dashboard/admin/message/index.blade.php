@@ -33,7 +33,6 @@
                                             scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                     >
-                                        Nama
                                     </th>
                                     <th
                                             scope="col"
@@ -64,68 +63,35 @@
                                 </tr>
                                 </thead>
                                 <tbody x-max="2">
+                                @foreach($messages as $message)
                                 <tr class="bg-white" x-description="Odd row">
                                     <td
                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                                     >
-                                        Jane Cooper
+                                        {{$message->first_name}} {{$message->last_name}}
                                     </td>
                                     <td
                                             class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
                                     >
-                                        Universitas Indonesia
+                                        {{$message->institution}}
                                     </td>
                                     <td
                                             class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
                                     >
-                                        jane.cooper@example.com
+                                        {{$message->email}}
                                     </td>
                                     <td
                                             class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
                                     >
-                                        081311312312
+                                       {{$message->phone_number}}
                                     </td>
                                     <td
                                             class="px-6 py-4 text-sm text-gray-500"
                                     >
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A asperiores
-                                        cupiditate error impedit minus molestiae nisi provident quibusdam recusandae
-                                        reiciendis. A ab asperiores aut autem beatae earum fuga impedit, labore nisi,
-                                        nostrum officia officiis quia quis sequi sit sunt tempora ut vitae voluptate
-                                        voluptatibus? Consequuntur nemo nisi tempore unde voluptates.
+                                        {{$message->message}}
                                     </td>
                                 </tr>
-
-                                <tr class="bg-gray-50" x-description="Even row">
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                                    >
-                                        Cody Fisher
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        Institut Teknologi Sepuluh Nopember
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        cody.fisher@example.com
-                                    </td>
-                                    <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                                    >
-                                        08125356123512
-                                    </td>
-                                    <td
-                                            class="px-6 py-4  text-sm text-gray-500"
-                                    >
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis,
-                                        voluptatum!
-                                    </td>
-
-                                </tr>
-
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
