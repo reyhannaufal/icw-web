@@ -7,40 +7,36 @@
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                    Statistik
                 </h3>
-                <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="px-4 py-5 sm:p-6">
-                            <dt class="text-sm font-medium text-gray-500 truncate">
-                                Total Peserta Event A
-                            </dt>
-                            <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                                10
-                            </dd>
-                        </div>
-                    </div>
-
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="px-4 py-5 sm:p-6">
-                            <dt class="text-sm font-medium text-gray-500 truncate">
-                                Total Peserta Event B
-                            </dt>
-                            <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                                10
-                            </dd>
-                        </div>
-                    </div>
-
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="px-4 py-5 sm:p-6">
-                            <dt class="text-sm font-medium text-gray-500 truncate">
-                                Total Keseluruhan Peserta
-                            </dt>
-                            <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                                20
-                            </dd>
-                        </div>
-                    </div>
-                </dl>
+                <div class="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    @include('dashboard.admin._stats-card', [
+                        'title' => 'Event',
+                        'count' => $event_name,
+                        'icon' => 'fas fa-users',
+                        'border_color' => 'border-blue-600',
+                        'text_color' => 'text-blue-600'
+                    ])
+                    @include('dashboard.admin._stats-card', [
+                        'title' => 'Jumlah Peserta Tertolak',
+                        'count' => $failed_count,
+                        'icon' => 'fa fa-exclamation-triangle',
+                        'border_color' => 'border-red-500',
+                        'text_color' => 'text-red-500'
+                    ])
+                    @include('dashboard.admin._stats-card', [
+                        'title' => 'Jumlah Peserta Terkonfirmasi',
+                        'count' => $success_count,
+                        'icon' => 'fas fa-dollar-sign',
+                        'border_color' => 'border-green-500',
+                        'text_color' => 'text-green-500'
+                    ])
+                    @include('dashboard.admin._stats-card', [
+                        'title' => 'Jumlah Peserta Pending',
+                        'count' => $pending_count,
+                        'icon' => 'fas fa-envelope-open-text',
+                        'border_color' => 'border-yellow-500',
+                        'text_color' => 'text-yellow-500'
+                    ])
+                </div>
             </div>
         </div>
     </div>

@@ -18,7 +18,14 @@ class DashboardController extends Controller
     public function index()
     {
         if (auth()->user()->isAdmin()) {
-            return view('dashboard.admin.panel');
+            $event = Event::where('id', auth()->user()->id)->first();
+
+            return view('dashboard.admin.panel', [
+                'event_name' => $event->name,
+                'pending_count' => $event->countRowsOnStatus('pending'),
+                'failed_count' => $event->countRowsOnStatus('failed'),
+                'success_count' => $event->countRowsOnStatus('success')
+            ]);
         }
         else { // go to user dashboard
             return view('dashboard.home.welcome', [
