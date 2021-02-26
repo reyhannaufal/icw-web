@@ -24,7 +24,7 @@ class UsersExport implements FromQuery, WithHeadings
         // Users data per event
         if ($this->event_id != 0) {
             $table = $table->select('users.name', 'users.email',
-                    'users.institution', 'users.phone_number')
+                    'users.institution', 'users.phone_number', 'event_user.created_at')
                 ->where('event_user.event_id', '=', $this->event_id);
         } else {
             // Data of all registered users
@@ -34,7 +34,8 @@ class UsersExport implements FromQuery, WithHeadings
                     'users.email',
                     'users.institution',
                     'users.phone_number',
-                    'events.name AS eventname'
+                    'events.name AS eventname',
+                    'event_user.created_at'
                 )
                 ->orderBy('eventname');
         }
@@ -48,13 +49,14 @@ class UsersExport implements FromQuery, WithHeadings
             'Nama',
             'Email',
             'Institusi',
-            'Nomor Telepon',
+            'Nomor Telepon'
         ];
 
         // For data of all users
         if ($this->event_id == 0) {
             array_push($header, 'Nama Event');
         }
+        array_push($header, 'Tanggal Daftar');
         return $header;
     }
 }

@@ -80,10 +80,11 @@ class User extends Authenticatable
         return !isNull($event->users()->where('user_id', $this->id)->first());
     }
 
-    public function isAdmin($isMaster = false) {
-        if ($isMaster) {
-            return $this->id == Event::all()->count() + 1;
-        }
+    public function isAdmin() {
         return $this->id <= Event::all()->count() + 1;
+    }
+
+    public function isMaster() {
+        return $this->id == Event::all()->count() + 1;
     }
 }

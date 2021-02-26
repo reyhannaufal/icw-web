@@ -35,7 +35,7 @@ class EventController extends Controller
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
-                        'price' => 'Rp. 75,000',
+                        'price' => 'Rp. ' . $event->price,
                         'text' => 'Pembayaran Anda sedang diproses',
                         'rgba' => 'rgba(227, 232, 255, 0.5)'
                     ],
@@ -47,7 +47,7 @@ class EventController extends Controller
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
-                        'price' => 'Rp. 75,000',
+                        'price' => 'Rp. ' . $event->price,
                         'text' => 'Pembayaran Anda ditolak, hubungi penanggung jawab event ini untuk info lebih lanjut',
                         'rgba' => 'rgba(240, 174, 172, 0.6)'
                     ],
@@ -58,7 +58,7 @@ class EventController extends Controller
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
-                        'price' => 'Rp. 75,000',
+                        'price' => 'Rp. ' . $event->price,
                         'text' => 'Pembayaran Anda telah diterima, buka menu dashboard events untuk info lebih lanjut',
                         'rgba' => 'rgba(183, 221, 213, 0.7)'
                     ],

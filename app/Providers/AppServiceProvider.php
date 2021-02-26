@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Messages;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -44,7 +45,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::composer('navigation-menu', function ($view) {
-            $view->with('event', Event::where('id', auth()->user()->id)->first());
+            $view->with('event', Event::where('id', auth()->user()->id)->first())
+                ->with('messages_count', Messages::where('status', '!=', 'Sudah diproses')->count());
         });
     }
 }

@@ -18,24 +18,27 @@
                     </x-jet-nav-link>
                 </div>
 
-                @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
+                @if(auth()->user()->isAdmin())
+                    <!-- Only viewable by admins -->
+                    @if(auth()->user()->isMaster())
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="/message" :active="request()->routeIs('message.index')">
+                                {{ __('Pesan') }}
+                                <span
+                                    class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
+                            {{ $messages_count  }}
+                        </span>
+                            </x-jet-nav-link>
+                        </div>
+                    @endif
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="/message" :active="request()->routeIs('message.index')">
-                        {{ __('Pesan') }}
-                    </x-jet-nav-link>
-                </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
+                            {{ __('Pengumuman') }}
+                        </x-jet-nav-link>
+                    </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
-                        {{ __('Pengumuman') }}
-                    </x-jet-nav-link>
-                </div>
-                @endif
-
-                <!-- Only viewable by admins -->
-                @if (isset($event) && !$event->isFree())
-                    @can ('interactAsEventAdmin', $event)
+                    @if (isset($event) && !$event->isFree())
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
                                 Verifikasi peserta
@@ -44,7 +47,7 @@
                                 </span>
                             </x-jet-nav-link>
                         </div>
-                    @endcan
+                    @endif
                 @endif
             </div>
 
@@ -122,17 +125,34 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
             <!-- Only viewable by admins -->
-            @if (isset($event) && !$event->isFree())
-                @can ('interactAsEventAdmin', $event)
-                        <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-jet-responsive-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
-                                Verifikasi peserta
-                                <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
-                                    {{ $event->countRowsOnStatus('pending')  }}
-                                </span>
-                            </x-jet-responsive-nav-link>
-                        </div>
-                @endcan
+            @if (auth()->user()->isAdmin())
+                @if (auth()->user()->isMaster())
+                    <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-responsive-nav-link href="/message" :active="request()->routeIs('message.index')">
+                            {{ __('Pesan') }}
+                            <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
+                                {{ $messages_count  }}
+                            </span>
+                        </x-jet-responsive-nav-link>
+                    </div>
+                @endif
+
+                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-responsive-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
+                        {{ __('Pengumuman') }}
+                    </x-jet-responsive-nav-link>
+                </div>
+
+                @if (isset($event) && !$event->isFree())
+                    <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-responsive-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
+                            {{ __('Verifikasi Peserta') }}
+                            <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
+                                {{ $event->countRowsOnStatus('pending')  }}
+                            </span>
+                        </x-jet-responsive-nav-link>
+                    </div>
+                @endif
             @endif
         </div>
 

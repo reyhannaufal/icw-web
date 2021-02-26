@@ -23,7 +23,6 @@ class MessagesController extends Controller
     }
 
     public function create() {
-        $this->authorize('interactAsMaster'); // If false, it'll display 403
         return view('pages.contact');
     }
 
@@ -61,8 +60,13 @@ class MessagesController extends Controller
     public function destroy(Messages $message)
     {
         $this->authorize('interactAsMaster'); // If false, it'll display 403
-        $message->delete();
 
-        return redirect()->route('message.index');
+        if ($message->status == 'Sudah diproses') {
+            $message->delete();
+            return redirect()->route('message.index');
+        } else {
+            return redirect()->route('message.index')
+                ->with('error', 'Pesan belum dapat dihapus!');
+        }
     }
 }

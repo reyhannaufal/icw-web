@@ -11,7 +11,7 @@ class AnnouncementsController extends Controller
 {
     public function index()
     {
-        $this->authorize('seeAnnouncements'); // If false, it'll display 403
+        $this->authorize('interactAsAdmin'); // If false, it'll display 403
         $announcements = Announcement::all();
         return view('dashboard.admin.announcement.index', compact('announcements'));
     }

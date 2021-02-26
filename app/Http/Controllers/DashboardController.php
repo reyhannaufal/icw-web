@@ -23,12 +23,15 @@ class DashboardController extends Controller
 
             if (auth()->user()->id == Event::all()->count() + 1) {
                 // Master admin
+                $this->authorize('interactAsMaster'); // If false, it'll display 403
+
                $event_users = DB::table('event_user')
                    ->join('users', 'user_id', '=', 'users.id')
                    ->join('events', 'event_id', '=', 'events.id')
                    ->select(
                        'users.name AS name', 'events.name AS event_name',
-                       'payment_status', 'email', 'institution', 'phone_number'
+                       'payment_status', 'email', 'institution', 'phone_number',
+                       'event_user.created_at'
                    )->orderBy('event_name')->get();
 
                 return view('dashboard.admin.panel', [
