@@ -3472,7 +3472,7 @@
             },
             "require": {
                 "php": "^7.2 || ^8",
-                "fakerphp/faker": "^1.5",
+                "fakerphp/faker": "^1.5"
             },
             "require-dev": {
                 "captainhook/captainhook": "^5.3",
