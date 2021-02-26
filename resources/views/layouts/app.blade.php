@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
     <link rel="stylesheet" href="{{ asset('css/data_table.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/register-status.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <link rel="stylesheet" href="https://pagecdn.io/lib/font-awesome/5.10.0-11/css/all.min.css" integrity="sha256-p9TTWD+813MlLaxMXMbTA7wN/ArzGyW/L7c5+KkjOkM=" crossorigin="anonymous">
     <!--Regular Datatables CSS-->
