@@ -1,0 +1,143 @@
+.register-card {
+  height: 210px;
+  width: 350px;
+  position: relative;
+  border-radius: 25px;
+  background: rgba(227, 232, 255, 0.5);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.register-card-top {
+  height: 155px;
+  width: 350px;
+}
+
+.register-card-bot {
+  height: 55px;
+  width: 350px;
+}
+
+.register-card-circles {
+  position: absolute;
+  height: 210px;
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-left {
+  height: 150px;
+  width: 150px;
+  top: -50px;
+  left: -60px;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(36, 69, 121, 1);
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.circle-right {
+  height: 170px;
+  width: 170px;
+  bottom: -75px;
+  right: -75px;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(36, 69, 121, 1);
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.register-container {
+  left: 50%;
+  bottom: -150px;
+  transform: translate(-50%, 0);
+}
+
+.register-btn {
+  background: rgba(255, 255, 255, 1);
+  border-color: #E0E2F5;
+  border-width: 3px;
+  border-radius: 20px;
+}
+
+.register-btn:hover {
+  background: #E0E2F5;
+}
+
+@media (min-width: 640px) {
+  .register-card {
+    height: 270px;
+    width: 450px;
+    position: relative;
+    border-radius: 25px;
+    background: rgba(227, 232, 255, 0.5);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  .register-card-top {
+    height: 185px;
+    width: 450px;
+  }
+
+  .register-card-bot {
+    height: 85px;
+    width: 450px;
+  }
+
+  .register-card-circles {
+    position: absolute;
+    height: 270px;
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .circle-left {
+    height: 180px;
+    width: 180px;
+    top: -50px;
+    left: -60px;
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(36, 69, 121, 1);
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .circle-right {
+    height: 200px;
+    width: 200px;
+    bottom: -90px;
+    right: -90px;
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(36, 69, 121, 1);
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+}
+
+@media (max-width: 640px) {
+  .register-btn {
+    background: rgba(255, 255, 255, 1);
+    width: 200px;
+    border-color: #E0E2F5;
+    border-width: 3px;
+    border-radius: 20px;
+  }
+  
+  .register-btn:hover {
+    background: rgba(227, 232, 255, 1);
+  }
+}
+.status-text {
+  text-align: justify;
+  text-justify: inter-word;
+}

@@ -44,3 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('guide', GuideController::class);
     Route::resource('announcement', AnnouncementsController::class);
 });
+
+Route::get('/event-page', function () {
+    return view('pages.template-event-page');
+});
