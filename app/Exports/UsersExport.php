@@ -18,36 +18,43 @@ class UsersExport implements FromQuery, WithHeadings
 
     public function query()
     {
-        return DB::table('users')
-            ->join('event_user', 'users.id', '=', 'event_user.user_id')
-            ->select('users.name', 'users.email',
-                'users.institution', 'users.phone_number')
-            ->where('event_user.event_id', '=', $this->event_id)
-            ->orderBy('users.id');
-    }
+        $table = DB::table('users')
+            ->join('event_user', 'users.id', '=', 'event_user.user_id');
 
-//    /**
-//     * @var User $user
-//     */
-//    public function map($user): array
-//    {
-//        return [
-//            $user->id,
-//            $user->name,
-//            $user->email,
-//            $user->institution,
-//            $user->phone_number,
-//            $user->participation->event_id,
-//        ];
-//    }
+        // Users data per event
+        if ($this->event_id != 0) {
+            $table = $table->select('users.name', 'users.email',
+                    'users.institution', 'users.phone_number')
+                ->where('event_user.event_id', '=', $this->event_id);
+        } else {
+            // Data of all registered users
+            $table = $table->join('events', 'events.id', '=', 'event_user.event_id')
+                ->select(
+                'users.name AS username',
+                    'users.email',
+                    'users.institution',
+                    'users.phone_number',
+                    'events.name AS eventname'
+                )
+                ->orderBy('eventname');
+        }
+        return $table->orderBy('users.name');
+    }
 
     public function headings(): array
     {
-        return [
-            'Name',
+        // For users data per event
+        $header = [
+            'Nama',
             'Email',
             'Institusi',
             'Nomor Telepon',
         ];
+
+        // For data of all users
+        if ($this->event_id == 0) {
+            array_push($header, 'Nama Event');
+        }
+        return $header;
     }
 }

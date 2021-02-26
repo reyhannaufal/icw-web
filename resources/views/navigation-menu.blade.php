@@ -35,7 +35,7 @@
 
                 <!-- Only viewable by admins -->
                 @if (isset($event) && !$event->isFree())
-                    @can ('interact', $event)
+                    @can ('interactAsEventAdmin', $event)
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
                                 Verifikasi peserta
@@ -123,7 +123,7 @@
             </x-jet-responsive-nav-link>
             <!-- Only viewable by admins -->
             @if (isset($event) && !$event->isFree())
-                @can ('interact', $event)
+                @can ('interactAsEventAdmin', $event)
                         <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-responsive-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
                                 Verifikasi peserta
