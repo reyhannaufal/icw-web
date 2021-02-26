@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersExport;
 use App\Models\Event;
 use App\Models\User;
 use App\Models\Announcement;
@@ -10,6 +11,7 @@ use Carbon\Carbon;
 use File;
 use Illuminate\Http\Request;
 use Log;
+use Maatwebsite\Excel\Facades\Excel;
 use Notification;
 use Throwable;
 
@@ -93,5 +95,10 @@ class DashboardController extends Controller
             }
         }
         return false;
+    }
+
+    public function export(Event $event)
+    {
+        return Excel::download(new UsersExport($event->id), 'users.xlsx');
     }
 }

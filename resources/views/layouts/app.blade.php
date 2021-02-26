@@ -65,19 +65,18 @@
         font-family: 'Poppins', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     }
 </style>
-{{--    <script src="https://unpkg.com/turbolinks"></script>--}}
-<!--Datatables -->
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-<script>
-    $(document).ready(function() {
+    <!--Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
-        var table = $('#example').DataTable( {
-            responsive: true
-        } )
-            .columns.adjust()
-            .responsive.recalc();
-    } );
+            var table = $('#example').DataTable( {
+                responsive: true
+            } )
+                .columns.adjust()
+                .responsive.recalc();
+        } );
 
-</script>
+    </script>
 </html>

@@ -37,8 +37,8 @@ Route::middleware('auth')->group(function () {
     // Admin section
     Route::get('/verify/{event}', [DashboardController::class, 'edit'])->name('verification');
     Route::post('/verify/{event}', [DashboardController::class, 'update']);
+    Route::get('/export/{event}', [DashboardController::class, 'export'])->name('export');
 
     Route::resource('message', MessagesController::class);
-
     Route::resource('announcement', AnnouncementsController::class);
 });
