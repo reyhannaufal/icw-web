@@ -23,7 +23,7 @@ class DashboardController extends Controller
             $event = Event::where('id', auth()->user()->id)->first();
 
             return view('dashboard.admin.panel', [
-                'users' => $event->usersWithPivot()->get(),
+                'users' => $event->usersWithPivot()->orderBy('id', 'ASC')->get(),
                 'event_name' => $event->name,
                 'pending_count' => $event->countRowsOnStatus('pending'),
                 'failed_count' => $event->countRowsOnStatus('failed'),
@@ -99,6 +99,6 @@ class DashboardController extends Controller
 
     public function export(Event $event)
     {
-        return Excel::download(new UsersExport($event->id), 'users.xlsx');
+        return Excel::download(new UsersExport($event->id), 'Peserta ' . $event->name . '.xlsx');
     }
 }
