@@ -6,7 +6,7 @@ function _scrollTo(curr, id, delayTo = '') {
     }
     let element = document.getElementById(id);
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    let adder = 0; // getAdder(id)
+    let adder = getAdder(id);
 
     window.scroll({
         behavior: 'smooth',
@@ -32,17 +32,17 @@ function setDelayOff() {
     localStorage.temp_id = '';
 }
 
-// function getAdder(id) {
-//     let adder;
-//     switch(id) {
-//         case "introduction":
-//             adder = 120;
-//             break;
-//         case "recap":
-//             adder = 63
-//             break;
-//         default:
-//             adder = 0;
-//     }
-//     return adder;
-// }
+function getAdder(id) {
+    let adder;
+    switch(id) {
+        case "events":
+            adder = window.innerWidth * 0.05;
+            break;
+        case "recap":
+            adder = window.innerWidth * 0.125;
+            break;
+        default:
+            adder = 0;
+    }
+    return adder;
+}

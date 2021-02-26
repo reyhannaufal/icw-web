@@ -27,7 +27,15 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('interact', function (User $user, Event $event) {
+        Gate::define('interactAsMaster', function (User $user) {
+            return ($user->isAdmin() && $user->id == Event::all()->count() + 1);
+        });
+
+        Gate::define('interactAsAdmin', function (User $user) {
+            return ($user->isAdmin());
+        });
+
+        Gate::define('interactAsEventAdmin', function (User $user, Event $event) {
             return ($user->isAdmin() && $user->id == $event->id);
         });
     }

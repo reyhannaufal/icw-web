@@ -23,8 +23,6 @@ Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info
 Route::get('/contact', [MessagesController::class, 'create'])->name('contact');
 Route::post('/messages', [MessagesController::class, 'store']);
 
-Route::post('/messages', [MessagesController::class, 'store']);
-
 // Dashboard
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -37,11 +35,12 @@ Route::middleware('auth')->group(function () {
     // Admin section
     Route::get('/verify/{event}', [DashboardController::class, 'edit'])->name('verification');
     Route::post('/verify/{event}', [DashboardController::class, 'update']);
+
     Route::get('/export/{event}', [DashboardController::class, 'export'])->name('export');
+    Route::get('/exports', [DashboardController::class, 'exportAll'])->name('exportAll');
 
-
+    Route::get('guide', [GuideController::class, 'index']);
     Route::resource('message', MessagesController::class);
-    Route::resource('guide', GuideController::class);
     Route::resource('announcement', AnnouncementsController::class);
 });
 

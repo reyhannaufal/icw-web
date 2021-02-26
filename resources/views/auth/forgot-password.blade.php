@@ -1,16 +1,20 @@
 <x-auth-layout>
+    @section('title', 'Forget Password')
+    @section('description', 'Forget Password')
     <div
             class="min-h-screen bg-white flex flex-col justify-center py-3 sm:px-6 lg:px-8"
             style="font-family: 'Poppins', sans-serif"
     >
 
         <div class="sm:mx-auto sm:w-full sm:max-w-md p-5">
-            <img
+            <a href="{{ route('home') }}">
+                <img
                     class="mx-auto"
                     src="{{'assets/img/logo_indicor.png'}}"
                     alt="logo-ILITS"
-                    width="150" height="300"
-            />
+                    width="300" height="300"
+                />
+            </a>
             <h2 class="text-center text-xl mt-5 leading-9 font-extrabold text-gray-900">
                 Forget your password?
             </h2>

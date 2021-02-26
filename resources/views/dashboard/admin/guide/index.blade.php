@@ -1,12 +1,12 @@
 <x-app-layout>
-    <div class="lg:mt-20">
-        <div class="px-4 py-12 max-w-5xl mx-auto mx-auto sm:px-6 lg:px-8">
+    <div class="md:pb-14 pb-10 mx-4">
+        <div class="px-2 py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="pb-5 border-b border-gray-200">
                 <h3 class="text-2xl leading-6 font-medium font-bold text-gray-900">
                     Petunjuk Penggunaan
                 </h3>
                 <p class="mt-2 max-w-4xl text-sm text-gray-500">
-                    Berikut merupaka petunjuk pneggunaan dashboard setiap Admin.
+                    Berikut merupakan petunjuk pneggunaan dashboard setiap Admin.
                 </p>
             </div>
         </div>
@@ -15,7 +15,7 @@
                 <div class="px-4 py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <h2 class="text-lg">Info Akun Admin</h2>
                     <ul class="list-decimal py-4">
-                        <li>Akun admin terbgai menjadi dua, yaitu admin normal dan admin master.</li>
+                        <li>Akun admin terbagi menjadi dua, yaitu admin normal dan admin master.</li>
                         <li>Akun admin normal adalah akun users dengan id <= jumlah event.</li>
                         <li>Akun admin master adalah akun users dengan id <= jumlah event.</li>
                         <li>Akun admin tidak bisa dihapus.</li>
@@ -63,7 +63,5 @@
 
             </div>
         </div>
-
-
     </div>
 </x-app-layout>

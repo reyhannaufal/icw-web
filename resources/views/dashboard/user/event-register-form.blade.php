@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 pb-20">
         <div class="md:w-full mx-auto sm:max-w-md mt-6 px-6 py-4">
             <h1 class="text-center text-gray-600 font-bold text-3xl">Silahkan Menyelesaikan Pendaftaran</h1>
             <div class="border-b-8 mt-3"></div>

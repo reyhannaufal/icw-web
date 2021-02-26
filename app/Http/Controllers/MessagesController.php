@@ -10,6 +10,7 @@ class MessagesController extends Controller
 {
     public function index()
     {
+        $this->authorize('interactAsMaster'); // If false, it'll display 403
         $messages = Messages::all();
 
         return view('dashboard.admin.message.index', compact('messages'));
@@ -17,6 +18,7 @@ class MessagesController extends Controller
 
     public function show(Messages $message)
     {
+        $this->authorize('interactAsMaster'); // If false, it'll display 403
         return view('dashboard.admin.message.show', compact('message'));
     }
 
@@ -26,6 +28,7 @@ class MessagesController extends Controller
 
     public function update(Request $request, Messages $message)
     {
+        $this->authorize('interactAsMaster'); // If false, it'll display 403
         $message->update($request->validate([
             'status' => [
                 'required',
@@ -56,8 +59,14 @@ class MessagesController extends Controller
 
     public function destroy(Messages $message)
     {
-        $message->delete();
+        $this->authorize('interactAsMaster'); // If false, it'll display 403
 
-        return redirect()->route('message.index');
+        if ($message->status == 'Sudah diproses') {
+            $message->delete();
+            return redirect()->route('message.index');
+        } else {
+            return redirect()->route('message.index')
+                ->with('error', 'Pesan belum dapat dihapus!');
+        }
     }
 }

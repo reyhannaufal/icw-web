@@ -31,16 +31,16 @@
                 <div class="circle-left"></div>
                 <div class="circle-right"></div>
                 @if ($data['status'] === 'Failed')
-                <div class="absolute register-container">
-                    <form method="POST" action="{{ route('reset-status', Str::slug($data['event_name'], '-')) }}">
-                        @csrf
-                        <button class="text-black font-bold py-3 px-5 register-btn">
-                            Upload Ulang
-                            <br>
-                            Bukti Pembayaran
-                        </button>
-                    </form>
-                </div>
+                    <div class="absolute register-container">
+                        <form method="POST" action="{{ route('reset-status', Str::slug($data['event_name'], '-')) }}">
+                            @csrf
+                            <button class="text-black font-bold py-3 px-5 register-btn">
+                                Upload Ulang
+                                <br>
+                                Bukti Pembayaran
+                            </button>
+                        </form>
+                    </div>
                 @endif
             </div>
 
