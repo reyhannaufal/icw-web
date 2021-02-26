@@ -42,13 +42,11 @@ class DatabaseSeeder extends Seeder
                 $adm_users[$i]->update([
                     'name' => 'Admin ' . $events[$i]->name,
                     'email' => 'admin' . ($i + 1) . '@admin.com',
-                    'password' => bcrypt('12345678')
                 ]);
             } else {
                 $adm_users[$i]->update([
                     'name' => 'Master Admin',
                     'email' => 'masteradmin' . '@admin.com',
-                    'password' => bcrypt('12345678')
                 ]);
             }
         }
