@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/verify/{event}', [DashboardController::class, 'update']);
     Route::get('/export/{event}', [DashboardController::class, 'export'])->name('export');
 
+
     Route::resource('message', MessagesController::class);
+    Route::resource('guide', GuideController::class);
     Route::resource('announcement', AnnouncementsController::class);
 });
