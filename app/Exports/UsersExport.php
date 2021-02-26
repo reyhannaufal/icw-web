@@ -10,7 +10,6 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class UsersExport implements FromQuery, WithHeadings
 {
-
     public function __construct(int $event_id)
     {
         $this->event_id = $event_id;

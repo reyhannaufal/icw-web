@@ -39,6 +39,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/export/{event}', [DashboardController::class, 'export'])->name('export');
     Route::get('/exports', [DashboardController::class, 'exportAll'])->name('exportAll');
 
-    Route::resource('announcement', AnnouncementsController::class);
+    Route::get('guide', [GuideController::class, 'index']);
     Route::resource('message', MessagesController::class);
+    Route::resource('announcement', AnnouncementsController::class);
+});
+
+Route::get('/event-page', function () {
+    return view('pages.template-event-page');
 });
