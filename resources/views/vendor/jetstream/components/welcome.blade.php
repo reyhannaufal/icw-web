@@ -6,7 +6,7 @@
             <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
                 <!-- Left column -->
                 <div class="grid grid-cols-1 gap-4 lg:col-span-2">
-                    <!-- Welcome panel -->
+                    <!-- Welcome panel.blade.php -->
                     <section aria-labelledby="profile-overview-title">
                         <div class="rounded-lg bg-white overflow-hidden shadow">
                             <h2 class="sr-only" id="profile-overview-title">Profile Overview</h2>
@@ -15,7 +15,6 @@
                                     <div class="sm:flex sm:space-x-5">
                                         <div class="flex-shrink-0">
 {{--                                            <img class="mx-auto h-20 w-20 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">--}}
-                                            <div class="mx-auto h-20 w-20 rounded-full bg-indigo-900"></div>
                                         </div>
                                         <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
                                             <p class="text-sm font-medium text-gray-600">Welcome Back,</p>
@@ -32,15 +31,14 @@
                             </div>
                         </div>
                     </section>
-
-                    <!-- Actions panel -->
-                    @include('dashboard.user.home._quick-links', $events)
+                    <!-- Actions panel.blade.php -->
+                    @include('dashboard.home._quick-links', $events)
                 </div>
 
                 <!-- Right column -->
                 <div class="grid grid-cols-1 gap-4">
                     <!-- Announcements -->
-                    @include('dashboard.user.home._announcements', $announcements)
+                    @include('dashboard.home._announcements', $announcements)
                 </div>
             </div>
         </div>

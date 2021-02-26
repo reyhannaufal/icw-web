@@ -26,7 +26,7 @@
                             <li class="py-5">
                                 <div class="relative">
                                     <h3 class="text-sm font-semibold text-gray-800">
-                                        <!-- Extend touch target to entire panel -->
+                                        <!-- Extend touch target to entire panel.blade.php -->
                                         <span class="absolute inset-0" aria-hidden="true"></span>
                                         {{ $bill->bank_name }}
                                     </h3>
@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <form method="POST" action="{{ route('event-register', Str::slug($event->name, '-')) }}">
+            <form method="POST" action="{{ route('event-register', Str::slug($event->name, '-')) }}" enctype="multipart/form-data">
                 @csrf
 
                 <div>

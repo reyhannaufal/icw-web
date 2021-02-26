@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use function PHPUnit\Framework\isNull;
 
 class User extends Authenticatable
 {
@@ -27,6 +28,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone_number',
+        'institution'
     ];
 
     /**
@@ -66,5 +69,18 @@ class User extends Authenticatable
             $data = $data->participation->payment_status;
         }
         return $data;
+    }
+
+    public function getPaymentReceipt(Event $event) {
+        $path = $this->events()->where('event_id', $event->id)->pluck('payment_receipt_path')->first();
+        return asset('storage/' . $path);
+    }
+
+    public function isRegistered(Event $event) {
+        return !isNull($event->users()->where('user_id', $this->id)->first());
+    }
+
+    public function isAdmin() {
+        return $this->id <= Event::all()->count();
     }
 }

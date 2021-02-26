@@ -1,15 +1,18 @@
 <x-auth-layout>
+    @section('title', 'Sign In Page')
     <div class="min-h-screen bg-white flex">
     <div
             class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
     >
         <div class="mx-auto w-full max-w-sm lg:w-96">
             <div>
-                <img
-                        class="h-12 w-auto"
-                        src="{{'assets/img/logo_indicor.png'}}"
-                        alt="icw-logo"
-                />
+                <a href="/">
+                    <img
+                            class="h-12 w-auto"
+                            src="{{'assets/img/logo_indicor.png'}}"
+                            alt="icw-logo"
+                    />
+                </a>
                 <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
                     Sign in to your account
                 </h2>
@@ -74,7 +77,7 @@
                         <div>
                             <button
                                     type="submit"
-                                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700"
                             >
                                 {{ __('Sign In') }}
                             </button>
