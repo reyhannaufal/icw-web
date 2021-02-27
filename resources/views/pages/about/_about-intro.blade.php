@@ -1,8 +1,8 @@
 <div class="relative bg-bgsection-0 overflow-hidden">
     <div
-            class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 max-w-7xl mx-auto"
+            class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 max-w-6xl mx-auto"
     >
-        <main class="mt-16  max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-32">
+        <main class="mt-16  px-4 sm:mt-24 sm:px-6 lg:mt-32">
             <div class="lg:grid lg:grid-cols-12 lg:gap-8 mx-auto" data-aos="fade-up-right" data-aos-duration="2000">
                 <div
                         class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
