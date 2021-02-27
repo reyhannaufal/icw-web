@@ -21,8 +21,9 @@ selalu perhatikan env.example
 * Akun admin terbgai menjadi dua, yaitu **admin normal** dan **admin master**.
 * Akun **admin normal** adalah akun users dengan id <= jumlah event.
 * Akun **admin master** adalah akun users dengan id <= jumlah event.
-* Akun admin tidak bisa dihapus
+* Akun admin tidak bisa dihapus.
 * Tiap event memiliki satu akun admin normal.
+* Admin tidak dapat mengganti ataupun melihat profil dan passwordnya.
 * Jika password akun admin terlupakan, segara hubungi tim web untuk bantuan reset password. 
   
 ### Otoritas Admin Normal

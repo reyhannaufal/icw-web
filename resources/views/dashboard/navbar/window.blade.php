@@ -86,25 +86,26 @@
                     </x-slot>
 
                     <x-slot name="content">
-                    @if (auth()->user()->isAdmin())
-                        <!-- Dokumentasi -->
+                        @if (auth()->user()->isAdmin())
+                            <!-- Dokumentasi -->
+                                <div class="block px-4 py-2 text-xs text-gray-400">
+                                    {{ __('Dokumentasi') }}
+                                </div>
+
+                                <x-jet-dropdown-link href="/guide" :active="request()->routeIs('guide.index')">
+                                    {{ __('Petunjuk') }}
+                                </x-jet-dropdown-link>
+                        @else
+                            <!-- Admin tidak dapat mengakses menu profil  -->
+                            <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Dokumentasi') }}
+                                {{ __('Manage Account') }}
                             </div>
 
-                            <x-jet-dropdown-link href="/guide" :active="request()->routeIs('guide.index')">
-                                {{ __('Petunjuk') }}
+                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                {{ __('Profile') }}
                             </x-jet-dropdown-link>
-                    @endif
-
-                    <!-- Account Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
-                            {{ __('Manage Account') }}
-                        </div>
-
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Profile') }}
-                        </x-jet-dropdown-link>
+                        @endif
 
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
