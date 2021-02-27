@@ -1,34 +1,47 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<x-auth-layout>
+    <div
+            class="min-h-screen bg-white flex flex-col justify-center py-3 sm:px-6 lg:px-8"
+            style="font-family: 'Poppins', sans-serif"
+    >
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Mohon isi email anda agar kami dapat mengirim link untuk mereset password anda.') }}
+        <div class="sm:mx-auto sm:w-full sm:max-w-md p-5">
+            <img
+                    class="mx-auto"
+                    src="{{'assets/img/logo_indicor.png'}}"
+                    alt="logo-ILITS"
+                    width="150" height="300"
+            />
+            <h2 class="text-center text-xl mt-5 leading-9 font-extrabold text-gray-900">
+                Forget your password?
+            </h2>
         </div>
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+        <div class=" sm:mx-auto sm:w-full sm:max-w-md">
+            <div class="bg-yellow-100 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                <div class="mb-4 text-sm text-black">
+                    {{ __('Mohon isi email anda agar kami dapat mengirim link untuk mereset password anda.') }}
+                </div>
+                <form method="POST" action="{{ route('password.email') }}">
+                    @csrf
+                    <div class="block">
+                        <x-jet-label for="email" value="{{ __('Email') }}" />
+                        <x-jet-input id="email" class="block mt-1 w-full" style="padding: 0.5rem" type="email" name="email" :value="old('email')" required autofocus />
+                    </div>
+                    <x-jet-validation-errors class="mb-4" />
+                    @if (session('status'))
+                        <div class="mt-1 mb-4 font-medium text-sm text-green-600">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <div class="flex items-center justify-end mt-4">
+                        <button class="ml-8 whitespace-nowrap inline-flex bg-gray-700 items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white">
+                            {{ __('Send me a link') }}
+                        </button>
+                    </div>
+                </form>
+
             </div>
-        @endif
+        </div>
+    </div>
+</x-auth-layout>
 
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
-                    {{ __('Kirimi Saya Link') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>

@@ -9,10 +9,15 @@ class Announcement extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'body'
+    ];
+
     protected $guarded = [];
 
     public function timeline() {
         return self::latest()
-            ->paginate($_ENV['PAGINATE']);
+            ->paginate(config('pagination'));
     }
 }

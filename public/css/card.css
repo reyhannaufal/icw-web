@@ -1,0 +1,29 @@
+@media(max-width: 830px) {
+    .card-img {
+        width: 18.7rem !important;
+    }
+}
+
+@media(max-width: 650px) {
+    .cards {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+    .card-img {
+        width: 22rem !important;
+    }
+}
+
+@media(max-width: 420px) {
+    .card {
+        margin: 10px 0 !important;
+    }
+    .card-img {
+        width: 18.7rem !important;
+    }
+}
+
+@media(max-width: 320px) {
+    .card-img {
+        width: 16.4rem !important;
+    }
+}
