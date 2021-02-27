@@ -54,7 +54,7 @@ class MessagesController extends Controller
         ]);
 
         return redirect()->route('contact')
-            ->with('success', 'Message sended successfully!');
+            ->with('success', 'Pesan terkirim!');
     }
 
     public function destroy(Messages $message)
