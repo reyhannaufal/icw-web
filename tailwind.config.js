@@ -19,13 +19,17 @@ module.exports = {
       screens: {
         'mdl': '809px',
         'vsm': '300px',
-        'largemin': '955px'
+        'largemin': '955px',
+        'xlplus': ['1282px']
       },
 
       colors: {
         bgnav:['#F5FAFF'],
         bgsection:['#121212'],
-        table: ['#171848']
+        table: ['#171848'],
+        dashboard: ['#c5e7dd'],
+        competable1: ['#ffdfaf'],
+        competable2: ['#feb8b4']
       }
     },
   },
