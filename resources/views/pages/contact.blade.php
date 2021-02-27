@@ -29,7 +29,7 @@
                         >First name</label
                         >
                         <div class="mt-1">
-                            <input
+                            <input  required
                                     type="text"
                                     name="first_name"
                                     id="first_name"
@@ -48,7 +48,7 @@
                         >Last name</label
                         >
                         <div class="mt-1">
-                            <input
+                            <input  required
                                     type="text"
                                     name="last_name"
                                     id="last_name"
@@ -64,10 +64,10 @@
                         <label
                                 for="institution"
                                 class="block text-sm font-medium text-gray-100"
-                        >Institution</label
+                        >Asal Sekolah</label
                         >
                         <div class="mt-1">
-                            <input
+                            <input  required
                                     type="text"
                                     name="institution"
                                     id="institution"
@@ -84,7 +84,7 @@
                         >Email</label
                         >
                         <div class="mt-1">
-                            <input
+                            <input  required
                                     id="email"
                                     name="email"
                                     type="email"
@@ -104,7 +104,7 @@
                                 class="block text-sm font-medium text-gray-100"
                         >Phone Number</label
                         >
-                        <input
+                        <input  required
                                 id="phone_number"
                                 name="phone_number"
                                 type="tel"
@@ -125,7 +125,7 @@
                         >Message</label
                         >
                         <div class="mt-1">
-                            <textarea
+                            <textarea  required
                                     id="message"
                                     name="message"
                                     rows="4"
@@ -147,5 +147,6 @@
                 </form>
             </div>
         </div>
+        <p class="text-center -white-500 text-xs pt-4">* Tunggu balasan admin melalui email atau nomor telepon Anda.</p>
     </div>
 </x-guest-layout>

@@ -81,6 +81,10 @@ class User extends Authenticatable
     }
 
     public function isAdmin() {
-        return $this->id <= Event::all()->count();
+        return $this->id <= Event::all()->count() + 1;
+    }
+
+    public function isMaster() {
+        return $this->id == Event::all()->count() + 1;
     }
 }

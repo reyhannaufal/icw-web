@@ -53,8 +53,11 @@
                                           method="POST" onsubmit="return confirm('Are you sure?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button
-                                            class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                                        <button {{ ($message->status == 'Sudah diproses') ?: 'disabled' }}
+                                            class="{{ ($message->status == 'Sudah diproses')
+                                                    ? 'hover:bg-red-500 hover:text-white hover:border-transparent'
+                                                    : 'disabled:opacity-50 cursor-not-allowed' }}
+                                                bg-transparent text-red-700 font-semibold py-2 px-4 border border-red-500 rounded">
                                             Delete
                                         </button>
                                     </form>
