@@ -1,88 +1,57 @@
-<div class="bg-white">
-    <div class="max-w-7xl mx-auto md:py-52 py-32 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
-            <div>
-                <h2 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                    Sales Support
-                </h2>
-                <div class="mt-3">
-                    <p class="text-lg text-gray-500">
-                        Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
-                    </p>
+<div class="bg-bgsection-0">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-semibold text-center text-white">
+            Sponsor
+        </h2>
+        <div class="flow-root mt-8 lg:mt-10">
+            <div class="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
+                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                    <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg" alt="Tuple">
                 </div>
-                <div class="mt-9">
-                    <div class="flex">
-                        <div class="flex-shrink-0">
-                            <svg class="h-6 w-6 text-gray-400" x-description="Heroicon name: outline/phone" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                        </div>
-                        <div class="ml-3 text-base text-gray-500">
-                            <p>
-                                +1 (555) 123 4567
-                            </p>
-                            <p class="mt-1">
-                                Mon-Fri 8am to 6pm PST
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex">
-                        <div class="flex-shrink-0">
-                            <svg class="h-6 w-6 text-gray-400" x-description="Heroicon name: outline/mail" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <div class="ml-3 text-base text-gray-500">
-                            <p>
-                                support@example.com
-                            </p>
-                        </div>
-                    </div>
+                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                    <img class="h-12" src="https://tailwindui.com/img/logos/mirage-logo-indigo-300.svg" alt="Mirage">
                 </div>
-            </div>
-            <div class="mt-12 sm:mt-16 md:mt-0">
-                <h2 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                    Technical Support
-                </h2>
-                <div class="mt-3">
-                    <p class="text-lg text-gray-500">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, repellat error corporis doloribus similique, voluptatibus numquam quam, quae officiis facilis.
-                    </p>
+                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                    <img class="h-12" src="https://tailwindui.com/img/logos/statickit-logo-indigo-300.svg" alt="StaticKit">
                 </div>
-                <div class="mt-9">
-                    <div class="flex">
-                        <div class="flex-shrink-0">
-                            <svg class="h-6 w-6 text-gray-400" x-description="Heroicon name: outline/phone" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                        </div>
-                        <div class="ml-3 text-base text-gray-500">
-                            <p>
-                                +1 (555) 123 4567
-                            </p>
-                            <p class="mt-1">
-                                Mon-Fri 8am to 6pm PST
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex">
-                        <div class="flex-shrink-0">
-                            <svg class="h-6 w-6 text-gray-400" x-description="Heroicon name: outline/mail" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <div class="ml-3 text-base text-gray-500">
-                            <p>
-                                support@example.com
-                            </p>
-                        </div>
-                    </div>
+                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                    <img class="h-12" src="https://tailwindui.com/img/logos/transistor-logo-indigo-300.svg" alt="Transistor">
+                </div>
+                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                    <img class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg" alt="Workcation">
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="bg-bgsection-0">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <p class="text-center text-base font-semibold uppercase text-gray-600 tracking-wider">
+            Media Partner
+        </p>
+        <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
+            <div class="col-span-1 flex justify-center py-8 px-8">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Workcation">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8 ">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8 0">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="bg-bgsection-0 text-white">
     <div
