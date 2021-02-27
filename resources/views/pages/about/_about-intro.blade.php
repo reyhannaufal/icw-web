@@ -3,7 +3,7 @@
             class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 max-w-7xl mx-auto"
     >
         <main class="mt-16  max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-32">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-8 mx-auto">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 mx-auto" data-aos="fade-up-right" data-aos-duration="2000">
                 <div
                         class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
                 >
@@ -21,11 +21,13 @@
                 </span>
                     </h1>
                     <p
-                            class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
+                            class="mt-3 md:text-base text-gray-500 sm:mt-5 sm:text-xl"
                     >
-                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                        lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                        fugiat aliqua ad ad non deserunt sunt.
+                        ICW memiliki tujuan untuk
+                        memberi wawasan serta menjadi wadah untuk mengaktualisasikan inovasi mengenai korosi. ICW
+                        memiliki beberapa sub event, diantaranya adalah ICW Paper Competition, ICW Virtual Talks,
+                        Symposium, Workshop Career Building, dan Corrosion Workshop.
+
                     </p>
                 </div>
                 <div
@@ -33,7 +35,9 @@
                 >
 
                     <div
-                            class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md"
+                            class="relative mx-auto w-full rounded-lg  lg:max-w-md"
+                            data-aos="fade-up-left"
+                            data-aos-duration="2000"
                     >
 
                         <img
@@ -46,36 +50,6 @@
                 </div>
             </div>
         </main>
-    </div>
-</div>
-
-<div class="bg-white">
-    <div class="max-w-5xl mx-auto py-24 px-4 sm:px-6 lg:py-24 lg:px-8 text-center" data-aos="fade-up"
-         data-aos-duration="1000">
-        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
-            <span class="block ">Our Vision</span>
-        </h2>
-        <div class="border-b-4 border-gray-700 rounded-xl mt-4"></div>
-        <p class="max-w-7xl mx-auto py-12 text-xl text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Accusamus accusantium adipisci deleniti
-            distinctio facere iste molestias nemo, quas quos rerum.</p>
-        <p class="max-w-7xl mx-auto  text-xl text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusamus accusantium adipisci deleniti
-            distinctio facere iste molestias nemo, quas quos rerum.</p>
-    </div>
-
-    <div class="max-w-5xl mx-auto py-24 px-4 sm:px-6 lg:py-24 lg:px-8 text-center" data-aos="fade-up"
-         data-aos-duration="2000">
-        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
-            <span class="block">Our Mission</span>
-        </h2>
-        <div class="border-b-4 border-gray-700 rounded-xl mt-4"></div>
-        <p class="max-w-7xl mx-auto py-12 text-xl text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Accusamus accusantium adipisci deleniti
-            distinctio facere iste molestias nemo, quas quos rerum.</p>
-        <p class="max-w-7xl mx-auto text-xl text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusamus accusantium adipisci deleniti
-            distinctio facere iste molestias nemo, quas quos rerum.</p>
     </div>
 </div>
 

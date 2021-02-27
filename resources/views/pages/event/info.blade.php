@@ -21,14 +21,18 @@
                                 INDOCOR</h2>
                             <h1 class="text-white text-4xl md:text-5xl font-bold text-secondary leading-tight mb-6 md:mb-10">
                                 {{$event->name}}</h1>
-                            <p class="mb-10 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-                                hic labore optio quae
-                                repellendus sed sequi sint voluptatem. Fugit, tenetur.</p>
+                            <p class="mb-10 text-white">
+                                ICW memiliki tujuan untuk memberi wawasan serta menjadi wadah untuk mengaktualisasikan
+                                inovasi mengenai korosi. ICW memiliki beberapa sub event, diantaranya adalah ICW Paper
+                                Competition, ICW Virtual Talks, Symposium, Workshop Career Building, dan Corrosion
+                                Workshop.
+
+                            </p>
                             <a href="/register"
                                class="text-white bg-primary px-6 md:px-8 py-3 md:py-4 text-lg md:text-xl text-secondary font-bold uppercase rounded bg-indigo-500
                                 bg-opacity-60 hover:bg-opacity-70">
-                                Sign Up Now!
-                                </a>
+                                Daftar!
+                            </a>
                         </div>
 
                         <div class="lg:pr-16 flex-1 flex justify-end">
@@ -55,7 +59,7 @@
                          data-aos-anchor-placement="top-bottom">
                         <h2 class="text-3xl">
                             <strong>
-                                What is <abbr title="Indonesia Corrosion Week"
+                                Apa itu <abbr title="Indonesia Corrosion Week"
                                               class="no-underline">ICW</abbr> {{$event->name}}
                             </strong>
                         </h2>
@@ -218,8 +222,7 @@
                 class="max-w-2xl mx-auto text-center py-24 px-4 md:py-36 sm:px-6 lg:px-8"
         >
             <h2 class="text-3xl font-extrabold  md:text-4xl animate-bounce">
-                <span class="block">Challenge Yourself</span>
-                <span class="block">Sign up today!</span>
+                <span class="block">Ayoo tunggu apa lagi?</span>
             </h2>
             <p class="mt-4 text-xl leading-6">
                 Excuses will always be there for you. Opportunity won’t.
@@ -228,7 +231,7 @@
                     onclick="_scrollTo(this, 'header')"
                     class="cursor-pointer mt-8 w-full inline-flex bg-bgsection-0 items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-gray-800 sm:w-auto"
             >
-                Sign up now
+                Daftar Sekarang
             </a>
         </div>
     </div>
@@ -237,8 +240,8 @@
         <div class="grid grid-cols-2 gap-28 relative pt-2 max-w-7xl mx-auto md:my-10">
             <div class="w-full col-span-2 text-white text-center">
                 <h2 class="text-3xl font-extrabold  md:text-4xl">
-                    <span class="block">Competition</span>
-                    <span class="block">Prize!</span>
+                    <span class="block">Hadiah</span>
+                    <span class="block">Kompetisi!</span>
                 </h2>
             </div>
 
@@ -252,42 +255,167 @@
 
             <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
                 <main class="py-4 px-4 text-white text-center">
-                    <strong class="text-2xl">1st Place</strong>
-                    <p class="text-md py-4 font-extralight">3000 USD</p>
+                    <strong class="text-2xl">Juara 1</strong>
+                    <p class="text-md py-4 font-extralight">Rp 2.000.000</p>
                 </main>
             </div>
 
             <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
                 <main class="py-4 px-4 text-white text-center">
-                    <strong class="text-2xl">2nd Place</strong>
-                    <p class="text-md py-4 font-extralight">1000 USD</p>
+                    <strong class="text-2xl">Juara 2</strong>
+                    <p class="text-md py-4 font-extralight">Rp 1.000.000</p>
                 </main>
             </div>
 
             <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
                 <main class="py-4 px-4 text-white text-center">
-                    <strong class="text-2xl">3rd Place</strong>
-                    <p class="text-md py-4 font-extralight">500 USD</p>
+                    <strong class="text-2xl">Juara 3</strong>
+                    <p class="text-md py-4 font-extralight">Rp 500.000</p>
                 </main>
             </div>
         </div>
     </section>
 
 
-    <div class="bg-white text-black">
-        <div
-                class="max-w-2xl mx-auto text-center py-24 px-4 md:py-36 sm:px-6 lg:px-8"
-        >
-            <h2 class="text-3xl font-extrabold  sm:text-4xl">
-                <span class="block">Contact Person</span>
+    <div class="bg-gray-100">
+        <div class="pt-12 sm:pt-16 lg:pt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
+                        Penanggung Jawab Event
+                    </h2>
+                    <p class="mt-4 text-xl text-gray-600">
+                        Kordinator dari {{$event->name}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 bg-white pb-16 sm:mt-12 sm:pb-20 lg:pb-28">
+            <div class="relative">
+                <div class="absolute inset-0 h-1/2 bg-gray-100"></div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
+                        <div class="flex-1 bg-white px-6 py-8 lg:p-12">
+                            <h3 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
+                                Ahmad Ramadhani
+                            </h3>
 
-            </h2>
-            <div class="mt-5 rounded-xl shadow-lg bg-gray-200 relative p-10">
-                <h1 class="font-semibold text-lg">Ahmad Ramadhani</h1>
-                <p>Coordinator of {{$event->name}}</p>
-                <p>Phone Number : 08133472313265</p>
-                <p>Line ID : ramdhoni</p>
-                <p>Email : icw.its@gmail.com</p>
+                            <p class="mt-6 text-base text-gray-500">Phone Number : 08133472313265</p>
+                            <p class="mt-1 text-base text-gray-500">Line ID : ramdhoni</p>
+                            <p class="mt-1 text-base text-gray-500">Email : icw.its@gmail.com</p>
+                            <div class="mt-8">
+                                <div class="flex items-center">
+                                    <h4 class="flex-shrink-0 pr-4 bg-white text-sm tracking-wider font-semibold uppercase text-indigo-600">
+                                        Apa yang termasuk?
+                                    </h4>
+                                    <div class="flex-1 border-t-2 border-gray-200"></div>
+                                </div>
+                                <ul class="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <svg class="h-5 w-5 text-green-400"
+                                                 x-description="Heroicon name: solid/check-circle"
+                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                 fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                      clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">
+                                            Sertifikat
+                                        </p>
+                                    </li>
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <svg class="h-5 w-5 text-green-400"
+                                                 x-description="Heroicon name: solid/check-circle"
+                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                 fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                      clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">
+                                            Hadiah
+                                        </p>
+                                    </li>
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <svg class="h-5 w-5 text-green-400"
+                                                 x-description="Heroicon name: solid/check-circle"
+                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                 fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                      clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">
+                                            Pengalaman
+                                        </p>
+                                    </li>
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <svg class="h-5 w-5 text-green-400"
+                                                 x-description="Heroicon name: solid/check-circle"
+                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                 fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                      clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">
+                                            Relasi
+                                        </p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+                            <p class="text-lg leading-6 font-medium text-gray-900">
+                                Guidebook
+                            </p>
+                            <div class="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
+                <span>
+                  Rp{{$event->price}}
+                </span>
+                                <span class="ml-3 text-xl font-medium text-gray-500">
+                  USD
+                </span>
+                            </div>
+                            <p class="mt-4 text-sm">
+                                <a href="#" class="font-medium text-gray-500 underline">
+                                    Pelejari lebih lanjut tentang Guidebook
+                                </a>
+                            </p>
+                            <div class="mt-6">
+                                <div class="rounded-md shadow">
+                                    <a href="#"
+                                       class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900">
+                                        Download GuideBook
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm">
+                                <a href="#" class="font-medium text-gray-900">
+                                    Ukuran Dokumen
+                                    <!-- space -->
+                                    <span class="font-normal text-gray-500">
+                    (20MB)
+                  </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
