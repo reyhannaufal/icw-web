@@ -31,36 +31,36 @@ class EventController extends Controller
                 ]);
             } // Payment is waiting for verification
             else if ($payment_status == 'pending') {
-                $view = view('dashboard.user.register-status', [
+                $view = view('dashboard.user.event-register-index', [
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
-                        'price' => 'Rp. 75,000',
+                        'price' => 'Rp. ' . $event->price,
                         'text' => 'Pembayaran Anda sedang diproses',
-                        'rgba' => 'rgba(227, 232, 255, 0.5)'
+                        'rgba' => 'rgba(241, 213, 168, 0.507);'
                     ],
                     'payment_receipt' => Auth::user()->getPaymentReceipt($event)
                 ]);
             } // Payment failed
             else if ($payment_status == 'failed') {
-                $view = view('dashboard.user.register-status', [
+                $view = view('dashboard.user.event-register-index', [
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
-                        'price' => 'Rp. 75,000',
+                        'price' => 'Rp. ' . $event->price,
                         'text' => 'Pembayaran Anda ditolak, hubungi penanggung jawab event ini untuk info lebih lanjut',
-                        'rgba' => 'rgba(240, 174, 172, 0.6)'
+                        'rgba' => 'rgba(240, 174, 172, 0.6);'
                     ],
                 ]);
             } // Payment success
             else if ($payment_status == 'success') {
-                $view = view('dashboard.user.register-status', [
+                $view = view('dashboard.user.event-register-index', [
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
-                        'price' => 'Rp. 75,000',
+                        'price' => 'Rp. ' . $event->price,
                         'text' => 'Pembayaran Anda telah diterima, buka menu dashboard events untuk info lebih lanjut',
-                        'rgba' => 'rgba(183, 221, 213, 0.7)'
+                        'rgba' => 'rgba(183, 221, 213, 0.6);'
                     ],
                 ]);
             } else {
@@ -70,7 +70,7 @@ class EventController extends Controller
             if (Auth::user()->isRegistered($event)) {
                 Auth::user()->events()->attach($event->id);
             }
-            $view = view('dashboard.user.register-status', [
+            $view = view('dashboard.user.event-register-index', [
                 'data' => [
                     'event_name' => $event->name,
                     'status' => '',
@@ -104,7 +104,7 @@ class EventController extends Controller
         ]);
         request()->user()->notify(new PaymentStatus('pending', $event->name, Auth::user()->name));
 
-        return back()->with('success','Register successfully!');
+        return back()->with('success','Pendaftaran Sukses!');
     }
 
     public function resetStatus(Event $event)
@@ -114,6 +114,6 @@ class EventController extends Controller
             'updated_at' => Carbon::now()
         ]);
 
-        return back()->with('success','Reset status successfully!');
+        return back()->with('success','Reset status pembayaran sukses!');
     }
 }

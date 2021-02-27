@@ -49,7 +49,9 @@
                     <strong>Daftar Peserta</strong>
                 </h3>
                 <div class="mt-3 sm:mt-0 sm:ml-4">
-                    <a href="{{ route('export', Str::slug($event_name, '-')) }}">
+                    <a href="{{ ($event_name != 'Semua Event')
+                                ? route('export', Str::slug($event_name, '-'))
+                                : route('exportAll') }}">
                         <button type="button"
                                 class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             Cetak Peserta
@@ -70,9 +72,13 @@
                         <tr>
                             <th data-priority="1">Nama</th>
                             <th data-priority="2">Email</th>
-                            <th data-priority="3">Institusi</th>
+                            <th data-priority="3">Asal Sekolah</th>
                             <th data-priority="4">No. Telepon</th>
                             <th data-priority="5">Status</th>
+                            @if ($event_name == 'Semua Event')
+                                <th data-priority="6">Event</th>
+                            @endif
+                            <th data-priority="7">Tanggal Daftar</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -82,7 +88,14 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->institution }}</td>
                                     <td>{{ $user->phone_number }}</td>
-                                    <td>{{ ucfirst($user->participation->payment_status) }}</td>
+                                    <td>{{ ucfirst(($event_name != 'Semua Event')
+                                            ? $user->participation->payment_status
+                                            : $user->payment_status) }}
+                                    </td>
+                                    @if ($event_name == 'Semua Event')
+                                        <td>{{ $user->event_name }}</td>
+                                    @endif
+                                    <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

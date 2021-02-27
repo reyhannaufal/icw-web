@@ -9,7 +9,7 @@
                         <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="title" class="block text-sm font-medium text-gray-700">Judul</label>
-                                <input type="text" name="title" id="title" autocomplete="title"
+                                <input required type="text" name="title" id="title" autocomplete="title"
                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                        value="{{ $announcement->title }}"
                                 >
@@ -20,8 +20,8 @@
 
                             <div class="col-span-6">
                                 <label for="body" class="block text-sm font-medium text-gray-700">Isi Pengumuman</label>
-                                <textarea type="text" name="body" id="body"
-                                          autocomplete="body" rows="5"
+                                <textarea required type="text" name="body" id="body"
+                                          autocomplete="body" rows="3"
                                           class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 >{{ $announcement->body }}</textarea>
                                 @error('body')
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                        <a class="mr-8" href="javascript:history.back()">Kembali</a>
+                        <a class="mr-8 hover:underline" href="javascript:history.back()">Kembali</a>
                         <button type="submit"
                                 class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             Simpan
