@@ -52,7 +52,7 @@
                                 </svg>
                             </div>
                             <div class="ml-4 text-base font-bold text-black hover:text-gray-900">
-                                About Us
+                                Tentang Kami
                             </div>
                         </a>
 

@@ -8,7 +8,7 @@
                 <h2
                         class="text-3xl font-extrabold tracking-tight text-gray-100 sm:text-4xl animate-pulse"
                 >
-                    Contact Us
+                Contact Us
                 </h2>
                 <p class="mt-4 text-lg leading-6 text-gray-200" data-aos="fade-up" data-aos-duration="2000">
                     We are here to help and answer any questions you might have <br>
@@ -102,7 +102,7 @@
                         <label
                                 for="phone_number"
                                 class="block text-sm font-medium text-gray-100"
-                        >Phone Number</label
+                        >Nomor Telepon</label
                         >
                         <input  required
                                 id="phone_number"
@@ -122,7 +122,7 @@
                         <label
                                 for="message"
                                 class="block text-sm font-medium text-gray-100"
-                        >Message</label
+                        >Pesan</label
                         >
                         <div class="mt-1">
                             <textarea  required

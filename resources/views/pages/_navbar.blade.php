@@ -39,10 +39,10 @@
                 </transition>
             </div>
                 <a href="/about" class="text-base font-bold text-black hover:text-gray-700">
-                    About Us
+                    Tentang Kami
                 </a>
                 <a href="/contact" class="text-base font-bold text-black hover:text-gray-700">
-                    Contact Us
+                    Kontak Kami
                 </a>
         </nav>
             <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
