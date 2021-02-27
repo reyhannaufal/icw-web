@@ -34,6 +34,13 @@
                     </x-jet-responsive-nav-link>
                 </div>
             @endif
+        @else
+        <!-- Your events  -->
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-jet-responsive-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">
+                    {{ __('Event Anda') }}
+                </x-jet-responsive-nav-link>
+            </div>
         @endif
     </div>
 

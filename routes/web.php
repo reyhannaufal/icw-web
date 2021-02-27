@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/announcements', [AnnouncementsController::class, 'index'])->name('announcements');
 
+    Route::get('/events', [DashboardEventsController::class, 'index'])->name('events.index');
     Route::get('register/{event}', [EventController::class, 'create'])->name('event-register');
     Route::post('register/{event}', [EventController::class, 'store']);
     Route::post('update/{event}', [EventController::class, 'resetStatus'])->name('reset-status');
