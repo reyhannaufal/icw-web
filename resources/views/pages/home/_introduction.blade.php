@@ -7,17 +7,17 @@
         <div class="w-auto col-span-2 md:col-span-1 pt-28 md:pt-0">
             <h2 class="text-3xl">
                 <strong>
-                    What is <abbr title="Indonesia Corrosion Week" class="no-underline">ICW</abbr>?
+                    Apa itu <abbr title="Indonesia Corrosion Week" class="no-underline">ICW</abbr>
                 </strong>
+                <div class="inline-block animate-bounce">
+                    <p class="text-5xl font-bold">?</p>
+                </div>
             </h2>
             <p class="pt-6 font-extralight text-sm lg:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore
-                et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi
-                ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit
-                esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
+                Indonesian Corrosion Week merupakan big event dari INDOCOR ITS SC. ICW memiliki tujuan untuk memberi
+                wawasan serta menjadi wadah untuk mengaktualisasikan inovasi mengenai korosi. ICW memiliki beberapa sub
+                event, diantaranya adalah ICW Paper Competition, ICW Virtual Talks, Symposium, Workshop Career Building,
+                dan Corrosion Workshop.
             </p>
 
         </div>
@@ -33,8 +33,11 @@
 
             <h2 class="text-3xl">
                 <strong>
-                    <abbr title="Indonesia Corrosion Week" class="no-underline">ICW</abbr> Goal !
+                    <abbr title="Indonesia Corrosion Week" class="no-underline">Tema</abbr> ICW
                 </strong>
+                <div class="inline-block animate-bounce">
+                    <p class="text-5xl font-bold">!</p>
+                </div>
             </h2>
             <p class="pt-6 font-extralight text-sm lg:text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
