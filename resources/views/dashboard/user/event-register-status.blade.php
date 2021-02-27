@@ -1,12 +1,6 @@
 <x-app-layout>
-    <div class="font-body max-w-7xl min-w-min mx-auto pb-40 pt-5">
-        <section class="flex flex-col xlplus:px-0 px-10 py-3">
-            <div class="py-10 font-bold">
-                <h1 class="text-2xl md:text-3xl tracking-wider">
-                    Dashboard
-                </h1>
-            </div>
-
+    <div class="font-body max-w-7xl min-w-min mx-auto pb-40 mt-16">
+        <section class="flex flex-col xlplus:px-0 px-10 my-8">
             <div
                 class="flex flex-row justify-center md:justify-between overflow-hidden bg-dashboard-0 rounded-lg w-auto z-10 relative shadow-md">
                 <div class="flex flex-col text-white md:px-8 py-4 w-full md:text-left text-center">
