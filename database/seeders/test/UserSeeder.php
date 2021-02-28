@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Test;
 
 use Illuminate\Database\Seeder;
-use App\Models\Messages;
+use App\Models\User;
 
-class MessagesSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +14,8 @@ class MessagesSeeder extends Seeder
      */
     public function run()
     {
-        Messages::factory()
-            ->count(4)
+        User::factory()
+            ->count(30)
             ->create();
     }
 }

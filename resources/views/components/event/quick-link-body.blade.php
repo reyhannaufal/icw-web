@@ -9,17 +9,10 @@
             </h3>
             <p class="text-xs">
                 @php
-                    // Asumsikan durasi cmn sehari
                     $start_at = $event->getDate('start_at', 'day');
                     $end_at = $event->getDate('end_at', 'day');
-                    $text = $start_at . ' - ' . $end_at;
 
-                    // Jika durasi lebih dari sehari, tampilkan jam dan menit
-                    if ($start_at == $end_at) {
-                        $start_at_minute = $event->getDate('start_at', 'only minute');
-                        $end_at = $event->getDate('end_at', 'only minute');
-                        $text = $start_at . ', pukul: ' . $start_at_minute . '' . ' - ' . $end_at;
-                    }
+                    $text =  $start_at . ( ($start_at == $end_at) ? '' :  ' - ' . $end_at );
                 @endphp
                 {{ $text }}
             </p>
