@@ -10,10 +10,10 @@
                 </p>
             </div>
         </div>
-        <div class="max-w-5xl rounded-xl bg-white shadow-xl p-10 mx-auto">
+        <div class="max-w-5xl rounded-xl bg-white shadow-xl pt-5 pb-4 px-10 sm:pt-8 sm:pb-10 mx-auto">
             <div class="bg-white">
                 <div class="px-4 py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <h2 class="text-lg">Info Akun Admin</h2>
+                    <h2 class="text-lg"><strong>Info Akun Admin</strong></h2>
                     <ul class="list-decimal py-4">
                         <li>Akun admin terbagi menjadi dua, yaitu admin normal dan admin master.</li>
                         <li>Akun admin normal adalah akun users dengan id <= jumlah event.</li>
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="px-4 py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <h2 class="text-lg">Authority Admin Normal</h2>
+                    <h2 class="text-lg"><strong>Authority Admin Normal</strong></h2>
                     <ul class="list-decimal py-4">
                         <li>Pesan dikelompokkan berdasarkan destinasi yang dipilih oleh user di form "Contact US".</li>
                         <li>Pesan tersebut akan ditampilkan di menu admin yang bertangung jawab atas destinasi yang terpilih.</li>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="px-4 py-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <h2 class="text-lg">Authority Admin Master</h2>
+                    <h2 class="text-lg"><strong>Authority Admin Master</strong></h2>
                     <ul class="list-decimal py-4">
                         <li>Bisa melihat dan men-download data dari event tertentu atau semua event.</li>
                         <li>Tidak bisa mem-verifikasi perserta.</li>

@@ -49,6 +49,3 @@ Route::middleware('auth')->group(function () {
     Route::delete('/paper/{user}', [PaperController::class, 'destroy'])->name('paper.destroy');
 });
 
-Route::get('/event-page', function () {
-    return view('pages.template-event-page');
-});
