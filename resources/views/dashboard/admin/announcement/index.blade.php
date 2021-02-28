@@ -36,8 +36,8 @@
 
                             {{-- Onlu master admin can read and delete announcements --}}
                             @if (auth()->user()->isMaster())
-                                <th data-priority="5">Edit</th>
-                                <th data-priority="6">Delete</th>
+                                <th data-priority="5">Ubah</th>
+                                <th data-priority="6">Hapus</th>
                             @endif
                         </tr>
                         </thead>
@@ -56,7 +56,7 @@
                                             @csrf
                                             <button
                                                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded">
-                                                Edit
+                                                Ubah
                                             </button>
                                         </form>
                                     </td>
@@ -68,7 +68,7 @@
                                             @method('DELETE')
                                             <button
                                                 class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
-                                                Delete
+                                                Hapus
                                             </button>
                                         </form>
                                     </td>
