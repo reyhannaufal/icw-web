@@ -2,7 +2,7 @@
     <div class="rounded-lg bg-white overflow-hidden shadow">
         <div class="p-6">
             <h2 class="text-base font-medium text-gray-900" id="announcements-title">
-                Announcements</h2>
+                Pengumuman</h2>
             <div class="flow-root mt-6">
                 <ul class="-my-5 divide-y divide-gray-200">
                     @forelse($announcements as $announcement)
