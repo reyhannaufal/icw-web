@@ -31,10 +31,6 @@
         {{ $slot }}
     </div>
 
-    <div class="antialiased bg-bgsection-0">
-        @include('pages.contact')
-    </div>
-
     <footer class="bg-bgnav-0">
         @include('pages.footer._footer')
     </footer>
