@@ -14,5 +14,5 @@
 
     </div>
 @else
-    No data (check database)
+    No data (check database) ur fucked up
 @endif

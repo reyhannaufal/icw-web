@@ -21,7 +21,6 @@ class DashboardController extends Controller
     public function index()
     {
         if (auth()->user()->isAdmin()) {
-
             if (auth()->user()->id == Event::all()->count() + 1) {
                 // Master admin
                 $this->authorize('interactAsMaster'); // If false, it'll display 403

@@ -25,7 +25,8 @@
                 <div class="mt-6">
                     <nav class="grid grid-cols-1 gap-7">
 
-                        <a onclick="_scrollTo(this, 'events')"
+                        <a href="/"
+                           onclick="_scrollTo(this, 'events')"
                            class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                             <div
                                     class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
