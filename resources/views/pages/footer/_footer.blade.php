@@ -9,17 +9,17 @@
         ])
 
         @include('pages.footer._footer-link', [
-            'name' => 'About Us',
+            'name' => 'Tentang Kami',
             'route' => '/about'
         ])
 
         @include('pages.footer._footer-link', [
-            'name' => 'Contact Us',
+            'name' => 'Kontak Kami',
             'route' => '/contact'
         ])
 
         @include('pages.footer._footer-link', [
-            'name' => 'Events',
+            'name' => 'Event',
             'route' => '/ scrollTo: events'
         ])
 
