@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\UsersExport;
 use App\Models\Event;
 use App\Models\Announcement;
+use App\Models\User;
 use App\Notifications\PaymentStatus;
 use Carbon\Carbon;
 use File;
@@ -80,47 +81,21 @@ class DashboardController extends Controller
     {
         // initialize event variable
         $curr_event = Event::where('id', $request->eventId)->first();
-        $this->authorize('interactAsEventAdmin', $curr_event); // If false, it'll display 403
 
-        // Update payment status
-        $pivot_table = $curr_event->usersWithPivot();
-        $pivot_table->updateExistingPivot($request->userId, [
-                'payment_status' => $request->status,
-                'updated_at' => Carbon::now()
-            ]);
-
-        // If payment receipt not default image --> delete payment receipt
-        $curr_pivot_row = $pivot_table->first()->participation;
-        $delete_success = $this->deleteLocalFile($curr_pivot_row->payment_receipt_path);
-
-        // change path to null if image is deleted successfully
-        if ($delete_success) {
-            $pivot_table->updateExistingPivot($request->userId, [
-                'payment_receipt_path' => null,
-            ]);
+        try {
+            $this->authorize('interactAsEventAdmin', $curr_event); // If false, it'll display 403
+        } catch (Throwable  $e) {
+            return back()->with('error', 'Forbidden access!');
         }
+        $curr_event->deleteFile('payment_receipts', $request->userId, $request->status);
 
         // send mail
         Notification::route('mail', $request->usermail)
             ->notify(new PaymentStatus($request->status, $curr_event->name, $request->username));
 
         return view('dashboard.admin.verification', [
-            'users' => $pivot_table->where('payment_status', 'pending')->oldest()->paginate(6)
+            'users' => $curr_event->usersWithPivot()->where('payment_status', 'pending')->oldest()->paginate(6)
         ]);
-    }
-
-    public function deleteLocalFile($path_to_file)
-    {
-        // Don't delete default image
-        if ($path_to_file !== 'payment_receipts/default.png') {
-            if (File::exists(public_path('storage/' . $path_to_file))) {
-                File::delete(public_path('storage/' . $path_to_file));
-                return true;
-            } else {
-                Log::info('File not found!');
-            }
-        }
-        return false;
     }
 
     public function exportAll()

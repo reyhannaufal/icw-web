@@ -25,13 +25,13 @@ class EventController extends Controller
         // If event isn't free
         if ($event->price != 0) { // User hasn't register
             if (!$payment_status) {
-                $view = view('dashboard.user.event-register-form', [
+                $view = view('dashboard.user.pay-form', [
                     'event' => $event,
                     'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get()
                 ]);
             } // Payment is waiting for verification
             else if ($payment_status == 'pending') {
-                $view = view('dashboard.user.event-register-index', [
+                $view = view('dashboard.user.status-card', [
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
@@ -42,7 +42,7 @@ class EventController extends Controller
                 ]);
             } // Payment failed
             else if ($payment_status == 'failed') {
-                $view = view('dashboard.user.event-register-index', [
+                $view = view('dashboard.user.status-card', [
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
@@ -53,7 +53,7 @@ class EventController extends Controller
                 ]);
             } // Payment success
             else if ($payment_status == 'success') {
-                $view = view('dashboard.user.event-register-index', [
+                $view = view('dashboard.user.status-card', [
                     'data' => [
                         'event_name' => $event->name,
                         'status' => ucfirst($payment_status),
@@ -69,7 +69,7 @@ class EventController extends Controller
             if (Auth::user()->isRegistered($event)) {
                 Auth::user()->events()->attach($event->id);
             }
-            $view = view('dashboard.user.event-register-index', [
+            $view = view('dashboard.user.status-card', [
                 'data' => [
                     'event_name' => $event->name,
                     'status' => '',

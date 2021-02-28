@@ -6,7 +6,7 @@ $(document).ready(function () {
 
         console.log(user_id, grade);
         $.ajax({
-            url: '/paper/grade',
+            url: '/admin/paper/grade',
             type: 'POST',
             data: {user_id: user_id, grade: grade},
             error:function(jqXHR, textStatus, errorThrown) {
