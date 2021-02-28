@@ -42,7 +42,7 @@
                     Tentang Kami
                 </a>
                 <a href="/contact" class="text-base font-bold text-white hover:text-gray-700">
-                    Kontak Kami
+                    Jadilah Partner Kami
                 </a>
         </nav>
             <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
