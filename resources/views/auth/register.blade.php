@@ -18,7 +18,17 @@
                     <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
                         Sign Up Now!
                     </h2>
-                    <p class="pt-4 text-gray-700">Create your account by filling up the form below.</p>
+                    <p class="mt-2 text-sm text-gray-600 max-w">Create your account by filling up the form below.</p>
+                    <p class="mt-2 text-sm text-gray-600 max-w">
+                        Or
+                        <!-- space -->
+                        <a
+                            href="{{route('login')}}"
+                            class="font-medium text-indigo-600 hover:text-indigo-500"
+                        >
+                            login to your account now!
+                        </a>
+                    </p>
                 </div>
 
                 <div class="mt-8">
@@ -79,7 +89,7 @@
                                 </div>
                             @endif
 
-                            <div class="flex-col items-center justify-end mt-4">
+                            <div class="flex-col items-center justify-end mt-8">
                                 <button class="w-full flex  justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600">
                                     {{ __('Sign Up') }}
                                 </button>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DB;
 use File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -67,6 +68,8 @@ class Event extends Model
             $date = $date->format('l, d M Y');
         } else if ($precision == 'only minute') {
             $date = $date->format('H:i');
+        } else if ($precision == 'day number') {
+            $date = $date->format('d M Y');
         } else {
             abort(404, 'Unknown date precision');
         }
@@ -116,5 +119,10 @@ class Event extends Model
             Log::info('File not found!');
         }
         return false;
+    }
+
+    public function notExpired()
+    {
+        return $this->attributes['end_at'] > Carbon::now();
     }
 }

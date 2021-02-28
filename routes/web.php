@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('error/{number}', [ErrorsController::class, 'show'])->name('error');
+Route::get('errors/{number}', [ErrorsController::class, 'show'])->name('error');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
@@ -29,9 +29,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/announcements', [AnnouncementsController::class, 'index'])->name('announcements');
 
     Route::get('/events', [DashboardEventsController::class, 'index'])->name('events.index');
-    Route::get('register/{event}', [EventController::class, 'create'])->name('event-register');
-    Route::post('register/{event}', [EventController::class, 'store']);
-    Route::post('update/{event}', [EventController::class, 'resetStatus'])->name('reset-status');
+    Route::get('/dashboard/event/{event}', [DashboardEventsController::class, 'show'])->name('events.show');
+    Route::post('/paper/{user}', [DashboardEventsController::class, 'store'])->name('events.store');
+
+    Route::get('/register/{event}', [EventController::class, 'create'])->name('event-register');
+    Route::post('/register/{event}', [EventController::class, 'store']);
+    Route::post('/update/{event}', [EventController::class, 'resetStatus'])->name('reset-status');
 
     // Admin section
     Route::get('/verify/{event}', [DashboardController::class, 'edit'])->name('verification');
@@ -45,7 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('announcement', AnnouncementsController::class);
 
     Route::get('/papers', [PaperController::class, 'index'])->name('paper.index');
-    Route::post('/paper/grade', [PaperController::class, 'update'])->name('paper.show');
+    Route::post('/admin/paper/grade', [PaperController::class, 'update'])->name('paper.update');
     Route::delete('/paper/{user}', [PaperController::class, 'destroy'])->name('paper.destroy');
 });
 

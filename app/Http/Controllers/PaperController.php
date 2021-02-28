@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Throwable;
 
 class PaperController extends Controller
 {
@@ -22,14 +24,21 @@ class PaperController extends Controller
 
     public function update(Request $request)
     {
+        $curr_event = Event::where('id', 1)->first();
+
+        try {
+            $this->authorize('interactAsEventAdmin', $curr_event); // If false, it'll display 403
+        } catch (Throwable  $e) {
+            return back()->with('error', 'Forbidden access!');
+        }
+
         // Pastikan nilai ada di antara 0-100
         if ($request->grade > 100.00 || $request->grade < 0) {
             abort(400);
         }
 
         // Update paper grade
-        Event::where('id', 1)
-            ->first()
+        $curr_event
             ->usersWithPaper()
             ->updateExistingPivot(
                 $request->user_id,
@@ -43,7 +52,7 @@ class PaperController extends Controller
         $this->authorize('interactAsAdmin', auth()->user());
         if ($user->getGrade() == 0.00) {
             $user->deletePaper();
-            return back()->with('success', 'Paper telah dihapus!');
+            return back();
         } else {
             return back()->with('error', 'Paper belum dapat dihapus!');
         }

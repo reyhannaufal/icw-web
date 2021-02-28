@@ -76,16 +76,23 @@
             </div>
             <div class="py-6 px-5">
                 <div class="mt-6">
-                    <a href="{{ route('register') }}"
-                       class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
-                        Daftar
-                    </a>
-                    <p class="mt-6 text-center text-base font-medium text-gray-500">
-                        Sudah punya akun?
-                        <a href="{{ route('login') }}" class="text-gray-900">
-                            Masuk
+                    @if ( !empty(auth()->user()) )
+                        <a href="{{ route('login') }}"
+                           class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
+                            Dashboard
                         </a>
-                    </p>
+                    @else
+                        <a href="{{ route('register') }}"
+                           class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
+                            Daftar
+                        </a>
+                        <p class="mt-6 text-center text-base font-medium text-gray-500">
+                            Sudah punya akun?
+                            <a href="{{ route('login') }}" class="text-gray-900">
+                                Masuk
+                            </a>
+                        </p>
+                    @endif
                 </div>
             </div>
         </div>

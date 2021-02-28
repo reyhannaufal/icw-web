@@ -43,7 +43,6 @@
                                         <div class="hidden" >
                                             {{ $participant->participation->paper_grade }}
                                         </div>
-{{--                                        py-2 px-4 border border-transparent hover:border-blue-500 rounded--}}
                                         <input type="text"
                                                name="paper_grade"
                                                id="grade_{{ $participant->id }}"

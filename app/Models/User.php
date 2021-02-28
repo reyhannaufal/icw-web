@@ -3,6 +3,7 @@
 namespace App\Models;
 
 //use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\PaperDeleted;
 use File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,6 +12,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Log;
+use Notification;
 use function PHPUnit\Framework\isNull;
 
 class User extends Authenticatable
@@ -59,7 +61,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Event::class)
             ->as('participation')
             ->withTimestamps()
-            ->withPivot('payment_status', 'payment_receipt_path');
+            ->withPivot('payment_status', 'payment_receipt_path', 'paper_path');
     }
 
     public function getPaymentStatus(Event $event) {
@@ -93,7 +95,12 @@ class User extends Authenticatable
 
         // Delete paper
         $success = $curr_event->deleteFile('paper', $this->id);
+
         if ($success) {
+            // send mail
+            Notification::route('mail', $this->email)
+                ->notify(new PaperDeleted($this->name));
+
             return back()->with('success', 'Paper sukses dihapus');
         } else {
             return back()->with('error', 'Paper tidak dapat dihapus');

@@ -17,7 +17,6 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/scroll-to.js') }}" defer></script>
-    <script src="{{ asset('js/change-title.js') }}"></script>
     <script src="{{ asset('js/alert.js') }}" defer></script>
 </head>
 <body onload="reScroll(this)">
