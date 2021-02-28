@@ -43,10 +43,10 @@
                 </div>
             </section>
 
-            <section class="mx-auto flex px-10 py-28 md:py-48 text-black sm:px-24 bg-white relative">
+            <section class="mx-auto flex px-10 py-28 md:py-48 text-black sm:px-24 text-white relative">
                 <div class="inline-grid max-w-7xl mx-auto grid grid-cols-2 md:gap-32 relative place-items-center">
                     <div class="w-auto col-span-2 md:col-span-1 ">
-                        <img src="{{URL::to('assets/img/notes.svg')}}" alt="question-animate"
+                        <img src="{{URL::to('assets/img/questions-animate.svg')}}" alt="question-animate"
                              class="xl:h-96 h-52 w-auto">
                     </div>
                     <div class="w-auto col-span-2 md:col-span-1 pt-28 md:pt-0"
@@ -74,152 +74,140 @@
     </div>
 
     @if($event->type == 'competition')
-    <section class="w-full bg-bgsection-0 py-24 px-4 sm:px-24 md:px-40 relative md:mt-32">
-        <div class="flex flex-1 md:mb-16 relative mx-auto z-10">
-            <div class="w-full text-white text-center place-self-center">
-                <header class="text-3xl  sm:text-4xl mdl:text-5xl lg:text-6xl">
-                    <strong class="font-bold text-gray-300 tracking-tight">
-                        Timeline
-                    </strong>
-                </header>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-8 gap-y-8  pt-20 pb-8 max-w-4xl min-w-xl mx-auto">
-            <div class="col-span-1 pr-3 pt-2 relative">
-                <div class="absolute right-2 md:right-4 -top-3 sm:top-1">
-                    <svg class="w-12 md:w-14" width="57" height="290" viewBox="0 0 57 290" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M29 261.009L29 29" stroke="#BDBDBD" stroke-width="3"/>
-                        <circle cx="28.5" cy="28.5" r="28.5" transform="rotate(90 28.5 28.5)"
-                                fill="url(#paint0_linear)"/>
-                        <circle cx="28.5" cy="28.5" r="15.5" transform="rotate(90 28.5 28.5)" fill="black"/>
-                        <defs>
-                            <linearGradient id="paint0_linear" x1="-1.90735e-06" y1="-1.90735e-06" x2="57"
-                                            y2="57" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#F2C94C"/>
-                                <stop offset="1" stop-color="#F2994A"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+        <section class="w-full bg-bgsection-0 py-24 px-4 sm:px-24 md:px-40 relative md:mt-32">
+            <div class="flex flex-1 md:mb-16 relative mx-auto z-10">
+                <div class="w-full text-white text-center place-self-center">
+                    <header class="text-3xl  sm:text-4xl mdl:text-5xl lg:text-6xl">
+                        <strong class="font-bold text-gray-300 tracking-tight">
+                            Timeline
+                        </strong>
+                    </header>
                 </div>
             </div>
-            <div class="col-span-6 bg-table-0 rounded-xl shadow-lg z-10" data-aos="zoom-in" data-aos-duration="2500">
-                <main class="py-4 px-5 md:py-6 md:px-7 text-white">
-                    <strong class="text-xl md:text-2xl">Step (Regist, competition, final, etc)</strong>
 
-                    <p class="md:text-md text-sm pt-2 font-extralight">Quick brief about the step if
-                        necessary</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">date: 31th, February 2021</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">deadline: 10 years from date</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">other content, content</p>
-                </main>
-            </div>
-            <div class="col-span-1"></div>
+            <div class="grid grid-cols-8 gap-y-8  pt-20 pb-8 max-w-4xl min-w-xl mx-auto">
+                <div class="col-span-1 pr-3 pt-2 relative">
+                    <div class="absolute right-2 md:right-4 -top-3 sm:top-1">
+                        <svg class="w-12 md:w-14" width="57" height="290" viewBox="0 0 57 290" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29 261.009L29 29" stroke="#BDBDBD" stroke-width="3"/>
+                            <circle cx="28.5" cy="28.5" r="28.5" transform="rotate(90 28.5 28.5)"
+                                    fill="url(#paint0_linear)"/>
+                            <circle cx="28.5" cy="28.5" r="15.5" transform="rotate(90 28.5 28.5)" fill="black"/>
+                            <defs>
+                                <linearGradient id="paint0_linear" x1="-1.90735e-06" y1="-1.90735e-06" x2="57"
+                                                y2="57" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F2C94C"/>
+                                    <stop offset="1" stop-color="#F2994A"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-6 bg-table-0 rounded-xl shadow-lg z-10" data-aos="zoom-in"
+                     data-aos-duration="2500">
+                    <main class="py-4 px-5 md:py-6 md:px-7 text-white">
+                        <strong class="text-xl md:text-2xl">Pendaftaran Batch 1</strong>
+                        <p class="md:text-md text-sm pt-1 font-extralight">Tanggal Pembukaan: 7 Maret 2021</p>
+                        <p class="md:text-md text-sm pt-1 font-extralight">Hingga: 26 Maret 2021</p>
+                    </main>
+                </div>
+                <div class="col-span-1"></div>
 
-            <div class="col-span-1 pr-3 pt-2 relative">
-                <div class="absolute right-2 md:right-4 -top-3 sm:top-1">
-                    <svg class="w-12 md:w-14" width="57" height="290" viewBox="0 0 57 290" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M29 261.009L29 29" stroke="#BDBDBD" stroke-width="3"/>
-                        <circle cx="28.5" cy="28.5" r="28.5" transform="rotate(90 28.5 28.5)"
-                                fill="url(#paint0_linear)"/>
-                        <circle cx="28.5" cy="28.5" r="15.5" transform="rotate(90 28.5 28.5)" fill="black"/>
-                        <defs>
-                            <linearGradient id="paint0_linear" x1="-1.90735e-06" y1="-1.90735e-06" x2="57"
-                                            y2="57" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#F2C94C"/>
-                                <stop offset="1" stop-color="#F2994A"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                <div class="col-span-1 pr-3 pt-2 relative">
+                    <div class="absolute right-2 md:right-4 -top-3 sm:top-1">
+                        <svg class="w-12 md:w-14" width="57" height="290" viewBox="0 0 57 290" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29 261.009L29 29" stroke="#BDBDBD" stroke-width="3"/>
+                            <circle cx="28.5" cy="28.5" r="28.5" transform="rotate(90 28.5 28.5)"
+                                    fill="url(#paint0_linear)"/>
+                            <circle cx="28.5" cy="28.5" r="15.5" transform="rotate(90 28.5 28.5)" fill="black"/>
+                            <defs>
+                                <linearGradient id="paint0_linear" x1="-1.90735e-06" y1="-1.90735e-06" x2="57"
+                                                y2="57" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F2C94C"/>
+                                    <stop offset="1" stop-color="#F2994A"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="col-span-6 bg-table-0 rounded-xl shadow-lg z-10" data-aos="zoom-in"
+                     data-aos-duration="2500">
+                    <main class="py-4 px-5 md:py-6 md:px-7 text-white">
+                        <strong class="text-xl md:text-2xl">Pendaftaran Batch 2</strong>
+                        <p class="md:text-md text-sm pt-1 font-extralight">Tanggal Pembukaan: 27 Maret 2021</p>
+                        <p class="md:text-md text-sm pt-1 font-extralight">Hingga: 09 April 2021</p>
+                    </main>
+                </div>
+                <div class="col-span-1"></div>
+
+                <div class="col-span-1 pr-3 pt-2 relative">
+                    <div class="absolute right-2 md:right-4 -top-3 sm:top-1">
+                        <svg class="w-12 md:w-14" width="57" height="290" viewBox="0 0 57 290" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29 261.009L29 29" stroke="#BDBDBD" stroke-width="3"/>
+                            <circle cx="28.5" cy="28.5" r="28.5" transform="rotate(90 28.5 28.5)"
+                                    fill="url(#paint0_linear)"/>
+                            <circle cx="28.5" cy="28.5" r="15.5" transform="rotate(90 28.5 28.5)" fill="black"/>
+                            <defs>
+                                <linearGradient id="paint0_linear" x1="-1.90735e-06" y1="-1.90735e-06" x2="57"
+                                                y2="57" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F2C94C"/>
+                                    <stop offset="1" stop-color="#F2994A"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-6 bg-table-0 rounded-xl shadow-lg z-10" data-aos="zoom-in"
+                     data-aos-duration="2500">
+                    <main class="py-4 px-5 md:py-6 md:px-7 text-white">
+                        <strong class="text-xl md:text-2xl">Pendaftaran Batch 3</strong>
+                        <p class="md:text-md text-sm pt-1 font-extralight">Tanggal Pembukaan:10 April 2021</p>
+                        <p class="md:text-md text-sm pt-1 font-extralight">Hingga: 17 April 2021</p>
+                    </main>
+                </div>
+                <div class="col-span-1"></div>
+
+                <div class="col-span-1 pr-3 pt-2 relative">
+                    <div class="absolute right-2 md:right-4 -top-0 sm:top-1">
+                        <svg class="w-12 md:w-14" width="57" height="57" viewBox="0 0 57 57" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="28.5" cy="28.5" r="28.5" transform="rotate(90 28.5 28.5)"
+                                    fill="url(#paint0_linear)"/>
+                            <circle cx="28.5" cy="28.5" r="15.5" transform="rotate(90 28.5 28.5)" fill="black"/>
+                            <defs>
+                                <linearGradient id="paint0_linear" x1="-1.90735e-06" y1="-1.90735e-06" x2="57"
+                                                y2="57" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F2C94C"/>
+                                    <stop offset="1" stop-color="#F2994A"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-span-6 bg-table-0 rounded-xl shadow-lg z-10" data-aos="zoom-in"
+                     data-aos-duration="2500">
+                    <main class="py-4 px-5 md:py-6 md:px-7 text-white">
+                        <strong class="text-xl md:text-2xl">Pengumuman Finalis</strong>
+                        <p class="md:text-md text-sm pt-1 font-extralight">Tanggal: 25 April 2021</p>
+                    </main>
+                </div>
+
+
+                <div class="absolute left-1/4 top-10 md:left-1/3 md:-top-8">
+                    <img src="{{URL::to('assets/img/ComEvent.png')}}" alt="competition-event"
+                         class="h-40 sm:h-52 md:h-72">
                 </div>
             </div>
-            <div class="col-span-6 bg-table-0 rounded-xl shadow-lg z-10" data-aos="zoom-in" data-aos-duration="2500">
-                <main class="py-4 px-5 md:py-6 md:px-7 text-white">
-                    <strong class="text-xl md:text-2xl">Step (Regist, competition, final, etc)</strong>
-
-                    <p class="md:text-md text-sm pt-2 font-extralight">Quick brief about the step if
-                        necessary</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">date: 31th, February 2021</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">deadline: 10 years from date</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">other content, content</p>
-                </main>
-            </div>
-            <div class="col-span-1"></div>
-
-            <div class="col-span-1 pr-3 pt-2 relative">
-                <div class="absolute right-2 md:right-4 -top-3 sm:top-1">
-                    <svg class="w-12 md:w-14" width="57" height="290" viewBox="0 0 57 290" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M29 261.009L29 29" stroke="#BDBDBD" stroke-width="3"/>
-                        <circle cx="28.5" cy="28.5" r="28.5" transform="rotate(90 28.5 28.5)"
-                                fill="url(#paint0_linear)"/>
-                        <circle cx="28.5" cy="28.5" r="15.5" transform="rotate(90 28.5 28.5)" fill="black"/>
-                        <defs>
-                            <linearGradient id="paint0_linear" x1="-1.90735e-06" y1="-1.90735e-06" x2="57"
-                                            y2="57" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#F2C94C"/>
-                                <stop offset="1" stop-color="#F2994A"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-            </div>
-            <div class="col-span-6 bg-table-0 rounded-xl shadow-lg z-10" data-aos="zoom-in" data-aos-duration="2500">
-                <main class="py-4 px-5 md:py-6 md:px-7 text-white">
-                    <strong class="text-xl md:text-2xl">Step (Regist, competition, final, etc)</strong>
-
-                    <p class="md:text-md text-sm pt-2 font-extralight">Quick brief about the step if
-                        necessary</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">date: 31th, February 2021</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">deadline: 10 years from date</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">other content, content</p>
-                </main>
-            </div>
-            <div class="col-span-1"></div>
-
-            <div class="col-span-1 pr-3 pt-2 relative">
-                <div class="absolute right-2 md:right-4 -top-0 sm:top-1">
-                    <svg class="w-12 md:w-14" width="57" height="57" viewBox="0 0 57 57" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="28.5" cy="28.5" r="28.5" transform="rotate(90 28.5 28.5)"
-                                fill="url(#paint0_linear)"/>
-                        <circle cx="28.5" cy="28.5" r="15.5" transform="rotate(90 28.5 28.5)" fill="black"/>
-                        <defs>
-                            <linearGradient id="paint0_linear" x1="-1.90735e-06" y1="-1.90735e-06" x2="57"
-                                            y2="57" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#F2C94C"/>
-                                <stop offset="1" stop-color="#F2994A"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-            </div>
-            <div class="col-span-6 bg-table-0 rounded-xl shadow-lg z-10" data-aos="zoom-in" data-aos-duration="2500">
-                <main class="py-4 px-5 md:py-6 md:px-7 text-white">
-                    <strong class="text-xl md:text-2xl">Step (Regist, competition, final, etc)</strong>
-
-                    <p class="md:text-md text-sm pt-2 font-extralight">Quick brief about the step if
-                        necessary</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">date: 31th, February 2021</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">deadline: 10 years from date</p>
-                    <p class="md:text-md text-sm pt-1 font-extralight">other content, content</p>
-                </main>
-            </div>
-            <div class="col-span-1"></div>
-
-
-            <div class="absolute left-1/4 top-10 md:left-1/3 md:-top-8">
-                <img src="{{URL::to('assets/img/ComEvent.png')}}" alt="competition-event"
-                     class="h-40 sm:h-52 md:h-72">
-            </div>
-        </div>
-    </section>
+        </section>
     @endif
-    <div class="bg-white text-black">
+
+    <div class="text-white py-16">
         <div
-                class="max-w-2xl mx-auto text-center py-24 px-4 md:py-36 sm:px-6 lg:px-8"
+                class="max-w-2xl mx-auto text-center py-24 px-4 md:py-36 sm:px-6 lg:px-8 xl:border-4 xl:rounded-xl"
         >
             <h2 class="text-3xl font-extrabold  md:text-4xl animate-bounce">
                 <span class="block">Ayoo tunggu apa lagi?</span>
@@ -229,53 +217,104 @@
             </p>
             <a
                     onclick="_scrollTo(this, 'header')"
-                    class="cursor-pointer mt-8 w-full inline-flex bg-bgsection-0 items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-gray-800 sm:w-auto"
+                    class="cursor-pointer mt-8 w-full inline-flex bg-white  items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-black hover:bg-gray-400 sm:w-auto"
             >
                 Daftar Sekarang
             </a>
         </div>
     </div>
 
-    <section class="w-full py-36 px-20 sm:px-24 md:px-24">
-        <div class="grid grid-cols-2 gap-28 relative pt-2 max-w-7xl mx-auto md:my-10">
-            <div class="w-full col-span-2 text-white text-center">
-                <h2 class="text-3xl font-extrabold  md:text-4xl">
-                    <span class="block">Hadiah</span>
-                    <span class="block">Kompetisi!</span>
-                </h2>
-            </div>
+    {{-- prize section --}}
 
-            <div class="col-span-2">
-                <img src="{{URL::to('assets/img/event-prize.png')}}" alt="prize_svg"
-                     class="mx-auto h-64 md:h-96">
+    @if($event->type == 'competition')
+    <section class="flex flex-col flex-1 xlplus:px-0 px-10 bg-bgsection-0 py-28 items-center">
+        <div class="text-3xl font-bold self-center">
+            <h1 class="text-white">Hadiah Kompetisi</h1>
+        </div>
+
+        <div class="text-sm font-medium self-center text-captionprize-0 text-center py-4">
+            <p>
+                There’s no event that complete without the prizes to appreciate the winner!
+                <br>
+                Get your chance to win some cash.
+            </p>
+        </div>
+
+
+        <div class="py-10 w-1/2 self-center">
+            <img src=" {{URL::to('assets/img/prize.png')}} " alt="prize-reward">
+        </div>
+
+
+        <div class="flex">
+            <div class="flex-1">
+                <div class="grid grid-cols-3 gap-20">
+
+
+                    <div
+                            class="row-start-2 md:col-start-1  md:row-start-1 col-span-3 md:col-span-1 transform duration-200 w-auto bg-bgsection-0 rounded-xl shadow-neu self-center hover:scale-105">
+                        <div class="flex flex-col px-10 py-10 text-white">
+                            <h1 class="font-semibold self-center text-sm pb-4">
+                                2nd Winner
+                            </h1>
+
+                            <p class="font-bold text-2xl self-center text-center">
+                                ???
+                                <br>
+                                IDR
+
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+                    <div
+                            class="row-start-1 md:row-start-1  col-span-3 md:col-span-1 transform duration-200 w-auto bg-bgsection-0 rounded-xl shadow-neu self-center flex-1 hover:scale-110">
+                        <div class="flex flex-col px-10 py-10 text-white">
+                            <h1 class="font-semibold self-center text-sm pb-4">
+                                1st Winner
+                            </h1>
+
+                            <p class="font-bold text-2xl self-center text-center">
+                                ???
+                                <br>
+                                IDR
+
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+                    <div
+                            class="col-span-3 md:col-span-1 transform duration-200 w-auto bg-bgsection-0 rounded-xl shadow-neu self-center hover:scale-105">
+                        <div class="flex flex-col px-10 py-10 text-white">
+                            <h1 class="font-semibold self-center text-sm pb-4">
+                                3rd Winner
+                            </h1>
+
+                            <p class="font-bold text-2xl self-center text-center">
+                                ??
+                                <br>
+                                IDR
+
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-4 lg:gap-10 bg-table py-10 md:py-20 max-w-7xl mx-auto">
-
-            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
-                <main class="py-4 px-4 text-white text-center">
-                    <strong class="text-2xl">Juara 1</strong>
-                    <p class="text-md py-4 font-extralight">Rp 2.000.000</p>
-                </main>
-            </div>
-
-            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
-                <main class="py-4 px-4 text-white text-center">
-                    <strong class="text-2xl">Juara 2</strong>
-                    <p class="text-md py-4 font-extralight">Rp 1.000.000</p>
-                </main>
-            </div>
-
-            <div class="col-span-3 md:col-span-1 w-full bg-table-0 rounded-full">
-                <main class="py-4 px-4 text-white text-center">
-                    <strong class="text-2xl">Juara 3</strong>
-                    <p class="text-md py-4 font-extralight">Rp 500.000</p>
-                </main>
-            </div>
         </div>
+
     </section>
-
+    @endif
 
     <div class="bg-gray-100">
         <div class="pt-12 sm:pt-16 lg:pt-20">
@@ -385,10 +424,10 @@
                             </p>
                             <div class="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
                 <span>
-                  Rp{{$event->price}}
+                  {{$event->price}}
                 </span>
                                 <span class="ml-3 text-xl font-medium text-gray-500">
-                  USD
+                  Rp
                 </span>
                             </div>
                             <p class="mt-4 text-sm">

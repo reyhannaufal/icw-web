@@ -23,7 +23,7 @@ class MessagesController extends Controller
     }
 
     public function create() {
-        return view('pages.contact');
+        return view('pages.become-partner');
     }
 
     public function update(Request $request, Messages $message)

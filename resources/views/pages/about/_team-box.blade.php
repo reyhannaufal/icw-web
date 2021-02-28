@@ -10,7 +10,7 @@
     </div>
     <ul class="justify-center mt-3 px-20 lg:pl-24">
         <li>
-            <a href="#" class="text-gray-400  hover:text-gray-500">
+            <a href="{{$url_linkedin}}" class="text-gray-400  hover:text-gray-500">
                 <span class="sr-only">LinkedIn</span>
                 <svg
                         class="w-6 h-6"
