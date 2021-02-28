@@ -31,9 +31,10 @@
         {{ $slot }}
     </div>
 
-    <footer class="bg-bgnav-0">
         @include('pages.footer._footer')
     </footer>
+
+
 </body>
 <style>
     *{

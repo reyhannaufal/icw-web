@@ -24,7 +24,9 @@ class EventSeeder extends Seeder
         $events = [
             [
                 'Paper Competition', '0', 'competition', '2021/03/07', '2021/04/18',
-                'Paper Competition ICW 2021 merupakan Kompetisi essay yang diperuntukkan untuk mahasiswa se-Indonesia sebagai sarana mengaktualisasikan ide dan inovasinya dalam bidang korosi dengan mengangkat tema “Mewujudkan pengembangan inovasi pengendalian korosi secara optimal.'
+                'Paper Competition ICW 2021 merupakan Kompetisi essay yang diperuntukkan untuk mahasiswa 
+                se-Indonesia sebagai sarana mengaktualisasikan ide dan inovasinya dalam bidang korosi dengan mengangkat 
+                tema “Mewujudkan pengembangan inovasi pengendalian korosi secara optimal.'
             ],
             [
                 'Corrosion Workshop', '0', 'non-competition', '2021/05/21', '2021/05/21', 'Program pelatihan untuk mahasiswa dalam bentuk simulasi dengan pemberian study case mengenai korosi. Selain itu, workshop ini juga memberikan tambahan kualifikasi profesi serta kecakapan diri.

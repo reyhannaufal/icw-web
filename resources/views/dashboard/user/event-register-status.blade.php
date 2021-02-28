@@ -68,7 +68,10 @@
                                 </p>
 
                                 <p class="font-medium text-base px-2">
-                                    <strong>Tanggal:</strong> {{$event->start_date}}
+                                    @php
+                                        $start_at = $event->getDate('start_at', 'day');
+                                    @endphp
+                                    <strong>Tanggal:</strong> {{$start_at}}
                                 </p>
 
                                 <p class="font-medium text-base px-2 pb-4">

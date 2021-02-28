@@ -17,7 +17,7 @@
                                 class="mt-1 block text-4xl tracking-tight font-extrabold sm:text-5xl xl:text-6xl"
                         >
                   <span class="block text-gray-100">Indonesian Corrosion Week</span>
-                  <span class="block text-gray-500">ITS Student Chapter</span>
+                  <span class="block text-gray-500">ITS SB</span>
                 </span>
                     </h1>
                     <p

@@ -16,9 +16,9 @@
                     </a>
 
                     <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
-                        Sign Up Now!
+                       Daftar Sekarang!
                     </h2>
-                    <p class="pt-4 text-gray-700">Create your account by filling up the form below.</p>
+                    <p class="pt-4 text-gray-700">Isi data-data dibawah dengan benar.</p>
                 </div>
 
                 <div class="mt-8">
@@ -28,7 +28,7 @@
                             @csrf
 
                             <div>
-                                <x-jet-label  class="block text-sm font-medium text-gray-700" for="name" value="{{ __('Name') }}" />
+                                <x-jet-label  class="block text-sm font-medium text-gray-700" for="name" value="{{ __('Nama') }}" />
                                 <x-jet-input id="name"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                             </div>
 
@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="mt-4">
-                                <x-jet-label for="phone_number" class="block text-sm font-medium text-gray-700" value="{{ __('Phone Number') }}" />
+                                <x-jet-label for="phone_number" class="block text-sm font-medium text-gray-700" value="{{ __('Nomor Telefon') }}" />
                                 <x-jet-input id="phone_number"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                              type="tel"
                                              placeholder="+62"
@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="mt-4">
-                                <x-jet-label for="password_confirmation"  class="block text-sm font-medium text-gray-700" value="{{ __('Confirm Password') }}" />
+                                <x-jet-label for="password_confirmation"  class="block text-sm font-medium text-gray-700" value="{{ __('Konfirmasi Password') }}" />
                                 <x-jet-input id="password_confirmation"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="password" name="password_confirmation" required autocomplete="new-password" />
                             </div>
 
@@ -81,7 +81,7 @@
 
                             <div class="flex-col items-center justify-end mt-4">
                                 <button class="w-full flex  justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600">
-                                    {{ __('Sign Up') }}
+                                    {{ __('Daftar Akun') }}
                                 </button>
                             </div>
 

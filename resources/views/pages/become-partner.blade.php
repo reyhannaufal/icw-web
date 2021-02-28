@@ -11,7 +11,7 @@
                     Jadilah Partner Kami
                 </h2>
                 <p class="mt-4 text-lg leading-6 text-gray-200" data-aos="fade-up" data-aos-duration="2000">
-                    Kalimat pengantar buat calon partner
+                    Isilah form berikut dengan benar.
                 </p>
             </div>
             <div class="mt-12">
@@ -164,20 +164,3 @@
         <p class="text-center -white-500 text-xs pt-4">* Tunggu balasan admin melalui email atau nomor telepon Anda.</p>
     </div>
 </x-guest-layout>
-
-
-<div class="input-group <?php echo (!empty($religion_err)) ? 'has-error' : ''; ?>" >
-    <label class="label">Religion</label>
-    <div class="rs-select2 js-select-simple select--no-search">
-        <select name="religion">
-            <option disabled="disabled" selected="selected" value="">Choose one</option>
-            <option value="Islam">Islam</option>
-            <option value="Kristen Protestan">Kristen Protestan</option>
-            <option value="Katolik">Katolik</option>
-            <option value="Hindu">Hindu</option>
-            <option value="Buddha">Buddha</option>
-            <option value="Kong Hu Cu">Kong Hu Cu</option>
-        </select>
-        <div class="select-dropdown"></div>
-    </div>
-</div>
