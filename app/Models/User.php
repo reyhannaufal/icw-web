@@ -3,12 +3,14 @@
 namespace App\Models;
 
 //use Illuminate\Contracts\Auth\MustVerifyEmail;
+use File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Log;
 use function PHPUnit\Framework\isNull;
 
 class User extends Authenticatable
@@ -79,6 +81,23 @@ class User extends Authenticatable
     public function getPaperPath() {
         $path = $this->events()->where('name', 'Paper Competition')->pluck('paper_path')->first();
         return asset('storage/' . $path);
+    }
+
+    public function getGrade() {
+        return $this->events()->where('name', 'Paper Competition')->pluck('paper_grade')->first();
+    }
+
+    public function deletePaper() {
+        // initialize event variable
+        $curr_event = Event::where('id', 1)->first();
+
+        // Delete paper
+        $success = $curr_event->deleteFile('paper', $this->id);
+        if ($success) {
+            return back()->with('success', 'Paper sukses dihapus');
+        } else {
+            return back()->with('error', 'Paper tidak dapat dihapus');
+        }
     }
 
     public function isRegistered(Event $event) {

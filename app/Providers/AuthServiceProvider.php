@@ -6,6 +6,7 @@ use App\Models\Event;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use App\Models\User;
+use Log;
 
 class AuthServiceProvider extends ServiceProvider
 {

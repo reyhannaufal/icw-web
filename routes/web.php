@@ -45,7 +45,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('announcement', AnnouncementsController::class);
 
     Route::get('/papers', [PaperController::class, 'index'])->name('paper.index');
-    Route::post('/paper/grade', [PaperController::class, 'update']);
+    Route::post('/paper/grade', [PaperController::class, 'update'])->name('paper.show');
+    Route::delete('/paper/{user}', [PaperController::class, 'destroy'])->name('paper.destroy');
 });
 
 Route::get('/event-page', function () {

@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Log;
 use Str;
+use Throwable;
 
 class Event extends Model
 {
@@ -68,5 +71,50 @@ class Event extends Model
             abort(404, 'Unknown date precision');
         }
         return $date;
+    }
+
+    public function deleteFile($type, $user_id, $status = null)
+    {
+        $pivot_table = $this->usersWithPivot();
+        if ($type != 'paper') {
+            $pivot_table->updateExistingPivot($user_id, [
+                'payment_status' => $status,
+                'updated_at' => Carbon::now()
+            ]);
+            $path = $pivot_table->first()->participation->payment_receipts_path;
+        } else {
+            $path = $pivot_table->first()->participation->paper_path;
+        }
+        $delete_success = false;
+
+        // If not default file --> delete file
+        if (isset($path) && $path != 'papers/dummy.pdf' && $path != 'payment_receipts/default.png') {
+            $delete_success = $this->deleteLocalFile($path);
+        }
+
+        // change path to null if image is deleted successfully
+        if ($delete_success) {
+            if ($type == 'paper') {
+                $pivot_table->updateExistingPivot($user_id, [
+                    'paper_path' => null,
+                ]);
+            } else {
+                $pivot_table->updateExistingPivot($user_id, [
+                    'payment_receipts' => null,
+                ]);
+            }
+        }
+        return $delete_success;
+    }
+
+    public function deleteLocalFile($path_to_file)
+    {
+        if (File::exists(public_path('storage/' . $path_to_file))) {
+            File::delete(public_path('storage/' . $path_to_file));
+            return true;
+        } else {
+            Log::info('File not found!');
+        }
+        return false;
     }
 }
