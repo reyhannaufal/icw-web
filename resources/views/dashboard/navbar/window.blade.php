@@ -31,23 +31,37 @@
                     </div>
                 @endif
 
+                @if (isset($event))
+                    @if (!$event->isFree())
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}"
+                                            :active="request()->routeIs('verification')">
+                                Verifikasi peserta
+                                <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
+                                    {{ $event->countRowsOnStatus('pending')  }}
+                                </span>
+                            </x-jet-nav-link>
+                        </div>
+                    @endif
+
+                    @if ($event->name == 'Paper Competition')
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('paper.index') }}"
+                                            :active="request()->routeIs('paper.index')">
+                                Paper
+                                <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
+                                {{ $papers_count  }}
+                            </span>
+                            </x-jet-nav-link>
+                        </div>
+                    @endif
+                @endif
+
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
                         {{ __('Pengumuman') }}
                     </x-jet-nav-link>
                 </div>
-
-                @if (isset($event) && !$event->isFree())
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}"
-                                        :active="request()->routeIs('verification')">
-                            Verifikasi peserta
-                            <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
-                                    {{ $event->countRowsOnStatus('pending')  }}
-                                </span>
-                        </x-jet-nav-link>
-                    </div>
-                @endif
             @else
                 <!-- Your events  -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -86,25 +100,26 @@
                     </x-slot>
 
                     <x-slot name="content">
-                    @if (auth()->user()->isAdmin())
-                        <!-- Dokumentasi -->
+                        @if (auth()->user()->isAdmin())
+                            <!-- Dokumentasi -->
+                                <div class="block px-4 py-2 text-xs text-gray-400">
+                                    {{ __('Dokumentasi') }}
+                                </div>
+
+                                <x-jet-dropdown-link href="/guide" :active="request()->routeIs('guide.index')">
+                                    {{ __('Petunjuk') }}
+                                </x-jet-dropdown-link>
+                        @else
+                            <!-- Admin tidak dapat mengakses menu profil  -->
+                            <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Dokumentasi') }}
+                                {{ __('Manage Account') }}
                             </div>
 
-                            <x-jet-dropdown-link href="/guide" :active="request()->routeIs('guide.index')">
-                                {{ __('Petunjuk') }}
+                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                {{ __('Profile') }}
                             </x-jet-dropdown-link>
-                    @endif
-
-                    <!-- Account Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
-                            {{ __('Manage Account') }}
-                        </div>
-
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Profile') }}
-                        </x-jet-dropdown-link>
+                        @endif
 
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">

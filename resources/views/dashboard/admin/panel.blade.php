@@ -72,7 +72,7 @@
                         <tr>
                             <th data-priority="1">Nama</th>
                             <th data-priority="2">Email</th>
-                            <th data-priority="3">Asal Sekolah</th>
+                            <th data-priority="3">Institusi</th>
                             <th data-priority="4">No. Telepon</th>
                             <th data-priority="5">Status</th>
                             @if ($event_name == 'Semua Event')

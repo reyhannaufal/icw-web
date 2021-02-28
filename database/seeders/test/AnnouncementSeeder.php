@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Test;
 
 use App\Models\Announcement;
 use Illuminate\Database\Seeder;

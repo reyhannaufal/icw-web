@@ -43,6 +43,9 @@ Route::middleware('auth')->group(function () {
     Route::get('guide', [GuideController::class, 'index']);
     Route::resource('message', MessagesController::class);
     Route::resource('announcement', AnnouncementsController::class);
+
+    Route::get('/papers', [PaperController::class, 'index'])->name('paper.index');
+    Route::post('/paper/grade', [PaperController::class, 'update']);
 });
 
 Route::get('/event-page', function () {

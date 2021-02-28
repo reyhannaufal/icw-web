@@ -22,7 +22,7 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
-                                <label for="institution" class="block text-sm font-medium text-gray-700">Asal Sekolah</label>
+                                <label for="institution" class="block text-sm font-medium text-gray-700">Institusi</label>
                                 <div class="bg-yellow-50 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                     {{ $message->institution }}
                                 </div>

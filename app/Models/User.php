@@ -73,6 +73,11 @@ class User extends Authenticatable
 
     public function getPaymentReceipt(Event $event) {
         $path = $this->events()->where('event_id', $event->id)->pluck('payment_receipt_path')->first();
+        dd(asset('storage/' . $path));
+    }
+
+    public function getPaperPath() {
+        $path = $this->events()->where('name', 'Paper Competition')->pluck('paper_path')->first();
         return asset('storage/' . $path);
     }
 
