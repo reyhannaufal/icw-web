@@ -67,7 +67,7 @@
                                 </svg>
                             </div>
                             <div class="ml-4 text-base font-bold text-black hover:text-gray-900">
-                                Kontak Kami
+                                Jadilah Partner Kami
                             </div>
                         </a>
 
