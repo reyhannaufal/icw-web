@@ -36,6 +36,10 @@
 
         <!-- Start : Our Last Recap -->
         @include('pages.home._recap')
+
+        <div class="bg-bgsection-0">
+            @include('pages.home._contact-section')
+        </div>
     </div>
         <style>
             iframe {

@@ -1,15 +1,17 @@
 <x-guest-layout>
-    <div class="text-white px-6 pt-0 pb-40 overflow-hidden sm:px-6 lg:px-8">
+    @section('title', 'Contact Page')
+    @section('description', 'Contact ICW')
+
+    <div class="text-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-40">
         <div class="relative max-w-xl mx-auto">
             <div class="text-center">
                 <h2
                         class="text-3xl font-extrabold tracking-tight text-gray-100 sm:text-4xl animate-pulse"
                 >
-                    Kontak Kami
+                    Jadilah Partner Kami
                 </h2>
                 <p class="mt-4 text-lg leading-6 text-gray-200" data-aos="fade-up" data-aos-duration="2000">
-                    Kami di sini untuk membantu dan menjawab pertanyaan yang mungkin anda miliki. Kami menunggu
-                    kabar dari Anda!
+                    Kalimat pengantar buat calon partner
                 </p>
             </div>
             <div class="mt-12">
@@ -19,6 +21,25 @@
                         class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                 >
                     @csrf
+                    <div class="sm:col-span-2">
+                        <label
+                                for="salutation"
+                                class="block text-sm font-medium text-gray-100"
+                        >Salutation (Dr. /Mr. /Mrs. /Ms.)</label
+                        >
+                        <div class="mt-1">
+                            <input required
+                                   type="text"
+                                   name="salutation"
+                                   id="salutation"
+                                   autocomplete="salutation"
+                                   class="py-3 px-4 text-black bg-gray-100  block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                            />
+                        </div>
+                        @error('salutation')
+                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
                     <div>
                         <label
                                 for="first_name"
@@ -117,21 +138,16 @@
                     </div>
                     <div class="sm:col-span-2">
                         <label
-                                for="message"
-                                class="block text-sm font-medium text-gray-100"
-                        >Pesan</label
+                        for="phone_number"
+                        class="block text-sm font-medium text-gray-100"
+                        >Option</label
                         >
-                        <div class="mt-1">
-                        <textarea required
-                                  id="message"
-                                  name="message"
-                                  rows="4"
-                                  class="py-3 text-black bg-gray-100 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                        ></textarea>
-                        </div>
-                        @error('message')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                        @enderror
+                        <select name="option" 
+                        class="py-3 text-black bg-gray-100 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+                            <option value selected disabled style="display:none;"></option>
+                            <option value="media-partner">Media Partner</option>
+                            <option value="community-partner">Community Partner</option>
+                        </select>
                     </div>
                     <div class="sm:col-span-2">
                         <button
@@ -147,5 +163,21 @@
         </div>
         <p class="text-center -white-500 text-xs pt-4">* Tunggu balasan admin melalui email atau nomor telepon Anda.</p>
     </div>
-
 </x-guest-layout>
+
+
+<div class="input-group <?php echo (!empty($religion_err)) ? 'has-error' : ''; ?>" >
+    <label class="label">Religion</label>
+    <div class="rs-select2 js-select-simple select--no-search">
+        <select name="religion">
+            <option disabled="disabled" selected="selected" value="">Choose one</option>
+            <option value="Islam">Islam</option>
+            <option value="Kristen Protestan">Kristen Protestan</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Kong Hu Cu">Kong Hu Cu</option>
+        </select>
+        <div class="select-dropdown"></div>
+    </div>
+</div>
