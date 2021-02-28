@@ -27,10 +27,10 @@ class EventSeeder extends Seeder
 
         // Define event name
         $names = [
+            'Paper Competition',
             'Oil Rig Competition',
             'Stock Trading Competition',
             'Petrosmart Competition',
-            'Paper Competition',
             'Business Case Competition',
             'Business Case Webinar',
         ];

@@ -56,10 +56,15 @@ class DatabaseSeeder extends Seeder
             $users->random(20)->pluck('id')->toArray(), [
                 'payment_status' => 'pending',
                 'payment_receipt_path' => 'payment_receipts/default.png',
+                'paper_path' => 'paper/dummy.pdf',
+                'paper_grade' => 0.00,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ]
         );
+
+        // first event is free
+        $events->first()->update(['price' => 0]);
 
         // remove first events
         $events = $events->filter(function ($event) {

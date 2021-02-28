@@ -39,7 +39,6 @@ class EventController extends Controller
                         'text' => 'Pembayaran Anda sedang diproses',
                         'rgba' => 'rgba(241, 213, 168, 0.507);'
                     ],
-                    'payment_receipt' => Auth::user()->getPaymentReceipt($event)
                 ]);
             } // Payment failed
             else if ($payment_status == 'failed') {

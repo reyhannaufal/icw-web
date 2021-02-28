@@ -64,7 +64,7 @@
                         <label
                                 for="institution"
                                 class="block text-sm font-medium text-gray-100"
-                        >Asal Sekolah</label
+                        >Institusi</label
                         >
                         <div class="mt-1">
                             <input  required

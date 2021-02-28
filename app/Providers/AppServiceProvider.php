@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Event;
@@ -45,8 +46,22 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::composer('navigation-menu', function ($view) {
-            $view->with('event', Event::where('id', auth()->user()->id)->first())
-                ->with('messages_count', Messages::where('status', '!=', 'Sudah diproses')->count());
+            $curr_event = Event::where('id', auth()->user()->id)->first();
+
+            if (isset($curr_event) && $curr_event->name == 'Paper Competition') {
+                $view = $view
+                    ->with('event', $curr_event)
+                    ->with('messages_count', null)
+                    ->with('papers_count', $curr_event->usersWithPaper()
+                        ->count());
+            } else {
+                $view = $view
+                    ->with('event', $curr_event)
+                    ->with('messages_count', Messages::where('status', '!=', 'Sudah diproses')
+                        ->count())
+                    ->with('papers_count', null);
+            }
+            return $view;
         });
     }
 }

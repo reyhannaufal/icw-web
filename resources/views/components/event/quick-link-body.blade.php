@@ -1,11 +1,29 @@
-<div class="mt-8">
-    <h3 class="text-lg font-medium">
-        <a href="{{ route('event-register', Str::slug($event->name, '-')) }}" class="focus:outline-none">
-            <!-- Extend touch target to entire panel.blade.php -->
-            <span class="absolute inset-0" aria-hidden="true"></span>
-            {{ $event->name }}
-        </a>
-    </h3>
+<div class="mt-6 mb-2">
+    <div class="mb-4">
+        <h3 class="text-lg font-medium">
+                <a href="{{ route('event-register', Str::slug($event->name, '-')) }}" class="focus:outline-none">
+                    <!-- Extend touch target to entire panel.blade.php -->
+                    <span class="absolute inset-0" aria-hidden="true"></span>
+                    {{ $event->name }}
+                </a>
+            </h3>
+            <p class="text-xs">
+                @php
+                    // Asumsikan durasi cmn sehari
+                    $start_at = $event->getDate('start_at', 'day');
+                    $end_at = $event->getDate('end_at', 'day');
+                    $text = $start_at . ' - ' . $end_at;
+
+                    // Jika durasi lebih dari sehari, tampilkan jam dan menit
+                    if ($start_at == $end_at) {
+                        $start_at_minute = $event->getDate('start_at', 'only minute');
+                        $end_at = $event->getDate('end_at', 'only minute');
+                        $text = $start_at . ', pukul: ' . $start_at_minute . '' . ' - ' . $end_at;
+                    }
+                @endphp
+                {{ $text }}
+            </p>
+    </div>
     <p class="mt-2 text-sm text-gray-500">
         {{ $event->description }}
     </p>

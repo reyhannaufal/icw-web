@@ -82,3 +82,5 @@ selalu perhatikan env.example
 * Ada empat nilai yang diterima di kolom `payment_status` pada tabel `event_user`, yaitu `null`, `failed`, `success`, dan `pending`.
 * Jika eventnya gratis, maka nilai kolom `price` pada tabel `events` sama dengan `0`.  
 * Selain itu, terdapat pula tabel `messages` dan tabel `announcements`.
+* Event paper competition ber-id 1.
+* Pada event selai paper competition, kolom `nilai paper` di excel dikosongkan.
