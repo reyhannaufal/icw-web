@@ -18,24 +18,38 @@
                 </div>
             @endif
 
-            <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-jet-responsive-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
-                    {{ __('Pengumuman') }}
-                </x-jet-responsive-nav-link>
-            </div>
+            @if (isset($event))
+                @if (!$event->isFree())
+                    <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-responsive-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
+                            {{ __('Verifikasi Peserta') }}
+                            <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
+                                    {{ $event->countRowsOnStatus('pending')  }}
+                                </span>
+                        </x-jet-responsive-nav-link>
+                    </div>
+                @endif
 
-            @if (isset($event) && !$event->isFree())
-                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-responsive-nav-link href="{{ route('verification', Str::slug($event->name, '-')) }}" :active="request()->routeIs('verification')">
-                        {{ __('Verifikasi Peserta') }}
-                        <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
-                                {{ $event->countRowsOnStatus('pending')  }}
+                @if ($event->name == 'Paper Competition')
+                    <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-responsive-nav-link href="{{ route('paper.index') }}"
+                                        :active="request()->routeIs('paper.index')">
+                            Paper
+                            <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
+                                {{ $papers_count }}
                             </span>
+                        </x-jet-responsive-nav-link>
+                    </div>
+                @endif
+            @endif
+
+                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-responsive-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
+                        {{ __('Pengumuman') }}
                     </x-jet-responsive-nav-link>
                 </div>
-            @endif
         @else
-        <!-- Your events  -->
+            <!-- Your events  -->
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <x-jet-responsive-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">
                     {{ __('Event Anda') }}
