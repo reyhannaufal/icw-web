@@ -1,25 +1,26 @@
 <div class="bg-bgsection-0">
-    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-semibold text-center text-white">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <p class="text-center text-base font-semibold uppercase text-gray-600 tracking-wider">
             Sponsor
-        </h2>
-        <div class="flow-root mt-8 lg:mt-10">
-            <div class="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
-                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                    <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg" alt="Tuple">
-                </div>
-                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                    <img class="h-12" src="https://tailwindui.com/img/logos/mirage-logo-indigo-300.svg" alt="Mirage">
-                </div>
-                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                    <img class="h-12" src="https://tailwindui.com/img/logos/statickit-logo-indigo-300.svg" alt="StaticKit">
-                </div>
-                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                    <img class="h-12" src="https://tailwindui.com/img/logos/transistor-logo-indigo-300.svg" alt="Transistor">
-                </div>
-                <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                    <img class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg" alt="Workcation">
-                </div>
+        </p>
+        <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
+            <div class="col-span-1 flex justify-center py-8 px-8">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg" alt="Workcation">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8 ">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/mirage-logo-indigo-300.svg" alt="Mirage">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-indigo-300.svg" alt="Tuple">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg" alt="Laravel">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8 0">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/transistor-logo-indigo-300.svg" alt="StaticKit">
+            </div>
+            <div class="col-span-1 flex justify-center py-8 px-8">
+                <img class="max-h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg" alt="Statamic">
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<div class="text-white border-4 max-w-7xl rounded-lg mx-auto">
+<div class="text-white 2xl:border-4 max-w-7xl rounded-lg mx-auto">
     <div class="max-w-7xl mx-2 md:mx-auto text-center py-32 px-4 py-20 sm:px-6 lg:py-40 lg:px-8">
         <h2 class="text-3xl font-extrabold tracking-tight  sm:text-4xl">
             <span>Sebuah <br></span>

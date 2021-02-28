@@ -18,8 +18,8 @@
         <section id="events" class="w-full bg-bgsection-0 py-24 px-14 sm:px-24 md:px-40">
             @include('pages.home._event-section', [
                 'events' => $events->where('type', 'competition'),
-                'title' => 'Competition Event',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, officia?'
+                'title' => 'Kompetisi Event',
+                'description' => 'Cocok nih buat jiwa-jiwa kompetitif!'
             ])
         </section>
         <!-- END : Competition Event -->
@@ -28,8 +28,8 @@
         <section class="w-full bg-bgsection-0 py-6 px-10 sm:px-24 md:px-24">
             @include('pages.home._event-section', [
                 'events' => $events->where('type', 'non-competition'),
-                'title' => 'Non-Competition Event',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, officia?'
+                'title' => 'Non-Kompetisi Event',
+                'description' => 'Eits ga cuman yangg kompetitif aja, yang non juga ada lhooo'
             ])
         </section>
         <!-- END : Non-Competition Event -->

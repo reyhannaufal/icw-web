@@ -51,7 +51,7 @@
                     </div>
                     <div class="w-auto col-span-2 md:col-span-1 pt-28 md:pt-0"
                          data-aos-delay="100"
-                         data-aos="fade-left"
+                         data-aos="fade-left    "
                          data-aos-duration="1000"
                          data-aos-easing="ease-in-out"
                          data-aos-mirror="false"
@@ -73,7 +73,7 @@
         </main>
     </div>
 
-
+    @if($event->type == 'competition')
     <section class="w-full bg-bgsection-0 py-24 px-4 sm:px-24 md:px-40 relative md:mt-32">
         <div class="flex flex-1 md:mb-16 relative mx-auto z-10">
             <div class="w-full text-white text-center place-self-center">
@@ -216,7 +216,7 @@
             </div>
         </div>
     </section>
-
+    @endif
     <div class="bg-white text-black">
         <div
                 class="max-w-2xl mx-auto text-center py-24 px-4 md:py-36 sm:px-6 lg:px-8"
