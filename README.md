@@ -21,8 +21,9 @@ selalu perhatikan env.example
 * Akun admin terbgai menjadi dua, yaitu **admin normal** dan **admin master**.
 * Akun **admin normal** adalah akun users dengan id <= jumlah event.
 * Akun **admin master** adalah akun users dengan id <= jumlah event.
-* Akun admin tidak bisa dihapus
+* Akun admin tidak bisa dihapus.
 * Tiap event memiliki satu akun admin normal.
+* Admin tidak dapat mengganti ataupun melihat profil dan passwordnya.
 * Jika password akun admin terlupakan, segara hubungi tim web untuk bantuan reset password. 
   
 ### Otoritas Admin Normal
@@ -81,3 +82,5 @@ selalu perhatikan env.example
 * Ada empat nilai yang diterima di kolom `payment_status` pada tabel `event_user`, yaitu `null`, `failed`, `success`, dan `pending`.
 * Jika eventnya gratis, maka nilai kolom `price` pada tabel `events` sama dengan `0`.  
 * Selain itu, terdapat pula tabel `messages` dan tabel `announcements`.
+* Event paper competition ber-id 1.
+* Pada event selai paper competition, kolom `nilai paper` di excel dikosongkan.

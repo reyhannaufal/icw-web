@@ -81,12 +81,7 @@ class DashboardController extends Controller
     {
         // initialize event variable
         $curr_event = Event::where('id', $request->eventId)->first();
-
-        try {
-            $this->authorize('interactAsEventAdmin', $curr_event); // If false, it'll display 403
-        } catch (Throwable  $e) {
-            return back()->with('error', 'Forbidden access!');
-        }
+        $this->authorize('interactAsEventAdmin', $curr_event); // If false, it'll display 403
 
         // Update payment status
         $pivot_table = $curr_event->usersWithPivot();

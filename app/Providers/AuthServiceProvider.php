@@ -38,5 +38,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('interactAsEventAdmin', function (User $user, Event $event) {
             return ($user->isAdmin() && $user->id == $event->id);
         });
+
+        Gate::define('interactAsPaperAdmin', function (User $user, Event $event) {
+            return ($user->isAdmin() && $user->id == 1);
+        });
     }
 }
