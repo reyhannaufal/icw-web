@@ -22,14 +22,14 @@ class EventFactory extends Factory
      */
     public function definition()
     {
+        $start_at = $this->faker->dateTimeBetween('next Monday', 'next Monday +7 days');
         return [
             'name' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
             'price' => strval($this->faker->randomNumber()),
 //            'type' => $this->faker->randomElement(['competition', 'non-competition']),
-            'start_date' => $this->faker->date(),
-            'start_time' => $this->faker->time(),
-            'end_time' => $this->faker->time(),
+            'start_at' => $start_at,
+            'end_at' => $this->faker->dateTimeBetween($start_at, $start_at->format('Y-m-d H:i:s').' +2 days'),
         ];
     }
 }

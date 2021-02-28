@@ -19,6 +19,10 @@ class ResetUserPassword implements ResetsUserPasswords
      */
     public function reset($user, array $input)
     {
+        if ($user->isAdmin) {
+            abort(403, "Admin tidak dapat merubah password");
+        }
+
         Validator::make($input, [
             'password' => $this->passwordRules(),
         ])->validate();

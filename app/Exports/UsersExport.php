@@ -22,9 +22,30 @@ class UsersExport implements FromQuery, WithHeadings
 
         // Users data per event
         if ($this->event_id != 0) {
-            $table = $table->select('users.name', 'users.email',
-                    'users.institution', 'users.phone_number', 'event_user.created_at')
-                ->where('event_user.event_id', '=', $this->event_id);
+
+            // If paper competition
+            if ($this->event_id == 1) {
+                $table = $table
+                    ->select(
+                        'users.name',
+                        'users.email',
+                        'users.institution',
+                        'users.phone_number',
+                        'event_user.paper_grade',
+                        'event_user.updated_at'
+                    );
+            } else {
+                $table = $table
+                    ->select(
+                        'users.name',
+                        'users.email',
+                        'users.institution',
+                        'users.phone_number',
+                        'event_user.created_at',
+                    );
+            }
+            $table = $table->where('event_user.event_id', '=', $this->event_id);
+
         } else {
             // Data of all registered users
             $table = $table->join('events', 'events.id', '=', 'event_user.event_id')
@@ -34,6 +55,7 @@ class UsersExport implements FromQuery, WithHeadings
                     'users.institution',
                     'users.phone_number',
                     'events.name AS eventname',
+                    'event_user.paper_grade',
                     'event_user.created_at'
                 )
                 ->orderBy('eventname');
@@ -54,8 +76,14 @@ class UsersExport implements FromQuery, WithHeadings
         // For data of all users
         if ($this->event_id == 0) {
             array_push($header, 'Nama Event');
+            array_push($header, 'Nilai Paper');
+            array_push($header, 'Tanggal Daftar');
+        } else if ($this->event_id == 1) {
+            array_push($header, 'Nilai Paper');
+            array_push($header, 'Tanggal Kirim Paper');
+        } else {
+            array_push($header, 'Tanggal Daftar');
         }
-        array_push($header, 'Tanggal Daftar');
         return $header;
     }
 }

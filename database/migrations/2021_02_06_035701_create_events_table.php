@@ -19,9 +19,8 @@ class CreateEventsTable extends Migration
             $table->text('description');
             $table->string('price')->default(0);
             $table->string('type')->default('non-competition');
-            $table->date('start_date');
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->dateTime('start_at');
+            $table->dateTime('end_at');
             $table->timestamps();
         });
 
@@ -32,6 +31,8 @@ class CreateEventsTable extends Migration
             $table->foreignId('event_id');
             $table->string('payment_status')->nullable();
             $table->string('payment_receipt_path')->nullable();
+            $table->string('paper_path')->nullable();
+            $table->decimal('paper_grade', $precision = 5, $scale = 2)->nullable();
             $table->timestamps();
 
             $table->unique(['user_id', 'event_id']);

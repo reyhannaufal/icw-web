@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Test;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\Models\Bill;
 
-class UserSeeder extends Seeder
+class BillSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +14,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()
-            ->count(30)
+        Bill::factory()
+            ->count(4)
             ->create();
     }
 }
