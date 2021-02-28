@@ -7,7 +7,7 @@
             <div class="pt-5 pb-6 px-5">
                 <div class="flex items-center justify-between">
                     <div>
-                        <img class="h-8 w-auto" src="{{URL::to('assets/img/logo_indicor.png')}}" alt="Workflow">
+                        <img class="h-8 w-auto" src="{{ asset('assets/img/logo_indicor.png') }}" alt="logo_icw">
                     </div>
                     <div class="-mr-2">
                         <button @click="mobileMenuOpen = false" type="button"
@@ -28,7 +28,7 @@
                         <a onclick="_scrollTo(this, 'events')"
                            class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                             <div
-                                class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                    class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                 <svg class="h-6 w-6" x-description="Heroicon name: outline/inbox"
                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke="currentColor" aria-hidden="true">
@@ -37,13 +37,13 @@
                                 </svg>
                             </div>
                             <div class="ml-4 text-base font-bold text-black hover:text-gray-900">
-                                Events
+                                Event
                             </div>
                         </a>
 
                         <a href="/about" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                             <div
-                                class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                    class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                 <svg class="h-6 w-6" x-description="Heroicon name: outline/annotation"
                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke="currentColor" aria-hidden="true">
@@ -52,13 +52,13 @@
                                 </svg>
                             </div>
                             <div class="ml-4 text-base font-bold text-black hover:text-gray-900">
-                                About Us
+                                Tentang Kami
                             </div>
                         </a>
 
                         <a href="/contact" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                             <div
-                                class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                    class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                 <svg class="h-6 w-6" x-description="Heroicon name: outline/chat-alt-2"
                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke="currentColor" aria-hidden="true">
@@ -67,7 +67,7 @@
                                 </svg>
                             </div>
                             <div class="ml-4 text-base font-bold text-black hover:text-gray-900">
-                                Contact Us
+                                Jadilah Partner Kami
                             </div>
                         </a>
 
@@ -78,12 +78,12 @@
                 <div class="mt-6">
                     <a href="{{ route('register') }}"
                        class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
-                        Sign up
+                        Daftar
                     </a>
                     <p class="mt-6 text-center text-base font-medium text-gray-500">
-                        Already have an account?
+                        Sudah punya akun?
                         <a href="{{ route('login') }}" class="text-gray-900">
-                            Sign in
+                            Masuk
                         </a>
                     </p>
                 </div>
