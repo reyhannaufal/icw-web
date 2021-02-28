@@ -48,6 +48,3 @@ Route::middleware('auth')->group(function () {
     Route::post('/paper/grade', [PaperController::class, 'update']);
 });
 
-Route::get('/event-page', function () {
-    return view('pages.template-event-page');
-});
