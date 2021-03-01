@@ -41,6 +41,17 @@
                             </button>
                         </form>
                     </div>
+                @elseif ($data['status'] === 'Success' || $data['price'] === 'Free')
+                    <div class="absolute register-container">
+                        <a href="{{ route('events.show', Str::slug($data['event_name'], '-')) }}">
+                            @csrf
+                            <button class="text-black font-bold py-3 px-5 register-btn hover:border-none">
+                                Buka Menu
+                                <br>
+                                Info Event
+                            </button>
+                        </a>
+                    </div>
                 @endif
             </div>
 

@@ -5,15 +5,15 @@
                     class="flex flex-row justify-center md:justify-between overflow-hidden bg-dashboard-0 rounded-lg w-auto z-10 relative shadow-md">
                 <div class="flex flex-col text-gray-700 md:px-8 py-4 w-full md:text-left text-center">
                     <h1 class="font-bold pb-4 text-xl md:text-lg">
-                        Hello, {{\Illuminate\Support\Facades\Auth::user()->name}} </h1>
+                        Hello, {{ auth()->user()->name}} </h1>
 
                     <div class="font-medium text-lg md:text-base">
-                        @if(\Illuminate\Support\Facades\Auth::user()->events->count() == 0)
+                        @if($events->count() == 0)
                             <p>Kamu belum terdaftar pada event apapun :(</p>
                         @endif
                         <p>Kamu terdaftar event sebanyak:
                             <span class="ml-2 text-xl font-bold">
-                                {{\Illuminate\Support\Facades\Auth::user()->events->count()}}
+                                {{$events->count()}}
                             </span>
                         </p>
                         <p class="mt-1">Semoga harimu menyenangkan!</p>
@@ -41,10 +41,40 @@
             <div class="flex justify-center items-center">
                 <div class="flex-1 self-center">
                     <div class="grid grid-cols-3 gap-x-6 gap-y-8 ">
-                        @foreach(\Illuminate\Support\Facades\Auth::user()->events as $event)
-                            @if(\Illuminate\Support\Facades\Auth::user()->events->count() == 0)
+                        @forelse($events as $event)
+                            <a class="col-span-3 md:col-span-1" href="/dashboard/event/{{ Str::slug($event->name, '-') }}">
+                                <div class="p-2 bg-competable1-0 space-y-6
+                                        rounded-xl tracking-wide transform hover:shadow-lg hover:scale-105 duration-200">
+                                    <div class="border-b border-white px-2 pt-4">
+                                        <h1 class="text-lg font-bold pb-2">
+                                            {{$event->name}}
+                                        </h1>
+                                    </div>
+
+                                    <p class="font-medium text-base px-2">
+                                        <strong>Harga:</strong> {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . $event->price }}
+                                    </p>
+
+                                    <p class="font-medium text-base px-2">
+                                        @php
+                                            $start_at = $event->getDate('start_at', 'day number');
+                                            $end_at = $event->getDate('end_at', 'day number');
+
+                                            $text =  $start_at . ( ($start_at == $end_at) ? '' :  ' - ' . $end_at );
+                                        @endphp
+                                        <strong>Tanggal:</strong>
+                                        <span class="inline-block">{{ $text }}</span>
+                                    </p>
+
+                                    <p class="font-medium text-justify text-base px-2 pb-4">
+                                        <strong>Deskripsi:</strong> <span
+                                            class="block text-base"> {{$event->description}}</span>
+                                    </p>
+                                </div>
+                            </a>
+                            @empty
                                 <div
-                                        class="col-span-3 md:col-span-1 bg-competable1-0 space-y-6
+                                    class="col-span-3 md:col-span-1 bg-competable1-0 space-y-6
                                         rounded-xl tracking-wide transform hover:shadow-lg hover:scale-105 duration-200">
                                     <div class="border-b border-white px-2 pt-4">
                                         <h1 class="text-lg font-bold pb-2">
@@ -53,33 +83,7 @@
                                     </div>
 
                                 </div>
-                            @endif
-                            <div
-                                    class="col-span-3 md:col-span-1 bg-competable1-0 space-y-6
-                                        rounded-xl tracking-wide transform hover:shadow-lg hover:scale-105 duration-200">
-                                <div class="border-b border-white px-2 pt-4">
-                                    <h1 class="text-lg font-bold pb-2">
-                                        {{$event->name}}
-                                    </h1>
-                                </div>
-
-                                <p class="font-medium text-base px-2">
-                                    <strong>Harga:</strong> Rp{{$event->price}}
-                                </p>
-
-                                <p class="font-medium text-base px-2">
-                                    @php
-                                        $start_at = $event->getDate('start_at', 'day');
-                                    @endphp
-                                    <strong>Tanggal:</strong> {{$start_at}}
-                                </p>
-
-                                <p class="font-medium text-base px-2 pb-4">
-                                    <strong>Deskripsi:</strong> <span class="block text-base"> {{$event->description}}</span>
-                                </p>
-
-                            </div>
-                        @endforeach
+                        @endforelse
 
                     </div>
                 </div>

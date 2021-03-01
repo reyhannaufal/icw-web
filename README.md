@@ -74,6 +74,17 @@ selalu perhatikan env.example
 * Admin normal dapat menolak dan menerima bukti pembayaran pengguna.
 * Bukti pembayaran akan dihapus secara otomatis saat admin menolak ataupun menerima bukti pembayaran.
 
+## Fitur Menu Paper Competition
+* Admin master dan yang bukan merupakan admin paper competition tidak dapat mengakses menu ini.
+* Admin event Paper Competition bisa melihat, memberi nilai, dan menghapus paper.
+* Admin master dapat mendownload excel yang berisikan nilai peserta paper competition.
+* Paper dapat dihapus hanya jika paper tersebut bernilai `0.00`.
+* Admin dapat memberi nilai pada paper mulai dari `0.00` hingga `100.00` .
+* Peserta dapat mendownload paper yang telah di submit di dashboard event peserta.
+* Jika admin menghapus paper peserta, maka peserta tidak dapat untuk mendownload paper yang telah ia submit.
+* Peserta yang papernya dihapus akan diberikan notifikasi melalui email.
+* Link pendaftaran dan upload paper akan ditutup secara otomatis sesuai dengan waktu penutupan pendaftaran yang ditampilkan di dashboard user.
+
 # Struktur Database
 * Tabel `users` berelasi many-to-many dengan tabel `events` dengan tabel `event_user` sebagai perantara.
 * Tabel `events` berelasi many-to-many dengan tabel `bills` dengan tabel `bill_event` sebagai perantara.
