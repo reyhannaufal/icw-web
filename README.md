@@ -74,6 +74,7 @@ selalu perhatikan env.example
     maka admin tersebut tidak dapat mengakses menu verifikasi.
 * Admin normal dapat menolak dan menerima bukti pembayaran pengguna.
 * Bukti pembayaran akan dihapus secara otomatis saat admin menolak ataupun menerima bukti pembayaran.
+* Badget menampilkan jumlah bukti pembayaran yang belum diverif.
 
 ## Fitur Menu Paper Competition
 * Admin master dan yang bukan merupakan admin paper competition tidak dapat mengakses menu ini.
@@ -85,7 +86,7 @@ selalu perhatikan env.example
 * Jika admin menghapus paper peserta, maka peserta tidak dapat untuk mendownload paper yang telah ia submit.
 * Peserta yang papernya dihapus akan diberikan notifikasi melalui email.
 * Link pendaftaran dan upload paper akan ditutup secara otomatis sesuai dengan waktu penutupan pendaftaran yang ditampilkan di dashboard user.
-* Badget menampilkan jumlah paper yang bernilai 0.
+* Badget menampilkan jumlah paper yang bernilai 0 .
 
 # Struktur Database
 * Tabel `users` berelasi many-to-many dengan tabel `events` dengan tabel `event_user` sebagai perantara.

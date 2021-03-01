@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/events', [DashboardEventsController::class, 'index'])->name('events.index');
     Route::get('/dashboard/event/{event}', [DashboardEventsController::class, 'show'])->name('events.show');
+
     Route::post('/paper/{user}', [DashboardEventsController::class, 'storePaper'])->name('events.store');
 
     Route::get('/register/{event}', [EventController::class, 'create'])->name('event-register');
