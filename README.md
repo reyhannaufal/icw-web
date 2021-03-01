@@ -70,7 +70,8 @@ selalu perhatikan env.example
 ## Fitur Menu Verikasi
 * Admin master tidak dapat mengakses menu ini.
 * Admin normal dapat melihat data singkat pengguna dan bukti pembayaran pada event masing-masing.
-* Jika event yang dipertanggungjawabkan oleh seorang admin normal bersifat gratis, maka admin tersebut tidak dapat mengakses menu verifikasi.
+* Jika event yang dipertanggungjawabkan oleh seorang admin normal bersifat gratis, 
+    maka admin tersebut tidak dapat mengakses menu verifikasi.
 * Admin normal dapat menolak dan menerima bukti pembayaran pengguna.
 * Bukti pembayaran akan dihapus secara otomatis saat admin menolak ataupun menerima bukti pembayaran.
 
