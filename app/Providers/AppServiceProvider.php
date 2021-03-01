@@ -52,14 +52,16 @@ class AppServiceProvider extends ServiceProvider
                 $view = $view
                     ->with('event', $curr_event)
                     ->with('messages_count', null)
-                    ->with('papers_count', $curr_event->usersWithPaper()
+                    ->with('ungraded_paper_count', $curr_event
+                        ->usersWithPaper()
+                        ->where('paper_grade', '!=', '0.00')
                         ->count());
             } else {
                 $view = $view
                     ->with('event', $curr_event)
                     ->with('messages_count', Messages::where('status', '!=', 'Sudah diproses')
                         ->count())
-                    ->with('papers_count', null);
+                    ->with('ungraded_paper_count', null);
             }
             return $view;
         });

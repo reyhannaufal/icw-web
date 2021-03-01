@@ -21,7 +21,7 @@
                              backdrop-filter: blur(20px);
                              overflow: hidden;">
                         <a class="flex-1 text-lg sm:text-xl">{{ $data['price'] }}</a>
-                        <a class="flex1 font-semibold text-lg sm:text-xl">{{ $data['status'] }}</a>
+                        <a class="flex1 font-semibold text-lg sm:text-xl">{{ ($data['price'] == 'Gratis') ? '' : $data['status'] }}</a>
                     </div>
                 </div>
             </div>
@@ -30,8 +30,8 @@
             <div class="register-card-circles">
                 <div class="circle-left"></div>
                 <div class="circle-right"></div>
-                @if ($data['status'] === 'Failed')
-                    <div class="absolute register-container">
+                <div class="absolute register-container">
+                    @if ($data['status'] === 'Failed')
                         <form method="POST" action="{{ route('reset-status', Str::slug($data['event_name'], '-')) }}">
                             @csrf
                             <button class="text-black font-bold py-3 px-5 register-btn">
@@ -40,9 +40,7 @@
                                 Bukti Pembayaran
                             </button>
                         </form>
-                    </div>
-                @elseif ($data['status'] === 'Success' || $data['price'] === 'Free')
-                    <div class="absolute register-container">
+                    @elseif ($data['status'] === 'Success')
                         <a href="{{ route('events.show', Str::slug($data['event_name'], '-')) }}">
                             @csrf
                             <button class="text-black font-bold py-3 px-5 register-btn hover:border-none">
@@ -51,8 +49,15 @@
                                 Info Event
                             </button>
                         </a>
-                    </div>
-                @endif
+                    @elseif ($data['price'] === 'Gratis')
+                        <form method="POST" action="{{ route('event-register', Str::slug($data['event_name'], '-')) }}">
+                            @csrf
+                            <button class="text-black font-bold py-3 px-5 register-btn hover:border-none">
+                                Daftar Sekarang
+                            </button>
+                        </form>
+                    @endif
+                </div>
             </div>
 
         </div>

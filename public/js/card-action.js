@@ -67,7 +67,7 @@ function changePStatus(eventId, userId, userName, userMail, status) {
 }
 
 function displayErrorAlert(status) {
-    window.location.href = '/error/' + status;
+    window.location.href = '/errors/' + status;
 }
 
 function disableScroll() {
