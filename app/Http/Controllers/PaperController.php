@@ -47,15 +47,10 @@ class PaperController extends Controller
         return back();
     }
 
-    public function download(User $user)
+    public function download($path)
     {
         $this->authorize('interactAsAdmin', auth()->user());
-        if ($user->getGrade() == 0.00) {
-            $user->deletePaper();
-            return back();
-        } else {
-            return back()->with('error', 'Paper belum dapat dihapus!');
-        }
+        return Storage::download($path);
     }
 
     public function destroy(User $user)

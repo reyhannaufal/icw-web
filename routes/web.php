@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/papers', [PaperController::class, 'index'])->name('paper.index');
     Route::post('/admin/paper/grade', [PaperController::class, 'update'])->name('paper.update');
-//    Route::post('/download/paper/{user}', [PaperController::class, 'download'])->name('paper.download');
+//    Route::get('/download/paper/{path}', [PaperController::class, 'download'])->name('paper.download');
     Route::delete('/paper/{user}', [PaperController::class, 'destroy'])->name('paper.destroy');
 });
 
