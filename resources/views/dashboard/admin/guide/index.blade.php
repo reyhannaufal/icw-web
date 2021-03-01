@@ -79,8 +79,10 @@
         </x-guide-card>
         <x-guide-card>
             <x-slot name="title">
-                Fitur Menu Verikasi
+                Fitur Menu Verikasi Bukti Pembayaran
             </x-slot>
+            <li>Menu ini bernama <strong>Verifikasi</strong> di baris navigasi.</li>
+            <li>Angka yang berada di sebelah kanan menu <strong>Paper</strong> menandakan banyak bukti pembayaran yang belum diverif (berstatus pending).</li>
             <li>Admin master tidak dapat mengakses menu ini.</li>
             <li>Admin normal dapat melihat data singkat pengguna dan bukti pembayaran pada event masing-masing.</li>
             <li>Jika event yang dipertanggungjawabkan oleh seorang admin normal bersifat gratis, maka admin tersebut tidak dapat mengakses menu verifikasi.</li>
@@ -89,8 +91,10 @@
         </x-guide-card>
         <x-guide-card>
             <x-slot name="title">
-                Fitur Menu Paper Competition
+                Fitur Menu Verifikasi Paper
             </x-slot>
+            <li>Menu ini bernama <strong>Paper</strong> di baris navigasi.</li>
+            <li>Angka yang berada di sebelah kanan menu <strong>Paper</strong> menandakan banyak paper yang belum dinilai (bernilai 0.00).</li>
             <li>Admin master dan yang bukan merupakan admin paper competition tidak dapat mengakses menu ini.</li>
             <li>Admin event Paper Competition bisa melihat, memberi nilai, dan menghapus paper.</li>
             <li>Admin master dapat mendownload excel yang berisikan nilai peserta paper competition.</li>

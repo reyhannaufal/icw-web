@@ -19,6 +19,10 @@ $(".grade").blur(function(e) {
                 icon: "success",
                 buttons: true,
             });
+            let badgets = document.getElementsByClassName("papers-badget");
+            for (let i = 0; i < badgets.length; i++) {
+                badgets[0].innerText--;
+            }
         }
     });
 });

@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/events', [DashboardEventsController::class, 'index'])->name('events.index');
     Route::get('/dashboard/event/{event}', [DashboardEventsController::class, 'show'])->name('events.show');
-    Route::post('/paper/{user}', [DashboardEventsController::class, 'store'])->name('events.store');
+    Route::post('/paper/{user}', [DashboardEventsController::class, 'storePaper'])->name('events.store');
 
     Route::get('/register/{event}', [EventController::class, 'create'])->name('event-register');
     Route::post('/register/{event}', [EventController::class, 'store']);
@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/papers', [PaperController::class, 'index'])->name('paper.index');
     Route::post('/admin/paper/grade', [PaperController::class, 'update'])->name('paper.update');
+//    Route::post('/download/paper/{user}', [PaperController::class, 'download'])->name('paper.download');
     Route::delete('/paper/{user}', [PaperController::class, 'destroy'])->name('paper.destroy');
 });
 
