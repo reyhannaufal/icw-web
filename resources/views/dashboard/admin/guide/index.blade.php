@@ -101,7 +101,10 @@
             <li>Admin master dapat mendownload excel yang berisikan nilai peserta paper competition.</li>
             <li>Paper dapat dihapus hanya jika paper tersebut bernilai <strong>0.00</strong>.</li>
             <li>Admin dapat memberi nilai pada paper mulai dari <strong>0.00</strong> hingga <strong>100.00</strong>.</li>
+<<<<<<< HEAD
             <li>Admin dapat memberi nilai pada paper mulai di kolom <strong>Nilai</strong>.</li>
+=======
+>>>>>>> 55f91170327794f15128d4cd133343bae6f5b653
             <li>Peserta dapat mendownload paper yang telah di submit di dashboard event peserta.</li>
             <li>Jika admin menghapus paper peserta, maka peserta tidak dapat untuk mendownload paper yang telah ia submit.</li>
             <li>Peserta yang papernya dihapus akan diberikan notifikasi melalui email.</li>

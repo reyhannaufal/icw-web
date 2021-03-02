@@ -53,7 +53,7 @@ class MessagesController extends Controller
             'message' => $attributes['message'],
         ]);
 
-        return redirect()->route('contact')
+        return redirect()->route('home')
             ->with('success', 'Pesan terkirim!');
     }
 

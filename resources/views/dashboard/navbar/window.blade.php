@@ -18,6 +18,11 @@
             </div>
 
         @if(auth()->user()->isAdmin())
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="/sponsor" :active="request()->routeIs('sponsorship')">
+                        {{ __('Sponsor') }}
+                    </x-jet-nav-link>
+                </div>
             <!-- Only viewable by admins -->
                 @if(auth()->user()->isMaster())
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -62,6 +67,8 @@
                         {{ __('Pengumuman') }}
                     </x-jet-nav-link>
                 </div>
+
+
             @else
                 <!-- Your events  -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
