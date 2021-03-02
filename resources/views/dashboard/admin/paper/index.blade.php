@@ -32,10 +32,10 @@
                                 <tr>
                                     <td>{{ $participant->name }}</td>
                                     <td>
-                                        <a href="{{ asset('storage/' . $participant->participation->paper_path) }}" target="_blank">
+                                        <a href="{{ $participant->getPaperPath() }}" target="_blank">
                                             <button
                                                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded">
-                                                Unduh
+                                                Lihat
                                             </button>
                                         </a>
                                     </td>

@@ -14,27 +14,37 @@
                         'border_color' => 'border-blue-600',
                         'text_color' => 'text-blue-600'
                     ])
-                    @include('dashboard.admin._stats-card', [
-                        'title' => 'Jumlah Peserta Tertolak',
-                        'count' => $failed_count,
-                        'icon' => 'fa fa-exclamation-triangle',
-                        'border_color' => 'border-red-500',
-                        'text_color' => 'text-red-500'
-                    ])
-                    @include('dashboard.admin._stats-card', [
-                        'title' => 'Jumlah Peserta Terkonfirmasi',
-                        'count' => $success_count,
-                        'icon' => 'fas fa-dollar-sign',
-                        'border_color' => 'border-green-500',
-                        'text_color' => 'text-green-500'
-                    ])
-                    @include('dashboard.admin._stats-card', [
-                        'title' => 'Jumlah Peserta Pending',
-                        'count' => $pending_count,
-                        'icon' => 'fas fa-envelope-open-text',
-                        'border_color' => 'border-yellow-500',
-                        'text_color' => 'text-yellow-500'
-                    ])
+                    @if (isset($isFree))
+                        @include('dashboard.admin._stats-card', [
+                            'title' => 'Jumlah Peserta',
+                            'count' => $registered_count,
+                            'icon' => 'fas fa-dollar-sign',
+                            'border_color' => 'border-green-500',
+                            'text_color' => 'text-green-500'
+                        ])
+                    @else
+                        @include('dashboard.admin._stats-card', [
+                            'title' => 'Jumlah Peserta Tertolak',
+                            'count' => $failed_count,
+                            'icon' => 'fa fa-exclamation-triangle',
+                            'border_color' => 'border-red-500',
+                            'text_color' => 'text-red-500'
+                        ])
+                        @include('dashboard.admin._stats-card', [
+                            'title' => 'Jumlah Peserta Terkonfirmasi',
+                            'count' => $success_count,
+                            'icon' => 'fas fa-dollar-sign',
+                            'border_color' => 'border-green-500',
+                            'text_color' => 'text-green-500'
+                        ])
+                        @include('dashboard.admin._stats-card', [
+                            'title' => 'Jumlah Peserta Pending',
+                            'count' => $pending_count,
+                            'icon' => 'fas fa-envelope-open-text',
+                            'border_color' => 'border-yellow-500',
+                            'text_color' => 'text-yellow-500'
+                        ])
+                    @endif
                 </div>
             </div>
         </div>
@@ -74,7 +84,9 @@
                             <th data-priority="2">Email</th>
                             <th data-priority="3">Institusi</th>
                             <th data-priority="4">No. Telepon</th>
-                            <th data-priority="5">Status</th>
+                            @if (!isset($isFree))
+                                <th data-priority="5">Status</th>
+                            @endif
                             @if ($event_name == 'Semua Event')
                                 <th data-priority="6">Event</th>
                             @endif
@@ -88,10 +100,12 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->institution }}</td>
                                     <td>{{ $user->phone_number }}</td>
-                                    <td>{{ ucfirst(($event_name != 'Semua Event')
-                                            ? $user->participation->payment_status
-                                            : $user->payment_status) }}
-                                    </td>
+                                    @if (!isset($isFree))
+                                        <td>{{ ucfirst(($event_name != 'Semua Event')
+                                                ? $user->participation->payment_status
+                                                : $user->payment_status) }}
+                                        </td>
+                                    @endif
                                     @if ($event_name == 'Semua Event')
                                         <td>{{ $user->event_name }}</td>
                                     @endif
