@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\Test;
+namespace Database\Seeders\test;
 
 use App\Models\Bill;
 use App\Models\Event;

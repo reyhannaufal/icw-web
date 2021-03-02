@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // Aktifkan salah satu
 //            Test\TestSeeder::class // Seeder for testing
-            Prod\ProductionSeeder::class // Sedder for production
+            ProductionSeeder::class // Sedder for production
         ]);
     }
 }
