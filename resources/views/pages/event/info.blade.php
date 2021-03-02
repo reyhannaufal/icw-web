@@ -321,10 +321,10 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
-                        Penanggung Jawab Event
+                        Informasi Event
                     </h2>
                     <p class="mt-4 text-xl text-gray-600">
-                        Kordinator dari {{$event->name}}
+                        {{$event->name}}
                     </p>
                 </div>
             </div>
@@ -336,12 +336,12 @@
                     <div class="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
                         <div class="flex-1 bg-white px-6 py-8 lg:p-12">
                             <h3 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                                Ahmad Ramadhani
+                                {{$event->lead_name}}
                             </h3>
 
-                            <p class="mt-6 text-base text-gray-500">Phone Number : 08133472313265</p>
-                            <p class="mt-1 text-base text-gray-500">Line ID : ramdhoni</p>
-                            <p class="mt-1 text-base text-gray-500">Email : icw.its@gmail.com</p>
+                            <p class="mt-6 text-base text-gray-500">Phone Number : {{$event->phone_number}}</p>
+                            <p class="mt-1 text-base text-gray-500">Line ID : {{$event->id_line}}</p>
+                            <p class="mt-1 text-base text-gray-500">Email : {{$event->lead_email}}</p>
                             <div class="mt-8">
                                 <div class="flex items-center">
                                     <h4 class="flex-shrink-0 pr-4 bg-white text-sm tracking-wider font-semibold uppercase text-indigo-600">
@@ -422,36 +422,29 @@
                             <p class="text-lg leading-6 font-medium text-gray-900">
                                 Guidebook
                             </p>
-                            <div class="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
-                <span>
-                  {{$event->price}}
-                </span>
-                                <span class="ml-3 text-xl font-medium text-gray-500">
-                  Rp
-                </span>
-                            </div>
+
                             <p class="mt-4 text-sm">
-                                <a href="#" class="font-medium text-gray-500 underline">
+                                <a href="{{$event->description_link}}" class="font-medium text-gray-500 underline">
                                     Pelejari lebih lanjut tentang Guidebook
                                 </a>
                             </p>
                             <div class="mt-6">
                                 <div class="rounded-md shadow">
-                                    <a href="#"
+                                    <a href="{{$event->guidebook}}"
                                        class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900">
-                                        Download GuideBook
+                                        Download Guidebook
                                     </a>
                                 </div>
                             </div>
-                            <div class="mt-4 text-sm">
-                                <a href="#" class="font-medium text-gray-900">
-                                    Ukuran Dokumen
-                                    <!-- space -->
-                                    <span class="font-normal text-gray-500">
-                    (20MB)
-                  </span>
-                                </a>
-                            </div>
+{{--                            <div class="mt-4 text-sm">--}}
+{{--                                <a href="#" class="font-medium text-gray-900">--}}
+{{--                                    Ukuran Dokumen--}}
+{{--                                    <!-- space -->--}}
+{{--                                    <span class="font-normal text-gray-500">--}}
+{{--                    (20MB)--}}
+{{--                  </span>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ use App\Models\Bill;
 use App\Models\Event;
 use App\Models\User;
 use Carbon\Carbon;
+use Database\Seeders\SponsorshipSeeder;
 use Database\Seeders\Test;
 use Illuminate\Database\Seeder;
 
@@ -23,7 +24,8 @@ class TestSeeder extends Seeder
             EventSeeder::class,
             BillSeeder::class,
             AnnouncementSeeder::class,
-            MessagesSeeder::class
+            MessagesSeeder::class,
+            SponsorshipSeeder::class
         ]);
 
         $events = Event::all();

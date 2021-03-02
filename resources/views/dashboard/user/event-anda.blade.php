@@ -42,7 +42,8 @@
                 <div class="flex-1 self-center">
                     <div class="grid grid-cols-3 gap-x-6 gap-y-8 ">
                         @forelse($events as $event)
-                            <a class="col-span-3 md:col-span-1" href="/dashboard/event/{{ Str::slug($event->name, '-') }}">
+                            <a class="col-span-3 md:col-span-1"
+                               href="/dashboard/event/{{ Str::slug($event->name, '-') }}">
                                 <div class="p-2 bg-competable1-0 space-y-6
                                         rounded-xl tracking-wide transform hover:shadow-lg hover:scale-105 duration-200">
                                     <div class="border-b border-white px-2 pt-4">
@@ -68,21 +69,22 @@
 
                                     <p class="font-medium text-justify text-base px-2 pb-4">
                                         <strong>Deskripsi:</strong> <span
-                                            class="block text-base"> {{$event->description}}</span>
+                                                class="block text-base"> {{$event->description}}</span>
                                     </p>
                                 </div>
                             </a>
-                            @empty
-                                <div
-                                    class="col-span-3 md:col-span-1 bg-competable1-0 space-y-6
-                                        rounded-xl tracking-wide transform hover:shadow-lg hover:scale-105 duration-200">
-                                    <div class="border-b border-white px-2 pt-4">
-                                        <h1 class="text-lg font-bold pb-2">
+                        @empty
+                            <div class="col-start-1 col-end-4">
+                                <div class="mx-auto bg-competable1-0 rounded-lg transform hover:shadow-lg hover:scale-105 duration-200">
+                                    <div class="border-b border-white  pt-4 p-10">
+                                        <h1 class="text-lg font-bold mt-5 pb-2">
                                             Tidak ada event terdaftar :(
                                         </h1>
+                                        <p>Untuk saat ini kamu tidak terdaftar pada event apapun. <br> Silahkan melakukan
+                                            pendaftaran pada event-event yang kamu sukai</p>
                                     </div>
-
                                 </div>
+                            </div>
                         @endforelse
 
                     </div>
