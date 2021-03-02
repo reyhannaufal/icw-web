@@ -17,13 +17,8 @@
                 </x-jet-nav-link>
             </div>
 
-        @if(auth()->user()->isAdmin())
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="/sponsor" :active="request()->routeIs('sponsorship')">
-                        {{ __('Sponsor') }}
-                    </x-jet-nav-link>
-                </div>
             <!-- Only viewable by admins -->
+            @if(auth()->user()->isAdmin())
                 @if(auth()->user()->isMaster())
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="/message" :active="request()->routeIs('message.index')">
@@ -68,7 +63,11 @@
                     </x-jet-nav-link>
                 </div>
 
-
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="/partner" :active="request()->routeIs('partner.index')">
+                        {{ __('Partner') }}
+                    </x-jet-nav-link>
+                </div>
             @else
                 <!-- Your events  -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

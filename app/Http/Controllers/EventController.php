@@ -113,6 +113,7 @@ class EventController extends Controller
 
     public function resetStatus(Event $event)
     {
+        $event->deleteFile('payment_receipt', auth()->user()->id);
         $event->usersWithPivot()->detach(auth()->user()->id);
 
         return back()->with('success','Reset status pembayaran sukses!');

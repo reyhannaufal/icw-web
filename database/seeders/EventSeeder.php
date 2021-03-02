@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\Prod;
+namespace Database\Seeders;
 
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
@@ -24,8 +24,8 @@ class EventSeeder extends Seeder
         $events = [
             [
                 'Paper Competition', '0', 'competition', '2021/03/07', '2021/04/18',
-                'Paper Competition ICW 2021 merupakan Kompetisi essay yang diperuntukkan untuk mahasiswa 
-                se-Indonesia sebagai sarana mengaktualisasikan ide dan inovasinya dalam bidang korosi dengan mengangkat 
+                'Paper Competition ICW 2021 merupakan Kompetisi essay yang diperuntukkan untuk mahasiswa
+                se-Indonesia sebagai sarana mengaktualisasikan ide dan inovasinya dalam bidang korosi dengan mengangkat
                 tema “Mewujudkan pengembangan inovasi pengendalian korosi secara optimal.',
                 'Indra Carllistya Pramadio', 'manamimushiiii', '085784779129', ' indra@pramadio.com'
             ],
@@ -35,7 +35,7 @@ class EventSeeder extends Seeder
             ],
             [
                 'Symposium', '0', 'non-competition', '2021/05/22', '2021/05/22',
-                'Symposium yang membahas tentang korosi serta aplikasi penanggulangannya di bidang 
+                'Symposium yang membahas tentang korosi serta aplikasi penanggulangannya di bidang
                 industri dan manufaktur, khususnya bidang Energi Baru dan Terbarukan (EBT) yang akan dipresentasikan oleh pembicara yang ahli dibidangnya. Symposium ICW 2021 dikemas berupa dialog interaktif serta diskusi antara narasumber dan peserta.',
                 'Lutfi Nur Aini', 'ltfnraini', '081332898488', 'lutfinuraini24@gmail.com'
             ],
@@ -55,7 +55,7 @@ class EventSeeder extends Seeder
                 'price' => $events[$i][1],
                 'type' => $events[$i][2],
                 'start_at' => $events[$i][3],
-                'end_at' => $events[$i][4],
+                'end_at' => $events[$i][4] . ' 23:59:59',
                 'description' => $events[$i][5],
                 'lead_name' => $events [$i][6],
                 'id_line' => $events [$i][7],

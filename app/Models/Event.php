@@ -78,15 +78,16 @@ class Event extends Model
 
     public function deleteFile($type, $user_id, $status = null)
     {
-        $pivot_table = $this->usersWithPivot();
         if ($type != 'paper') {
+            $pivot_table = $this->usersWithPivot();
             $pivot_table->updateExistingPivot($user_id, [
                 'payment_status' => $status,
                 'updated_at' => Carbon::now()
             ]);
-            $path = $pivot_table->first()->participation->payment_receipts_path;
+            $path = $pivot_table->find($user_id)->participation->payment_receipt_path;
         } else {
-            $path = $pivot_table->first()->participation->paper_path;
+            $pivot_table = $this->usersWithPaper();
+            $path = $pivot_table->find($user_id)->participation->paper_path;
         }
         $delete_success = false;
 
@@ -103,7 +104,7 @@ class Event extends Model
                 ]);
             } else {
                 $pivot_table->updateExistingPivot($user_id, [
-                    'payment_receipts' => null,
+                    'payment_receipt_path' => null,
                 ]);
             }
         }

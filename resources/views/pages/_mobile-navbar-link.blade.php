@@ -25,7 +25,8 @@
                 <div class="mt-6">
                     <nav class="grid grid-cols-1 gap-7">
 
-                        <a href="/ "
+                        <a href="/"
+                           onclick="_scrollTo(this, 'events')"
                            class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                             <div
                                     class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
@@ -56,7 +57,7 @@
                             </div>
                         </a>
 
-                        <a href="/sponsor-page" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                        <a href="/contact" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                             <div
                                     class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                 <svg class="h-6 w-6" x-description="Heroicon name: outline/chat-alt-2"

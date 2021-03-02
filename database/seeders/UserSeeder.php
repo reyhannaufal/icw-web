@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\Prod;
+namespace Database\Seeders;
 
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
@@ -30,12 +30,10 @@ class UserSeeder extends Seeder
         ];
         $count = count($admins);
         for ($i = 0; $i < $count; $i++) {
-            $email = (($i == $count - 1) ? 'masteradmin' : 'admin' . ($i + 1)) . '@admin.com';
-
             User::create([
                 'name' => $admins[$i][0],
-                'email' => $email,
-                'password' => bcrypt($admins[$i][1]),
+                'email' =>  $admins[$i][1],
+                'password' => bcrypt($admins[$i][2]),
                 'institution' => 'Indocor ITS',
                 'phone_number' => '000000000000',
                 'created_at' => Carbon::now(),

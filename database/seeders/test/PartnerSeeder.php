@@ -2,10 +2,10 @@
 
 namespace Database\Seeders\test;
 
+use App\Models\Partner;
 use Illuminate\Database\Seeder;
-use App\Models\User;
 
-class UserSeeder extends Seeder
+class PartnerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +14,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()
-            ->count(30)
-            ->create();
+        Partner::factory()->count(3)->create();
     }
 }
