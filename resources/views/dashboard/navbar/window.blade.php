@@ -50,7 +50,7 @@
                                             :active="request()->routeIs('paper.index')">
                                 Paper
                                 <span class="ml-1.5 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
-                                {{ $papers_count  }}
+                                <p class="papers-badget">{{ $ungraded_paper_count  }}</p>
                             </span>
                             </x-jet-nav-link>
                         </div>

@@ -47,6 +47,12 @@ class PaperController extends Controller
         return back();
     }
 
+    public function download($path)
+    {
+        $this->authorize('interactAsAdmin', auth()->user());
+        return Storage::download($path);
+    }
+
     public function destroy(User $user)
     {
         $this->authorize('interactAsAdmin', auth()->user());

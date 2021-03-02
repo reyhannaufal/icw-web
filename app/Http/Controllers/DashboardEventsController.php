@@ -29,12 +29,12 @@ class DashboardEventsController extends Controller
         return view('dashboard.user.show-event', compact('event'));
     }
 
-    public function store(User $user) {
+    public function storePaper(User $user) {
         $pivot_table = $user->events();
 
         // Onlu registered and verified users can access event page
         if  (empty($pivot_table
-            ->where('event_id', $event->id)
+            ->where('name', 'Paper Competition')
             ->where('payment_status', 'success')
             ->first())
         ) {
