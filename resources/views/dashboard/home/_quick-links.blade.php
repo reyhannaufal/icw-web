@@ -18,12 +18,9 @@
             <x-event.quick-link-body :event="$events[3]"/>
         </div>
 
-        <div class="rounded-bl-lg  relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-cyan-500">
+        <div class="rounded-bl-lg  w-full relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset col-start-1 col-end-3 focus-within:ring-cyan-500">
             <x-event.quick-link-body :event="$events[4]"/>
         </div>
 
-        <div class="rounded-br-lg relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-cyan-500">
-            <x-event.quick-link-body :event="$events[5]"/>
-        </div>
     </div>
 </section>
