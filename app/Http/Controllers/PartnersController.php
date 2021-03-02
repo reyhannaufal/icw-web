@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\SponsorExport;
-use App\Http\Requests\StoreSponsorRequest;
-use App\Models\Sponsorship;
+use App\Exports\PartnerExport;
+use App\Http\Requests\StorePartnerRequest;
+use App\Models\Partner;
 use Maatwebsite\Excel\Facades\Excel;
 
-class SponsorshipController extends Controller
+class PartnersController extends Controller
 {
 
     public function index()
     {
         $this->authorize('interactAsAdmin');
 
-        $sponsors = Sponsorship::all();
+        $partners = Partner::all();
 
-        return view('dashboard.admin.sponsorship.index', compact('sponsors'));
+        return view('dashboard.admin.partners.index', compact('partners'));
     }
 
     public function create()
@@ -24,10 +24,10 @@ class SponsorshipController extends Controller
         return view('pages.become-partner');
     }
 
-    public function store(StoreSponsorRequest $request)
+    public function store(StorePartnerRequest $request)
     {
         $attributes = $request->validated();
-        Sponsorship::create(
+        Partner::create(
             [
                 'first_name' => $attributes['first_name'],
                 'last_name' => $attributes['last_name'],
@@ -38,20 +38,19 @@ class SponsorshipController extends Controller
             ]
         );
 
-        return redirect()->route('sponsorship')
-            ->with('success', 'Pesan terkirim!');
+        return back()->with('success', 'Pesan terkirim!');
     }
 
     public function export()
     {
         $this->authorize('interactAsAdmin'); // If false, it'll display 403
-        return Excel::download(new SponsorExport(), 'Partner ICW' . '.xlsx');
+        return Excel::download(new PartnerExport(), 'Partner ICW' . '.xlsx');
     }
 
-    public function destroy(Sponsorship $sponsor)
+    public function destroy(Partner $partner)
     {
         $this->authorize('interactAsMaster'); // If false, it'll display 403
-        $sponsor->delete();
+        $partner->delete();
 
         return back()->with('succes', 'Delete berhasil!');
     }

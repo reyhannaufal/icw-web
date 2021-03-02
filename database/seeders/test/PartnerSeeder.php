@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Test;
 
-use App\Models\Sponsorship;
+use App\Models\Partner;
 use Illuminate\Database\Seeder;
 
-class SponsorshipSeeder extends Seeder
+class PartnerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class SponsorshipSeeder extends Seeder
      */
     public function run()
     {
-        Sponsorship::factory()->count(3)->create();
+        Partner::factory()->count(3)->create();
     }
 }

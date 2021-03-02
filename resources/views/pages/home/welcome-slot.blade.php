@@ -8,7 +8,7 @@
             @include('pages.home._hero-section')
 
             <!-- Logo Cloud -->
-            @include('pages.home._sponsor-logo')
+            @include('pages.home._partner-logo')
         </main>
 
         <!-- What is ICW and ICW Goal -->

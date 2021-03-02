@@ -6,11 +6,11 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class SponsorExport implements FromQuery, WithHeadings
+class PartnerExport implements FromQuery, WithHeadings
 {
     public function query()
     {
-        $table = DB::table('sponsorships');
+        $table = DB::table('partners');
         $table = $table->select(
             'first_name',
             'last_name',

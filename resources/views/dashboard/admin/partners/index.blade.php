@@ -3,13 +3,13 @@
         <div class="px-2 py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="pb-5 border-b border-gray-200 sm:flex sm:items-center sm:justify-between">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
-                    <strong>Tabel Sponsor</strong>
+                    <strong>Tabel Partner</strong>
                 </h3>
                 <div class="mt-3 sm:mt-0 sm:ml-4">
-                    <a href="{{ route('sponsor.export') }}">
+                    <a href="{{ route('partner.export') }}">
                         <button type="button"
                                 class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            Cetak Sponsor
+                            Cetak Partner
                         </button>
                     </a>
                 </div>
@@ -36,17 +36,17 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($sponsors as $sponsor)
+                        @foreach($partners as $partner)
                             <tr>
-                                <td>{{ $sponsor->first_name}} {{$sponsor->last_name}}</td>
-                                <td>{{ $sponsor->institution }}</td>
-                                <td>{{ $sponsor->email }}</td>
-                                <td>{{ $sponsor->phone_number}}</td>
-                                <td>{{ $sponsor->option }}</td>
+                                <td>{{ $partner->first_name}} {{$partner->last_name}}</td>
+                                <td>{{ $partner->institution }}</td>
+                                <td>{{ $partner->email }}</td>
+                                <td>{{ $partner->phone_number}}</td>
+                                <td>{{ $partner->option }}</td>
                                 @if (auth()->user()->isMaster())
                                     <td>
                                         <form class="inline-block"
-                                              action="{{ route('sponsor.destroy', $sponsor->id) }}"
+                                              action="{{ route('partner.destroy', $partner->id) }}"
                                               method="POST" onsubmit="return confirm('Are you sure?');">
                                             @csrf
                                             @method('DELETE')

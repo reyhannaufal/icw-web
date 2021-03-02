@@ -101,14 +101,18 @@
             <li>Admin master dapat mendownload excel yang berisikan nilai peserta paper competition.</li>
             <li>Paper dapat dihapus hanya jika paper tersebut bernilai <strong>0.00</strong>.</li>
             <li>Admin dapat memberi nilai pada paper mulai dari <strong>0.00</strong> hingga <strong>100.00</strong>.</li>
-<<<<<<< HEAD
             <li>Admin dapat memberi nilai pada paper mulai di kolom <strong>Nilai</strong>.</li>
-=======
->>>>>>> 55f91170327794f15128d4cd133343bae6f5b653
             <li>Peserta dapat mendownload paper yang telah di submit di dashboard event peserta.</li>
             <li>Jika admin menghapus paper peserta, maka peserta tidak dapat untuk mendownload paper yang telah ia submit.</li>
             <li>Peserta yang papernya dihapus akan diberikan notifikasi melalui email.</li>
             <li>Link pendaftaran dan upload paper akan ditutup secara otomatis sesuai dengan waktu penutupan pendaftaran yang ditampilkan di dashboard user.</li>
+        </x-guide-card>
+        <x-guide-card>
+            <x-slot name="title">
+                Fitur Menu Partner
+            </x-slot>
+            <li>Admin master dapat melihat, mencetak, dan menghapus partner.</li>
+            <li>Admin normal dapat melihat dan mecetak partner.</li>
         </x-guide-card>
     </div>
 </x-app-layout>
