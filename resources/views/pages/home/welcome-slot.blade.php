@@ -37,7 +37,7 @@
         <!-- Start : Our Last Recap -->
         @include('pages.home._recap')
 
-        <div class="bg-bgsection-0">
+        <div id="contact" class="bg-bgsection-0">
             @include('pages.home._contact-section')
         </div>
 

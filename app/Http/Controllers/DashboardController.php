@@ -30,7 +30,7 @@ class DashboardController extends Controller
                    ->join('events', 'event_id', '=', 'events.id')
                    ->select(
                        'users.name AS name', 'events.name AS event_name',
-                       'payment_status', 'email', 'institution', 'phone_number',
+                       'payment_status', 'email', 'institution', 'users.phone_number',
                        'event_user.created_at'
                    )->orderBy('event_name')->get();
 

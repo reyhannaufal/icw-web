@@ -50,10 +50,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('message', MessagesController::class);
     Route::resource('announcement', AnnouncementsController::class);
     Route::resource('sponsor', SponsorshipController::class);
+    Route::get('/sponsors', [SponsorshipController::class, 'export'])->name('sponsor.export');
 
     Route::get('/papers', [PaperController::class, 'index'])->name('paper.index');
     Route::post('/admin/paper/grade', [PaperController::class, 'update'])->name('paper.update');
-//    Route::get('/download/paper/{path}', [PaperController::class, 'download'])->name('paper.download');
     Route::delete('/paper/{user}', [PaperController::class, 'destroy'])->name('paper.destroy');
 });
 

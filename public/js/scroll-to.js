@@ -41,6 +41,9 @@ function getAdder(id) {
         case "recap":
             adder = window.innerWidth * 0.125;
             break;
+        case "contact":
+            adder = window.innerWidth * -0.075;
+            break;
         default:
             adder = 0;
     }

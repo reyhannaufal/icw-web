@@ -7,6 +7,11 @@
 
         <!-- Only viewable by admins -->
         @if (auth()->user()->isAdmin())
+            <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-jet-responsive-nav-link href="/message" :active="request()->routeIs('sponsor.index')">
+                    {{ __('Sponsor') }}
+                </x-jet-responsive-nav-link>
+            </div>
             @if (auth()->user()->isMaster())
                 <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-responsive-nav-link href="/message" :active="request()->routeIs('message.index')">
