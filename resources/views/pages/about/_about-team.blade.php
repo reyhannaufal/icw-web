@@ -16,7 +16,7 @@
                 <p class="text-xl text-gray-400 text-center">Testing can only prove the presence of bugs, not their absence.</p>
             </div>
             <div class="lg:col-span-2">
-                <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
+                <ul class="space-y-12 mx-auto sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
 
                     @include('pages.about._team-box', [
                         'img' => 'https://res.cloudinary.com/dogxsl2bo/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1614517768/pro_pict-min_pk6xv8.jpg',

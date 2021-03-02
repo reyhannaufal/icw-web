@@ -18,6 +18,12 @@ class CreateEventsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('price')->default(0);
+            $table->string('lead_name')->default('#');
+            $table->string('id_line')->default('#');
+            $table->string('phone_number')->default('#');
+            $table->string('lead_email')->default('#');
+            $table->string('guidebook')->default('#');
+            $table->string('description_link')->default('#');
             $table->string('type')->default('non-competition');
             $table->dateTime('start_at');
             $table->dateTime('end_at');

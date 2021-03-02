@@ -20,8 +20,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info');
 
-Route::get('/contact', [MessagesController::class, 'create'])->name('contact');
 Route::post('/messages', [MessagesController::class, 'store']);
+
+Route::get('/sponsor-page', [SponsorshipController::class, 'create'])->name('sponsorship');
+Route::post('/sponsors', [SponsorshipController::class, 'store']);
 
 // Dashboard
 Route::middleware('auth')->group(function () {
@@ -47,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('guide', [GuideController::class, 'index']);
     Route::resource('message', MessagesController::class);
     Route::resource('announcement', AnnouncementsController::class);
+    Route::resource('sponsor', SponsorshipController::class);
 
     Route::get('/papers', [PaperController::class, 'index'])->name('paper.index');
     Route::post('/admin/paper/grade', [PaperController::class, 'update'])->name('paper.update');

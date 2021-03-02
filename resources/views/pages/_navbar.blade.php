@@ -41,7 +41,7 @@
                 <a href="/about" class="text-base font-bold text-white hover:text-gray-700">
                     Tentang Kami
                 </a>
-                <a href="/contact" class="text-base font-bold text-white hover:text-gray-700">
+                <a href="/sponsor-page" class="text-base font-bold text-white hover:text-gray-700">
                     Jadilah Partner Kami
                 </a>
         </nav>

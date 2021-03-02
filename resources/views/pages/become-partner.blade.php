@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', 'Contact Page')
+    @section('title', 'Sponsorship Page')
     @section('description', 'Contact ICW')
 
     <div class="text-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-40">
@@ -16,30 +16,11 @@
             </div>
             <div class="mt-12">
                 <form
-                        action="/messages"
+                        action="/sponsors"
                         method="POST"
                         class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                 >
                     @csrf
-                    <div class="sm:col-span-2">
-                        <label
-                                for="salutation"
-                                class="block text-sm font-medium text-gray-100"
-                        >Salutation (Dr. /Mr. /Mrs. /Ms.)</label
-                        >
-                        <div class="mt-1">
-                            <input required
-                                   type="text"
-                                   name="salutation"
-                                   id="salutation"
-                                   autocomplete="salutation"
-                                   class="py-3 px-4 text-black bg-gray-100  block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                            />
-                        </div>
-                        @error('salutation')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                        @enderror
-                    </div>
                     <div>
                         <label
                                 for="first_name"
@@ -138,12 +119,12 @@
                     </div>
                     <div class="sm:col-span-2">
                         <label
-                        for="phone_number"
-                        class="block text-sm font-medium text-gray-100"
+                                for="option"
+                                class="block text-sm font-medium text-gray-100"
                         >Option</label
                         >
-                        <select name="option" 
-                        class="py-3 text-black bg-gray-100 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+                        <select name="option"
+                                class="py-3 text-black bg-gray-100 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                             <option value selected disabled style="display:none;"></option>
                             <option value="media-partner">Media Partner</option>
                             <option value="community-partner">Community Partner</option>
@@ -155,7 +136,6 @@
                                 class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Kirim!
-
                         </button>
                     </div>
                 </form>
