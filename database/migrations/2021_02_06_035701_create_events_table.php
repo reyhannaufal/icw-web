@@ -24,7 +24,7 @@ class CreateEventsTable extends Migration
             $table->string('lead_email')->default('#');
             $table->string('guidebook')->default('#');
             $table->string('description_link')->default('#');
-            $table->string('type')->default('non-competition');
+            $table->enum('type', ['competition', 'non-competition'])->default('non-competition');
             $table->dateTime('start_at');
             $table->dateTime('end_at');
             $table->timestamps();
@@ -35,7 +35,7 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('event_id');
-            $table->string('payment_status')->nullable();
+            $table->enum('payment_status', ['pending', 'failed', 'success'])->nullable();
             $table->string('payment_receipt_path')->nullable();
             $table->string('paper_path')->nullable();
             $table->decimal('paper_grade', $precision = 5, $scale = 2)->nullable();

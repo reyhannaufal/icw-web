@@ -8,7 +8,7 @@
             @include('pages.home._hero-section')
 
             <!-- Logo Cloud -->
-            @include('pages.home._sponsor-logo')
+            @include('pages.home._partner-logo')
         </main>
 
         <!-- What is ICW and ICW Goal -->
@@ -37,7 +37,7 @@
         <!-- Start : Our Last Recap -->
         @include('pages.home._recap')
 
-        <div class="bg-bgsection-0">
+        <div id="contact" class="bg-bgsection-0">
             @include('pages.home._contact-section')
         </div>
 

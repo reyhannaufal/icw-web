@@ -3,7 +3,6 @@ $(".grade").blur(function(e) {
     let user_id = parseInt($input.attr('id').split('_')[1]);
     let grade = parseFloat($input.val())
 
-    console.log(user_id, grade);
     $.ajax({
         url: '/admin/paper/grade',
         type: 'POST',

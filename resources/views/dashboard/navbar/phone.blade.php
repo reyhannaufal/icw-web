@@ -43,11 +43,17 @@
                 @endif
             @endif
 
-                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-responsive-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
-                        {{ __('Pengumuman') }}
-                    </x-jet-responsive-nav-link>
-                </div>
+            <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-jet-responsive-nav-link href="/announcement" :active="request()->routeIs('announcement.index')">
+                    {{ __('Pengumuman') }}
+                </x-jet-responsive-nav-link>
+            </div>
+
+            <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-jet-responsive-nav-link href="/message" :active="request()->routeIs('partner.index')">
+                    {{ __('Partner') }}
+                </x-jet-responsive-nav-link>
+            </div>
         @else
             <!-- Your events  -->
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    @section('title', 'Sponsorship Page')
+    @section('title', 'Partners Page')
     @section('description', 'Contact ICW')
 
     <div class="text-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-40">
@@ -16,7 +16,7 @@
             </div>
             <div class="mt-12">
                 <form
-                        action="/sponsors"
+                        action="/partners"
                         method="POST"
                         class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                 >

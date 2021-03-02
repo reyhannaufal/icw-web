@@ -10,9 +10,10 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class UsersExport implements FromQuery, WithHeadings
 {
-    public function __construct(int $event_id)
+    public function __construct(int $event_id, bool $isFree)
     {
         $this->event_id = $event_id;
+        $this->isFree = $isFree;
     }
 
     public function query()
@@ -35,14 +36,26 @@ class UsersExport implements FromQuery, WithHeadings
                         'event_user.updated_at'
                     );
             } else {
-                $table = $table
-                    ->select(
-                        'users.name',
-                        'users.email',
-                        'users.institution',
-                        'users.phone_number',
-                        'event_user.created_at',
-                    );
+                if ($this->isFree) {
+                    $table = $table ->
+                        select(
+                            'users.name',
+                            'users.email',
+                            'users.institution',
+                            'users.phone_number',
+                            'event_user.created_at',
+                        );
+                } else {
+                    $table = $table ->
+                        select(
+                            'users.name',
+                            'users.email',
+                            'users.institution',
+                            'users.phone_number',
+                            'event_user.created_at',
+                            'event_user.payment_status',
+                        );
+                }
             }
             $table = $table->where('event_user.event_id', '=', $this->event_id);
 
@@ -55,6 +68,7 @@ class UsersExport implements FromQuery, WithHeadings
                     'users.institution',
                     'users.phone_number',
                     'events.name AS eventname',
+                    'event_user.payment_status',
                     'event_user.paper_grade',
                     'event_user.created_at'
                 )
@@ -76,6 +90,7 @@ class UsersExport implements FromQuery, WithHeadings
         // For data of all users
         if ($this->event_id == 0) {
             array_push($header, 'Nama Event');
+            array_push($header, 'Status Pembayaran');
             array_push($header, 'Nilai Paper');
             array_push($header, 'Tanggal Daftar');
         } else if ($this->event_id == 1) {
@@ -83,6 +98,10 @@ class UsersExport implements FromQuery, WithHeadings
             array_push($header, 'Tanggal Kirim Paper');
         } else {
             array_push($header, 'Tanggal Daftar');
+
+            if (!$this->isFree) {
+                array_push($header, 'Status Pembayaran');
+            }
         }
         return $header;
     }

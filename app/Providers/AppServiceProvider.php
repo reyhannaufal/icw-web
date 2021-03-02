@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
                     ->with('messages_count', null)
                     ->with('ungraded_paper_count', $curr_event
                         ->usersWithPaper()
-                        ->where('paper_grade', '!=', '0.00')
+                        ->where('paper_grade', '0.00')
                         ->count());
             } else {
                 $view = $view

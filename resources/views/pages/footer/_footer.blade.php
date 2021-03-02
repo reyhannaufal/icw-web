@@ -15,7 +15,7 @@
 
         @include('pages.footer._footer-link', [
             'name' => 'Kontak Kami',
-            'route' => '/contact'
+            'route' => '/ scrollTo: contact'
         ])
 
         @include('pages.footer._footer-link', [

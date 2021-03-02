@@ -34,7 +34,7 @@
                     @if ($data['status'] === 'Failed')
                         <form method="POST" action="{{ route('reset-status', Str::slug($data['event_name'], '-')) }}">
                             @csrf
-                            <button class="text-black font-bold py-3 px-5 register-btn">
+                            <button class="text-black font-bold py-3 px-5 register-btn hover:border-none">
                                 Upload Ulang
                                 <br>
                                 Bukti Pembayaran

@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Sponsorship;
+use App\Models\Partner;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SponsorshipFactory extends Factory
+class PartnerFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Sponsorship::class;
+    protected $model = Partner::class;
 
     /**
      * Define the model's default state.
