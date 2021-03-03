@@ -16,7 +16,10 @@ function _scrollTo(curr, id, delayTo = '') {
 }
 
 function reScroll(curr) {
-    if (localStorage.delay) {
+    if (window.location.pathname  === '/contact') {
+        _scrollTo(curr, 'contact');
+
+    } else if (localStorage.delay) {
         _scrollTo(curr, localStorage.temp_id);
         setDelayOff();
     }
