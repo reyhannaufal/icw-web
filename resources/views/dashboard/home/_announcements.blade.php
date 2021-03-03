@@ -13,7 +13,7 @@
                                 <span class="absolute inset-0" aria-hidden="true"></span>
                                 {{ $announcement->title }}
                             </h3>
-                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">
+                            <p class="text-justify mt-1 text-sm text-gray-600 line-clamp-2">
                                 {{ $announcement->body }}
                             </p>
                         </div>

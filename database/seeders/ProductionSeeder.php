@@ -15,7 +15,8 @@ class ProductionSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            EventSeeder::class
+            EventSeeder::class,
+            AnnouncementSeeder::class
         ]);
     }
 }
