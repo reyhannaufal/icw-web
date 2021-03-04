@@ -69,7 +69,7 @@ class PaymentStatus extends Notification
             ->subject("Status Pembayaran Event " . $this->event_name)
             ->greeting("Halo, " . $this->user_name)
             ->line($text)
-            ->action('Dashboard Events', url('http://127.0.0.1:8000/events'))
+            ->action('Dashboard Events',  config('app.url') . 'events')
             ->line('Terima kasih sudah berpartisipasi dalam event kami.');
     }
 

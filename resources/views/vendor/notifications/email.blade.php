@@ -54,7 +54,7 @@
     [
         'actionText' => 'Hubungi Kami',
     ]
-) <span class="break-all">[Hubungi Kami](http://47.254.198.205:81/contact)</span>
+) <span class="break-all">[Hubungi Kami]({{ config('app.url') }}contact)</span>
 @endslot
 @endisset
 @endcomponent

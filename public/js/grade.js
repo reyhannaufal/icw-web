@@ -14,7 +14,7 @@ $(".grade").blur(function(e) {
             swal({
                 type: 'success',
                 title: "Nilai berhasil diubah!",
-                text: "Reload laman ini untuk menggunakan fitur pengurutan berdasarkan nilai.",
+                text: 'Reload laman ini untuk menggunakan:\n' + 'fitur pengurutan berdasarkan nilai / fitur delete.',
                 icon: "success",
                 buttons: true,
             });

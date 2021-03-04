@@ -18,7 +18,6 @@ class HomeController extends Controller
     {
         return view('pages.home.welcome-slot', [
             'events' => Event::all(),
-            'scrollToContact' => true
         ]);
     }
 }
