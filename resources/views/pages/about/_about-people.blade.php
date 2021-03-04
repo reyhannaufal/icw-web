@@ -1,3 +1,6 @@
+
+{{-- dikomen sampai ada pemberitahuan tentang event--}}
+
 <div class="bg-bgsection-0">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <p class="text-center text-base font-semibold uppercase text-gray-600 tracking-wider">
@@ -79,6 +82,33 @@
                     class="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-4 lg:max-w-5xl"
             >
 
+
+                @include('pages.about._people-box', [
+                    'img' => 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1614616262/Refanza_Zulfan_Faiz_Project_Officer_-_Refanza_Zulfan_izhrrg.jpg' ,
+                    'name'=> 'Refanza Zulfan Faiz',
+                    'role' => 'Project Officer',
+                    'url_linkedin'=> 'https://www.linkedin.com/in/refanza-zulfan-589423149/',
+                ])
+
+
+                @include('pages.about._people-box', [
+                    'img' => 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/v1614520631/Dhea_Febrina_Kostradyanti_Vice_Project_Officer_-_Dhea_Febrina-min_qkkgso.jpg',
+                    'name' => 'Dhea Febrina',
+                    'role' => 'Vice Project Officer',
+                    'url_linkedin' => 'https://www.linkedin.com/in/dhea-febrina-kostradyanti-65a0211b4'
+                ])
+
+
+                @include('pages.about._people-box', [
+                    'img'=> 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1614520632/4CE7F123-6382-4D84-89C0-741F3D3B0B48_-_Kevin_Deanta-min_kx0b3z.jpg',
+                    'name'=> 'Kevin Deanta Silalahi',
+                    'role' => 'Treasurer',
+                    'url_linkedin'=> 'https://id.linkedin.com/in/kevin-deanta-silalahi-29a5741bb',
+                ])
+
+
+
+
                 @include('pages.about._people-box', [
                'img' => 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1614533026/Michaela_Claresta_Head_of_Public_Relations_-_michaela_claresta_wf6rdv.jpg' ,
                'name'=> 'Michaela Claresta Erja',
@@ -102,13 +132,6 @@
 
 
 
-                @include('pages.about._people-box', [
-                        'img' => 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/v1614520631/Dhea_Febrina_Kostradyanti_Vice_Project_Officer_-_Dhea_Febrina-min_qkkgso.jpg',
-                        'name' => 'Dhea Febrina',
-                        'role' => 'Vice Project Officer',
-                        'url_linkedin' => 'https://www.linkedin.com/in/dhea-febrina-kostradyanti-65a0211b4'
-                    ])
-
 
                 @include('pages.about._people-box', [
                         'img' => 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1614520614/Fariza_Hafizh_Achly_Head_of_Events_-_Fariza_Hafizh_Achly-min_t5bwpq.jpg' ,
@@ -124,12 +147,6 @@
                      'url_linkedin'=> '#',
                  ])
 
-                @include('pages.about._people-box', [
-                        'img'=> 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1614520632/4CE7F123-6382-4D84-89C0-741F3D3B0B48_-_Kevin_Deanta-min_kx0b3z.jpg',
-                        'name'=> 'Kevin Deanta Silalahi',
-                        'role' => 'Treasurer',
-                        'url_linkedin'=> 'https://id.linkedin.com/in/kevin-deanta-silalahi-29a5741bb',
-                    ])
 
 
                 @include('pages.about._people-box', [
@@ -156,13 +173,6 @@
                     'url_linkedin'=> 'http://linkedin.com/in/ahmad-ramadhani',
                 ])
 
-
-                @include('pages.about._people-box', [
-                    'img' => 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1614616262/Refanza_Zulfan_Faiz_Project_Officer_-_Refanza_Zulfan_izhrrg.jpg' ,
-                    'name'=> 'Refanza Zulfan Faiz',
-                    'role' => 'Project Officer',
-                    'url_linkedin'=> 'https://www.linkedin.com/in/refanza-zulfan-589423149/',
-                ])
 
                 @include('pages.about._people-box', [
                 'img' => 'https://res.cloudinary.com/dogxsl2bo/image/upload/q_auto:eco/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1614616271/relita_shinta_deputy_head_of_branding_-_emailtugas_shinta_jhbwom.png' ,
