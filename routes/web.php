@@ -19,6 +19,7 @@ Route::get('errors/{number}', [ErrorsController::class, 'show'])->name('error');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/event/{event}', [EventController::class, 'show'])->name('event-info');
+Route::get('/contact', [HomeController::class, 'index'])->name('contact');
 
 Route::post('/messages', [MessagesController::class, 'store']);
 

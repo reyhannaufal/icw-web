@@ -13,4 +13,11 @@ class HomeController extends Controller
             'events' => Event::all(),
         ]);
     }
+
+    public function showContact()
+    {
+        return view('pages.home.welcome-slot', [
+            'events' => Event::all(),
+        ]);
+    }
 }

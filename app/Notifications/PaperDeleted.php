@@ -48,7 +48,7 @@ class PaperDeleted extends Notification
                 ->subject("Status Paper di Event Paper Competition ICW")
                 ->greeting("Halo, " . $this->user_name)
                 ->line($text)
-                ->action('Dashboard Events', url('http://127.0.0.1:8000/dashboard'))
+                ->action('Dashboard Events', config('app.url') .'dashboard')
                 ->line('Terima kasih sudah berpartisipasi dalam event kami.');
     }
 
