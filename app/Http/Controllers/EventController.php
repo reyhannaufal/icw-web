@@ -25,56 +25,63 @@ class EventController extends Controller
         if (!$payment_status) {
             if ($event->isFree()) {
                 $view = view('dashboard.user.status-card', [
-                    'data' => [
-                        'event_name' => $event->name,
-                        'status' => '',
-                        'price' => 'Gratis',
-                        'text' => 'Klik tombol "Daftar Sekarang" untuk daftar di event ini.',
-                        'rgba' => 'rgba(183, 221, 213, 0.6)'
-                    ],
+                    'event_name' => $event->name,
+                    'status' => '',
+                    'price' => 'Gratis',
+                    'text' => 'Klik tombol "Daftar Sekarang" untuk daftar di event ini.',
+                    'rgba' => 'rgba(183, 221, 213, 0.6)'
                 ]);
             } else {
-                $view = view('dashboard.user.pay-form', [
-                    'event' => $event,
-                    'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get()
-                ]);
+                if ($event->name == 'Paper Competition') {
+                    $payment_info = $this->getBranch(Carbon::now());
+                    if (!isset($payment_info)) {
+                        abort(404);
+                    }
+                    $view = view('dashboard.user.pay-form', [
+                        'event' => $event,
+                        'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get(),
+                        'payment_info' => $payment_info
+                    ]);
+                } else {
+                    $view = view('dashboard.user.pay-form', [
+                        'event' => $event,
+                        'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get()
+                    ]);
+                }
             }
         }
-        // Payment is waiting for verification
-        elseif ($payment_status == 'pending') {
-            $view = view('dashboard.user.status-card', [
-                'data' => [
-                    'event_name' => $event->name,
-                    'status' => ucfirst($payment_status),
-                    'price' => 'Rp. ' . $event->price,
-                    'text' => 'Pembayaran Anda sedang diproses',
-                    'rgba' => 'rgba(241, 213, 168, 0.507);'
-                ],
-            ]);
-        } // Payment failed
-        else if ($payment_status == 'failed') {
-            $view = view('dashboard.user.status-card', [
-                'data' => [
-                    'event_name' => $event->name,
-                    'status' => ucfirst($payment_status),
-                    'price' => 'Rp. ' . $event->price,
-                    'text' => 'Pembayaran Anda ditolak, hubungi penanggung jawab event ini untuk info lebih lanjut',
-                    'rgba' => 'rgba(240, 174, 172, 0.6);'
-                ],
-            ]);
-        } // Payment success
-        else if ($payment_status == 'success') {
-            $view = view('dashboard.user.status-card', [
-                'data' => [
-                    'event_name' => $event->name,
-                    'status' => ucfirst($payment_status),
-                    'price' => ($event->isFree()) ? 'Gratis' : 'Rp. ' . $event->price,
-                    'text' => 'Selamat, Anda dapat mengikuti event ini. Untuk info lebih lanjut, buka menu info event.',
-                    'rgba' => 'rgba(183, 221, 213, 0.6);'
-                ],
-            ]);
-        } else {
-            abort(403, 'Status pembayaran tidak terdefinisi');
+        else {
+            // Payment is waiting for verification
+            $data = [
+                'event_name' => $event->name,
+                'status' => ucfirst($payment_status),
+            ];
+
+            if ($payment_status == 'pending') {
+                $data['price'] = 'Rp. ' . $event->price;
+                $data['text'] = 'Pembayaran Anda sedang diproses';
+                $data['rgba'] = 'rgba(241, 213, 168, 0.507);';
+            } // Payment failed
+            else if ($payment_status == 'failed') {
+                $data['price'] = 'Rp. ' . $event->price;
+                $data['text'] = 'Pembayaran Anda ditolak, hubungi penanggung jawab event ini untuk info lebih lanjut';
+                $data['rgba'] = 'rgba(240, 174, 172, 0.6);';
+            } // Payment success
+            else if ($payment_status == 'success') {
+                $data['price'] = ($event->isFree()) ? 'Gratis' : 'Rp. ' . $event->price;
+                $data['text'] = 'Selamat, Anda dapat mengikuti event ini. Untuk info lebih lanjut, buka menu info event.';
+                $data['rgba'] = 'rgba(183, 221, 213, 0.6);';
+            } else {
+                abort(403, 'Status pembayaran tidak terdefinisi');
+            }
+            if ($event->name == 'Paper Competition') {
+                $payment_info = $this->getBranch(Carbon::now());
+                if (!isset($payment_info)) {
+                    abort(404);
+                }
+                $data['price'] = null;
+            }
+            $view = view('dashboard.user.status-card', $data);
         }
         return $view;
     }
@@ -94,6 +101,7 @@ class EventController extends Controller
                 'payment_receipt' => [
                     'required',
                     'image',
+                    'max:1024'
                 ],
             ]);
 
@@ -109,6 +117,34 @@ class EventController extends Controller
             request()->user()->notify(new PaymentStatus('pending', $event->name, Auth::user()->name));
             return back()->with('success','Pendaftaran Sukses!');
         }
+    }
+
+    public function getBranch(Carbon $now) {
+        $branchs_date = [
+            Carbon::create(2021, 3, 26, 23, 59, 59),
+            Carbon::create(2021, 4, 9, 23, 59, 59),
+            Carbon::create(2021, 4, 17, 23, 59, 59),
+        ];
+
+        if ($now < $branchs_date[0]) {
+            $data = [
+                'branch' => 'Branch 1',
+                'branch_price' => '35.000',
+            ];
+        } else if ($now < $branchs_date[1]) {
+            $data = [
+                'branch' => 'Branch 2',
+                'branch_price' => '40.000',
+            ];
+        } else if ($now < $branchs_date[2]) {
+            $data = [
+                'branch' => 'Branch 2',
+                'branch_price' => '45.000',
+            ];
+        } else {
+            $data = null;
+        }
+        return $data;
     }
 
     public function resetStatus(Event $event)
