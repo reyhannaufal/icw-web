@@ -20,13 +20,13 @@ class UserSeeder extends Seeder
 
         // Admin <nama event>, email, password
         $admins = [
-            ['Admin Paper Competition', 'papercompetition@admin.com', '12345678'],
-            ['Admin Corrosion Workshop', 'corrotionworkshop@admin.com', '12345678'],
-            ['Admin Symposium', 'symposium@noreply.com', '12345678'],
-            ['Admin Workshop Career Building', 'workshopcareer@admin.com', '12345678'],
-            ['Admin ICW Virtual Talks', 'virtualtalks@admin.com', '12345678'],
+            ['Admin Paper Competition', 'papercompetition@admin.com', 'AKUadminpaper'],
+            ['Admin Corrosion Workshop', 'corrotionworkshop@admin.com', 'AKUadmincorrosion'],
+            ['Admin Symposium', 'symposium@noreply.com', '12345678', 'AKUadminsymposium'],
+            ['Admin Workshop Career Building', 'workshopcareer@admin.com', 'AKUadmincareer'],
+            ['Admin ICW Virtual Talks', 'virtualtalks@admin.com', 'AKUadminvirtual'],
             // event selanjutnya...
-            ['Master Admin', 'master@admin.com', '12345678'],
+            ['Master Admin', 'master@admin.com', 'kepodehkamu#2021'],
         ];
         $count = count($admins);
         for ($i = 0; $i < $count; $i++) {
