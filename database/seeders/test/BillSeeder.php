@@ -18,4 +18,6 @@ class BillSeeder extends Seeder
             ->count(4)
             ->create();
     }
+
+
 }
