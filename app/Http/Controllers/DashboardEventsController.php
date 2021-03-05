@@ -45,7 +45,7 @@ class DashboardEventsController extends Controller
             'paper' => [
                 'required',
                 'mimes:pdf',
-                'max:4096'
+                'max:1024'
             ],
         ]);
 
