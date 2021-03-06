@@ -128,11 +128,14 @@ class User extends Authenticatable
         ];
 
         if ($createdAt < $batchs_date[0]) {
-            $data = 'Batch 1';
+            $data['name'] = 'Batch 1';
+            $data['price'] = 'Rp. 35.000';
         } else if ($createdAt < $batchs_date[1]) {
-            $data = 'Batch 2';
+            $data['name'] = 'Batch 2';
+            $data['price'] = 'Rp. 40.000';
         } else if ($createdAt < $batchs_date[2]) {
-            $data = 'Batch 3';
+            $data['name'] = 'Batch 3';
+            $data['price'] = 'Rp. 45.000';
         } else {
             $data = null;
         }

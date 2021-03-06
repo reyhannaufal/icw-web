@@ -47,22 +47,13 @@ class DashboardController extends Controller
                 $event = Event::where('id', auth()->user()->id)->first();
                 $this->authorize('interactAsEventAdmin', $event); // If false, it'll display 403
 
-                if ($event->isFree()) {
-                    return view('dashboard.admin.panel', [
-                        'users' => $event->usersWithPivot()->orderBy('id', 'ASC')->get(),
-                        'event_name' => $event->name,
-                        'isFree' => true,
-                        'registered_count' => $event->countRowsOnStatus('success'),
-                    ]);
-                } else {
-                    return view('dashboard.admin.panel', [
-                        'users' => $event->usersWithPivot()->orderBy('id', 'ASC')->get(),
-                        'event_name' => $event->name,
-                        'pending_count' => $event->countRowsOnStatus('pending'),
-                        'failed_count' => $event->countRowsOnStatus('failed'),
-                        'success_count' => $event->countRowsOnStatus('success')
-                    ]);
-                }
+                return view('dashboard.admin.panel', [
+                    'users' => $event->usersWithPivot()->orderBy('id', 'ASC')->get(),
+                    'event_name' => $event->name,
+                    'pending_count' => $event->countRowsOnStatus('pending'),
+                    'failed_count' => $event->countRowsOnStatus('failed'),
+                    'success_count' => $event->countRowsOnStatus('success')
+                ]);
             }
         }
         else { // go to user dashboard
@@ -86,10 +77,9 @@ class DashboardController extends Controller
         ];
         if ($event->name == 'Paper Competition') {
             foreach ($data['users'] as $user) {
-                $user['branch_name'] = $user->getUserBatch($user->participation->created_at);
+                $user['branch'] = $user->getUserBatch($user->participation->created_at);
             }
         }
-
         return view('dashboard.admin.verification', $data);
     }
 

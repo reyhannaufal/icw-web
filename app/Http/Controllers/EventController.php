@@ -19,36 +19,21 @@ class EventController extends Controller
 
     public function create(Event $event)
     {
-        $view = null;
         $payment_status = auth()->user()->getPaymentStatus($event);
 
         if (!$payment_status) {
-            if ($event->isFree()) {
-                $view = view('dashboard.user.status-card', [
-                    'event_name' => $event->name,
-                    'status' => '',
-                    'price' => 'Gratis',
-                    'text' => 'Klik tombol "Daftar Sekarang" untuk daftar di event ini.',
-                    'rgba' => 'rgba(183, 221, 213, 0.6)'
-                ]);
-            } else {
-                if ($event->name == 'Paper Competition') {
-                    $payment_info = $event->getBatch();
-                    if (!isset($payment_info)) {
-                        abort(404);
-                    }
-                    $view = view('dashboard.user.pay-form', [
-                        'event' => $event,
-                        'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get(),
-                        'payment_info' => $payment_info
-                    ]);
-                } else {
-                    $view = view('dashboard.user.pay-form', [
-                        'event' => $event,
-                        'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get()
-                    ]);
+            $data = [
+                'event' => $event,
+                'bills' => $event->bills()->orderBy('bank_name', 'DESC')->get()
+            ];
+            if ($event->name == 'Paper Competition') {
+                $payment_info = $event->getBatch();
+                if (!isset($payment_info)) {
+                    abort(404);
                 }
+                $data['payment_info'] = $payment_info;
             }
+            $view = view('dashboard.user.pay-form', $data);
         }
         else {
             // Payment is waiting for verification
@@ -59,12 +44,12 @@ class EventController extends Controller
 
             if ($payment_status == 'pending') {
                 $data['price'] = 'Rp. ' . $event->price;
-                $data['text'] = 'Pembayaran Anda sedang diproses';
+                $data['text'] = 'Pendaftaran Anda sedang diproses';
                 $data['rgba'] = 'rgba(241, 213, 168, 0.507);';
             } // Payment failed
             else if ($payment_status == 'failed') {
                 $data['price'] = 'Rp. ' . $event->price;
-                $data['text'] = 'Pembayaran Anda ditolak, hubungi penanggung jawab event ini untuk info lebih lanjut';
+                $data['text'] = 'Pendaftaran Anda ditolak, hubungi penanggung jawab event ini untuk info lebih lanjut';
                 $data['rgba'] = 'rgba(240, 174, 172, 0.6);';
             } // Payment success
             else if ($payment_status == 'success') {
@@ -74,12 +59,14 @@ class EventController extends Controller
             } else {
                 abort(403, 'Status pembayaran tidak terdefinisi');
             }
+
             if ($event->name == 'Paper Competition') {
-                $payment_info = $event->getBatch();
+                $payment_info = $event->getBatch(true);
                 if (!isset($payment_info)) {
                     abort(404);
                 }
-                $data['price'] = null;
+                $data['price'] = 'Rp. ' . $payment_info['batch_price'];
+                $data['batch_name'] = $payment_info['batch'];
             }
             $view = view('dashboard.user.status-card', $data);
         }
@@ -88,35 +75,30 @@ class EventController extends Controller
 
     public function store(Event $event)
     {
-        if ($event->isFree()) {
-            Auth::user()->events()->attach($event->id, [
-                'payment_status' => 'success',
-            ]);
-            request()->user()->notify(new PaymentStatus('success', $event->name, Auth::user()->name));
-            return redirect()
-                ->route('events.show', Str::slug($event->name, '-'))
-                ->with('success','Pendaftaran Sukses!');
-        } else {
-            $attributes = request()->validate([
-                'payment_receipt' => [
-                    'required',
-                    'image',
-                    'max:1024'
-                ],
-            ]);
+        if ($event->name != 'Paper Competition') {
+            $input['gdrive'] = 'required|string|max:127';
+        }
+        if (!$event->isFree()) {
+            $input['payment_receipt'] = 'required|image|max:1024';
+        }
+        $attributes = request()->validate($input);
 
+        if ($event->name != 'Paper Competition') {
+            $store_data['gdrive_path'] = $attributes['gdrive'];
+        }
+        if (!$event->isFree()) {
+            // store in local folder and rename payment_receipt
             $file_type = request('payment_receipt')->extension();
             $file_path = 'payment_receipts/' . Str::slug($event->name, '_');
             $file_name = Str::slug(Auth::user()->name, '_') . '.' . $file_type;
             $attributes['payment_receipt'] = request('payment_receipt')->storeAs($file_path, $file_name);
 
-            Auth::user()->events()->attach($event->id, [
-                'payment_status' => 'pending',
-                'payment_receipt_path' => $attributes['payment_receipt']
-            ]);
-            request()->user()->notify(new PaymentStatus('pending', $event->name, Auth::user()->name));
-            return back()->with('success','Pendaftaran Sukses!');
+            $store_data['payment_receipt_path'] = $attributes['payment_receipt'];
         }
+        $store_data['payment_status'] = 'pending';
+        Auth::user()->events()->attach($event->id, $store_data);
+        request()->user()->notify(new PaymentStatus($store_data['payment_status'], $event->name, Auth::user()->name));
+        return back()->with('success','Pendaftaran Sukses!');
     }
 
     public function resetStatus(Event $event)

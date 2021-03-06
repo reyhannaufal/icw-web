@@ -1,19 +1,21 @@
 <div class="rounded card min-w-sm border border-gray-700 bg-gray-700 text-gray-50
             transition-shadow shadow-xl hover:shadow-xl min-w-max"
 >
-    <!---->
-    <div class="w-full card__media hover:opacity-50">
-        <a href="{{ asset('storage/' . $user->participation->payment_receipt_path) }}" target="_blank">
-            <img src="{{ asset('storage/' . $user->participation->payment_receipt_path) }}"
-                class="h-96 w-96 card-img object-fill"
-            >
-        </a>
-    </div>
+    @if (isset($user->participation->payment_receipt_path))
+        <div class="w-full card__media hover:opacity-50">
+            <a href="{{ asset('storage/' . $user->participation->payment_receipt_path) }}" target="_blank">
+                <img src="{{ asset('storage/' . $user->participation->payment_receipt_path) }}"
+                     class="h-96 w-96 card-img object-fill"
+                >
+            </a>
+        </div>
+    @endif
 
     <div class="flex items-center p-4">
         <div class="relative flex flex-col items-center w-full">
             <div class="relative flex flex-col space-y-1 justify-center items-center w-full">
-                <span class="text-md whitespace-nowrap text-gray-50 font-semibold">
+                <span class="text-md whitespace-nowrap text-gray-50 font-semibold
+                    {{ (!isset($user->participation->payment_receipt_path)) ? 'my-2' : '' }}">
                     {{ $user->name }}
                 </span>
                 <span class="text-md whitespace-nowrap text-gray-100">
@@ -23,10 +25,18 @@
                     {{ $user->phone_number }}
                 </span>
 
-                @if (isset($user->branch_name))
+                @if (isset($user->branch))
                     <span class="text-md whitespace-nowrap text-gray-100">
-                        {{ $user->branch_name }}
+                        <p>{{ $user->branch['name'] }} ==> {{ $user->branch['price'] }}</p>
                     </span>
+                @endif
+
+                @if (isset($user->participation->gdrive_path))
+                    <a style="margin-top: 20px !important;" href="{{ $user->participation->gdrive_path }}" target="_blank">
+                        <span class="underline font-bold hover:text-yellow-200 text-md whitespace-nowrap text-gray-100">
+                            Link Google Drive
+                        </span>
+                    </a>
                 @endif
 
                 <div class="py-4 flex space-x-2">

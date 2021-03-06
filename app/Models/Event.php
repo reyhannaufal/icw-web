@@ -28,7 +28,7 @@ class Event extends Model
         return $this->belongsToMany(User::class)
             ->as('participation')
             ->withTimestamps()
-            ->withPivot('payment_status', 'payment_receipt_path');
+            ->withPivot('payment_status', 'payment_receipt_path', 'gdrive_path');
     }
 
     public function usersWithPaper()
@@ -86,34 +86,39 @@ class Event extends Model
             $pivot_table = $this->usersWithPaper();
             $path = $pivot_table->find($user_id)->participation->paper_path;
         }
-        $delete_success = false;
 
         // If not default file --> delete file
         if (isset($path) && $path != 'papers/dummy.pdf' && $path != 'payment_receipts/default.png') {
             $delete_success = $this->deleteLocalFile($path);
+        } else {
+            $delete_success = true;
         }
 
         // change path to null if image is deleted successfully
         if ($delete_success) {
+            $submit_data['gdrive_path'] = null;
             if ($type == 'paper') {
-                $pivot_table->updateExistingPivot($user_id, [
-                    'paper_path' => null,
-                ]);
+                $submit_data['paper_path'] = null;
             } else {
-                $pivot_table->updateExistingPivot($user_id, [
-                    'payment_receipt_path' => null,
-                ]);
+                $submit_data['payment_receipt_path'] = null;
             }
+            $pivot_table->updateExistingPivot($user_id, $submit_data);
         }
         return $delete_success;
     }
 
-    public function getBatch() {
+    public function getBatch($currUser = false) {
         if ($this->name != 'Paper Competition') {
             return null;
         }
 
-        $now = Carbon::now();
+        $now = ($currUser)
+            ? auth()->user()->events()
+                ->where('events.id', $this->attributes['id'])
+                ->first()
+                ->participation
+                ->created_at
+            : Carbon::now();
         $batchs_date = [
             Carbon::create(2021, 3, 26, 23, 59, 59),
             Carbon::create(2021, 4, 9, 23, 59, 59),
