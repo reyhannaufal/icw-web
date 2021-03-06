@@ -20,8 +20,11 @@
                              background: {{ $rgba }};
                              backdrop-filter: blur(20px);
                              overflow: hidden;">
-                        <a class="flex-1 text-lg sm:text-xl">{{ (isset($price)) ? $price : '' }}</a>
-                        <a class="flex1 font-semibold text-lg sm:text-xl">{{ ($price == 'Gratis') ? '' : $status }}</a>
+                        <div class="flex-1 text-lg sm:text-xl">
+                            @if ($event_name == 'Paper Competition') <div><strong>{{ $batch_name }}</strong></div> @endif
+                            <div>{{ ($price != 'Rp. 0') ? $price : 'Gratis' }}</div>
+                        </div>
+                        <a class="self-center flex1 font-semibold text-lg sm:text-xl">{{ ($price == 'Rp. 0') ? '' : $status }}</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +40,7 @@
                             <button class="text-black font-bold py-3 px-5 register-btn hover:border-none">
                                 Upload Ulang
                                 <br>
-                                Bukti Pembayaran
+                                File Pendaftaran
                             </button>
                         </form>
                     @elseif ($status === 'Success')

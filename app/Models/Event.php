@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use DB;
 use File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Log;
-use Str;
-use Throwable;
 
 class Event extends Model
 {
@@ -31,7 +28,7 @@ class Event extends Model
         return $this->belongsToMany(User::class)
             ->as('participation')
             ->withTimestamps()
-            ->withPivot('payment_status', 'payment_receipt_path');
+            ->withPivot('payment_status', 'payment_receipt_path', 'gdrive_path');
     }
 
     public function usersWithPaper()
@@ -89,26 +86,64 @@ class Event extends Model
             $pivot_table = $this->usersWithPaper();
             $path = $pivot_table->find($user_id)->participation->paper_path;
         }
-        $delete_success = false;
 
         // If not default file --> delete file
         if (isset($path) && $path != 'papers/dummy.pdf' && $path != 'payment_receipts/default.png') {
             $delete_success = $this->deleteLocalFile($path);
+        } else {
+            $delete_success = true;
         }
 
         // change path to null if image is deleted successfully
         if ($delete_success) {
+            $submit_data['gdrive_path'] = null;
             if ($type == 'paper') {
-                $pivot_table->updateExistingPivot($user_id, [
-                    'paper_path' => null,
-                ]);
+                $submit_data['paper_path'] = null;
             } else {
-                $pivot_table->updateExistingPivot($user_id, [
-                    'payment_receipt_path' => null,
-                ]);
+                $submit_data['payment_receipt_path'] = null;
             }
+            $pivot_table->updateExistingPivot($user_id, $submit_data);
         }
         return $delete_success;
+    }
+
+    public function getBatch($currUser = false) {
+        if ($this->name != 'Paper Competition') {
+            return null;
+        }
+
+        $now = ($currUser)
+            ? auth()->user()->events()
+                ->where('events.id', $this->attributes['id'])
+                ->first()
+                ->participation
+                ->created_at
+            : Carbon::now();
+        $batchs_date = [
+            Carbon::create(2021, 3, 26, 23, 59, 59),
+            Carbon::create(2021, 4, 9, 23, 59, 59),
+            Carbon::create(2021, 4, 17, 23, 59, 59),
+        ];
+
+        if ($now < $batchs_date[0]) {
+            $data = [
+                'batch' => 'Batch 1',
+                'batch_price' => '35.000',
+            ];
+        } else if ($now < $batchs_date[1]) {
+            $data = [
+                'batch' => 'Batch 2',
+                'batch_price' => '40.000',
+            ];
+        } else if ($now < $batchs_date[2]) {
+            $data = [
+                'batch' => 'Batch 2',
+                'batch_price' => '45.000',
+            ];
+        } else {
+            $data = null;
+        }
+        return $data;
     }
 
     public function deleteLocalFile($path_to_file)

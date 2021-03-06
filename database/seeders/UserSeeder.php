@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         $admins = [
             ['Admin Paper Competition', 'papercompetition@admin.com', 'AKUadminpaper'],
             ['Admin Corrosion Workshop', 'corrotionworkshop@admin.com', 'AKUadmincorrosion'],
-            ['Admin Symposium', 'symposium@noreply.com', '12345678', 'AKUadminsymposium'],
+            ['Admin Symposium', 'symposium@noreply.co', 'AKUadminsymposium'],
             ['Admin Workshop Career Building', 'workshopcareer@admin.com', 'AKUadmincareer'],
             ['Admin ICW Virtual Talks', 'virtualtalks@admin.com', 'AKUadminvirtual'],
             // event selanjutnya...

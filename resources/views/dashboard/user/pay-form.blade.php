@@ -19,19 +19,26 @@
             @if (isset($payment_info))
                 <div class="mb-6">
                     <div class="mb-2 text-base font-medium text-gray-900">
-                        <strong>{{ $payment_info['branch'] }}</strong>
+                        <strong>{{ $payment_info['batch'] }}</strong>
                     </div>
                     <div class="text-center text-base font-medium text-gray-900">
-                        <strong>Rp. {{ $payment_info['branch_price'] }}</strong>
+                        <strong>Rp. {{ $payment_info['batch_price'] }}</strong>
                     </div>
                 </div>
             @else
                 <div class="mb-6 text-center text-base font-medium text-gray-900">
-                    <strong>Rp. {{ $event->price }}</strong>
+                    <strong>
+                        @if ($event->isFree())
+                            Gratis
+                        @else
+                            Rp. {{ $event->price }}
+                        @endif
+                    </strong>
                 </div>
             @endif
 
-            <div class="mb-12">
+            @if (!$event->isFree())
+                <div class="mb-12">
                 <h2 class="text-base font-medium text-gray-900" id="announcements-title">
                     Pembayaran bisa dilakukan melalui:
                 </h2>
@@ -59,14 +66,28 @@
                     </ul>
                 </div>
             </div>
+            @endif
 
             <form method="POST" action="{{ route('event-register', Str::slug($event->name, '-')) }}" enctype="multipart/form-data">
                 @csrf
 
-                <div>
-                    <x-jet-label for="payment_receipt" value="{{ __('Bukti bayar') }}" />
-                    <x-jet-input id="payment_receipt" class="block mt-1 w-full" type="file" accept="image/*" name="payment_receipt" required autofocus />
-                </div>
+                @if (!$event->isFree())
+                    <div>
+                        <x-jet-label for="payment_receipt" value="{{ __('Bukti bayar') }}" />
+                        <x-jet-input id="payment_receipt" class="block mt-1 w-full" type="file" accept="image/*" name="payment_receipt" required autofocus />
+                    </div>
+                @endif
+
+                @if ($event->name != 'Paper Competition')
+                    <div class="{{ ($event->isFree()) ?: 'mt-4' }}">
+                        <x-jet-label for="gdrive" value="{{ __('Link Google Drive') }}" />
+                        <x-jet-input id="gdrive"
+                                     class="h-8 font-sans block mt-1 w-full border border-black border-opacity-100"
+                                     type="text" name="gdrive"
+                                     required autofocus
+                        />
+                    </div>
+                @endif
 
                 <div class="flex items-center justify-end mt-6">
                     <x-jet-button class="ml-4">

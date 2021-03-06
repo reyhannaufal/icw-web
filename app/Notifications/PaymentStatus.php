@@ -50,12 +50,12 @@ class PaymentStatus extends Notification
 
         switch ($this->status) {
             case "pending":
-                $text = "Bukti pembayaran Anda telah terkirim. " .
+                $text = "File pendaftaran Anda telah terkirim. " .
                     "Tunggu beberapa saat hingga pembayaran diverifikasi oleh admin. " .
                     "Notifikasi selanjutnya akan dikirim menuju email ini.";
                 break;
             case "failed":
-                $text = "Maaf, bukti pembayaran Anda tidak valid. " .
+                $text = "Maaf, file pendaftaran Anda tidak valid. " .
                     "Upload bukti pembayaran valid Anda atau hubungi kami untuk bantuan lebih lanjut.";
                 break;
             case "success":

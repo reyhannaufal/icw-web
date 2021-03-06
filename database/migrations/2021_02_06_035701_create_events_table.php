@@ -38,6 +38,7 @@ class CreateEventsTable extends Migration
             $table->enum('payment_status', ['pending', 'failed', 'success'])->nullable();
             $table->string('payment_receipt_path')->nullable();
             $table->string('paper_path')->nullable();
+            $table->string('gdrive_path')->nullable();
             $table->decimal('paper_grade', $precision = 5, $scale = 2)->nullable();
             $table->timestamps();
 
