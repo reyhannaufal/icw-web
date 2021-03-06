@@ -22,9 +22,9 @@
                              overflow: hidden;">
                         <div class="flex-1 text-lg sm:text-xl">
                             @if ($event_name == 'Paper Competition') <div><strong>{{ $batch_name }}</strong></div> @endif
-                            <div>{{ (isset($price)) ? $price : '' }}</div>
+                            <div>{{ ($price != 'Rp. 0') ? $price : 'Gratis' }}</div>
                         </div>
-                        <a class="self-center flex1 font-semibold text-lg sm:text-xl">{{ ($price == 'Gratis') ? '' : $status }}</a>
+                        <a class="self-center flex1 font-semibold text-lg sm:text-xl">{{ ($price == 'Rp. 0') ? '' : $status }}</a>
                     </div>
                 </div>
             </div>

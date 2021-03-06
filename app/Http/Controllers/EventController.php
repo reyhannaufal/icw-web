@@ -75,22 +75,25 @@ class EventController extends Controller
 
     public function store(Event $event)
     {
-        if ($event->isFree()) {
-            $attributes = request()->validate([
-                'gdrive' => 'required|string|max:127'
-            ]);
-            $store_data = ['gdrive_path' => $attributes['gdrive']];
-        } else {
-            $attributes = request()->validate([
-                'payment_receipt' => 'required|image|max:1024'
-            ]);
+        if ($event->name != 'Paper Competition') {
+            $input['gdrive'] = 'required|string|max:127';
+        }
+        if (!$event->isFree()) {
+            $input['payment_receipt'] = 'required|image|max:1024';
+        }
+        $attributes = request()->validate($input);
+
+        if ($event->name != 'Paper Competition') {
+            $store_data['gdrive_path'] = $attributes['gdrive'];
+        }
+        if (!$event->isFree()) {
             // store in local folder and rename payment_receipt
             $file_type = request('payment_receipt')->extension();
             $file_path = 'payment_receipts/' . Str::slug($event->name, '_');
             $file_name = Str::slug(Auth::user()->name, '_') . '.' . $file_type;
             $attributes['payment_receipt'] = request('payment_receipt')->storeAs($file_path, $file_name);
 
-            $store_data = ['payment_receipt_path' => $attributes['payment_receipt']];
+            $store_data['payment_receipt_path'] = $attributes['payment_receipt'];
         }
         $store_data['payment_status'] = 'pending';
         Auth::user()->events()->attach($event->id, $store_data);
