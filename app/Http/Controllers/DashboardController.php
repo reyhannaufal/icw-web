@@ -79,11 +79,18 @@ class DashboardController extends Controller
     {
         $this->authorize('interactAsEventAdmin', $event); // If false, it'll display 403
 
-        return view('dashboard.admin.verification', [
+        $data = [
             'users' => $event->usersWithPivot()
                 ->where('payment_status', 'pending')
                 ->oldest()->paginate(4),
-        ]);
+        ];
+        if ($event->name == 'Paper Competition') {
+            foreach ($data['users'] as $user) {
+                $user['branch_name'] = $user->getUserBatch($user->participation->created_at);
+            }
+        }
+
+        return view('dashboard.admin.verification', $data);
     }
 
     public function update(Request $request)

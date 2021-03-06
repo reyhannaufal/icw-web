@@ -8,6 +8,7 @@ use File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
@@ -117,5 +118,24 @@ class User extends Authenticatable
 
     public function isMaster() {
         return $this->id == Event::all()->count() + 1;
+    }
+
+    public function getUserBatch(Carbon $createdAt) {
+        $batchs_date = [
+            Carbon::create(2021, 3, 26, 23, 59, 59),
+            Carbon::create(2021, 4, 9, 23, 59, 59),
+            Carbon::create(2021, 4, 17, 23, 59, 59),
+        ];
+
+        if ($createdAt < $batchs_date[0]) {
+            $data = 'Batch 1';
+        } else if ($createdAt < $batchs_date[1]) {
+            $data = 'Batch 2';
+        } else if ($createdAt < $batchs_date[2]) {
+            $data = 'Batch 3';
+        } else {
+            $data = null;
+        }
+        return $data;
     }
 }

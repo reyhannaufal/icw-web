@@ -19,10 +19,10 @@
             @if (isset($payment_info))
                 <div class="mb-6">
                     <div class="mb-2 text-base font-medium text-gray-900">
-                        <strong>{{ $payment_info['branch'] }}</strong>
+                        <strong>{{ $payment_info['batch'] }}</strong>
                     </div>
                     <div class="text-center text-base font-medium text-gray-900">
-                        <strong>Rp. {{ $payment_info['branch_price'] }}</strong>
+                        <strong>Rp. {{ $payment_info['batch_price'] }}</strong>
                     </div>
                 </div>
             @else

@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use DB;
 use File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Log;
-use Str;
-use Throwable;
 
 class Event extends Model
 {
@@ -109,6 +106,39 @@ class Event extends Model
             }
         }
         return $delete_success;
+    }
+
+    public function getBatch() {
+        if ($this->name != 'Paper Competition') {
+            return null;
+        }
+
+        $now = Carbon::now();
+        $batchs_date = [
+            Carbon::create(2021, 3, 26, 23, 59, 59),
+            Carbon::create(2021, 4, 9, 23, 59, 59),
+            Carbon::create(2021, 4, 17, 23, 59, 59),
+        ];
+
+        if ($now < $batchs_date[0]) {
+            $data = [
+                'batch' => 'Batch 1',
+                'batch_price' => '35.000',
+            ];
+        } else if ($now < $batchs_date[1]) {
+            $data = [
+                'batch' => 'Batch 2',
+                'batch_price' => '40.000',
+            ];
+        } else if ($now < $batchs_date[2]) {
+            $data = [
+                'batch' => 'Batch 2',
+                'batch_price' => '45.000',
+            ];
+        } else {
+            $data = null;
+        }
+        return $data;
     }
 
     public function deleteLocalFile($path_to_file)
