@@ -84,6 +84,11 @@ class DashboardController extends Controller
                 ->where('payment_status', 'pending')
                 ->oldest()->paginate(4),
         ];
+        if ($event->name == 'Paper Competition') {
+            foreach ($data['users'] as $user) {
+                $user['branch_name'] = $user->getUserBatch($user->participation->created_at);
+            }
+        }
 
         return view('dashboard.admin.verification', $data);
     }

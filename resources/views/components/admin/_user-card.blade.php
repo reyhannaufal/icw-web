@@ -23,6 +23,12 @@
                     {{ $user->phone_number }}
                 </span>
 
+                @if (isset($user->branch_name))
+                    <span class="text-md whitespace-nowrap text-gray-100">
+                        {{ $user->branch_name }}
+                    </span>
+                @endif
+
                 <div class="py-4 flex space-x-2">
                     <button
                         class="flex justify-center  max-h-max whitespace-nowrap focus:outline-none  focus:ring
