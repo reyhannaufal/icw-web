@@ -22,6 +22,7 @@
                 <span class="text-md whitespace-nowrap text-gray-100">
                     {{ $user->phone_number }}
                 </span>
+
                 <div class="py-4 flex space-x-2">
                     <button
                         class="flex justify-center  max-h-max whitespace-nowrap focus:outline-none  focus:ring
@@ -48,7 +49,7 @@
                 </div>
                 <div class="pt-1 pb-2 flex justify-center">
                     <p class="text-xs text-gray-400">
-                        Terdaftar pada: {{ $user->participation->created_at }}
+                        Diupload pada: {{ $user->participation->created_at }}
                     </p>
                 </div>
             </div>

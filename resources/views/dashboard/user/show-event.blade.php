@@ -70,9 +70,16 @@
                         <dt class="text-sm font-medium text-gray-500">
                             Harga
                         </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . $event->price }}
-                        </dd>
+                        @if ($event->name != 'Paper Competition')
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . $event->price }}
+                            </dd>
+                        @else
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                <p class="py-2">Batch 1 --> Rp. 35.000</p>
+                                <p class="py-2">Batch 2 --> Rp. 40.000</p>
+                                <p class="py-2">Batch 3 --> Rp. 45.000</p>
+                        @endif
                     </div>
 
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
