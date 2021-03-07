@@ -116,8 +116,8 @@ return [
     'unique'               => ':Attribute sudah ada sebelumnya.',
     'uploaded'             => ':Attribute gagal diunggah.',
     'url'                  => 'Format :attribute tidak valid.',
-    'gdrive'               => 'Link yang dikirm bukanlah link menuju Google Drive.' .
-                                'Pastikan lnik diawali dengan "https://".',
+    'gdrive'               => 'Link yang dikirim bukanlah link menuju Google Drive. ' .
+                                'Pastikan link diawali dengan "https://".',
     'uuid'                 => ':Attribute harus merupakan UUID yang valid.',
 
     /*
