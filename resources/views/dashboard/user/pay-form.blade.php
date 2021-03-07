@@ -113,7 +113,6 @@
                                      required autofocus
                         />
                     </div>
-
                 @endif
 
                 <div class="flex items-center justify-end mt-6">

@@ -65,7 +65,7 @@
                 </div>
                 <div class="pt-1 pb-2 flex justify-center">
                     <p class="text-xs text-gray-400">
-                        Diupload pada: {{ $user->participation->created_at }}
+                        Terdaftar pada: {{ $user->participation->created_at }}
                     </p>
                 </div>
             </div>
