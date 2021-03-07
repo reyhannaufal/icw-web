@@ -2,7 +2,8 @@
 {{-- Header --}}
 @slot('header')
 @component('mail::header', ['url' => config('app.url')])
-    <img class="cursor-pointer" src="https://i.imgur.com/aA7A6mI.png"
+    <img class="cursor-pointer"
+         src="https://res.cloudinary.com/dogxsl2bo/image/upload/v1615098411/logo_indicor_urdqoi.png"
          alt="logo-indicor"
          style="width: 500px;"
     >

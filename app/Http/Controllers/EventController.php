@@ -76,7 +76,7 @@ class EventController extends Controller
     public function store(Event $event)
     {
         if ($event->name != 'Paper Competition') {
-            $input['gdrive'] = 'required|string|max:127';
+            $input['gdrive'] = 'required|string|gdrive|max:127';
         }
         if (!$event->isFree()) {
             $input['payment_receipt'] = 'required|image|max:1024';

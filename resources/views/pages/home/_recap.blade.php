@@ -6,7 +6,7 @@
     </div>
     <h1 class="font-bold text-4xl text-white text-center mb-20">Rekap Terakhir Kami</h1>
     <div >
-        <iframe class="mx-auto" src="https://www.youtube.com/embed/77KWQExJgaU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="mx-auto" src="https://www.youtube.com/embed/bJpwt3DzKEQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div class="flex flex-row justify-between my-40">

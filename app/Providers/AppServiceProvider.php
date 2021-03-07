@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Event;
+use Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -64,6 +65,10 @@ class AppServiceProvider extends ServiceProvider
                     ->with('ungraded_paper_count', null);
             }
             return $view;
+        });
+
+        Validator::extend('gdrive', function ($attribute, $value, $parameters, $validator) {
+            return str_contains($value,'https://drive.google.com/file/d/');
         });
     }
 }
