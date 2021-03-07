@@ -24,7 +24,7 @@
                             @if ($event_name == 'Paper Competition') <div><strong>{{ $batch_name }}</strong></div> @endif
                             <div>{{ ($price != 'Rp. 0') ? $price : 'Gratis' }}</div>
                         </div>
-                        <a class="self-center flex1 font-semibold text-lg sm:text-xl">{{ ($price == 'Rp. 0') ? '' : $status }}</a>
+                        <a class="self-center flex1 font-semibold text-lg sm:text-xl">{{ $status }}</a>
                     </div>
                 </div>
             </div>
