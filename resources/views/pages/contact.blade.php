@@ -2,7 +2,7 @@
         <div class="relative max-w-xl mx-auto">
             <div class="text-center">
                 <h2
-                        class="text-3xl font-extrabold tracking-tight text-gray-100 sm:text-4xl animate-pulse"
+                    class="text-3xl font-extrabold tracking-tight text-gray-100 sm:text-4xl animate-pulse"
                 >
                     Jadilah Partner Kami
                 </h2>

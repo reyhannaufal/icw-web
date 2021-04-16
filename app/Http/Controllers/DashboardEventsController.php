@@ -44,7 +44,7 @@ class DashboardEventsController extends Controller
         $attributes = request()->validate([
             'paper' => [
                 'required',
-                'mimes:pdf',
+                'mimes:pdf,txt,zip,rar',
                 'max:1024'
             ],
         ]);
