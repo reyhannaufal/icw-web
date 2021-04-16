@@ -52,9 +52,11 @@
                                         </h1>
                                     </div>
 
-                                    <p class="font-medium text-base px-2">
-                                        <strong>Harga:</strong> {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . $event->price }}
-                                    </p>
+                                    @if($event->name != 'Paper Competition')
+                                        <p class="font-medium text-base px-2">
+                                            <strong>Harga:</strong> {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . $event->price }}
+                                        </p>
+                                    @endif
 
                                     <p class="font-medium text-base px-2">
                                         @php

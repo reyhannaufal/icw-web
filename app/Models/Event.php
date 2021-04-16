@@ -137,7 +137,7 @@ class Event extends Model
             ];
         } else if ($now < $batchs_date[2]) {
             $data = [
-                'batch' => 'Batch 2',
+                'batch' => 'Batch 3',
                 'batch_price' => '45.000',
             ];
         } else {
