@@ -26,6 +26,10 @@ Route::post('/messages', [MessagesController::class, 'store']);
 Route::get('/partner-page', [PartnersController::class, 'create'])->name('partnership');
 Route::post('/partners', [PartnersController::class, 'store']);
 
+Route::get('/FinalPaperCompetition', function() {
+    return redirect('https://drive.google.com/drive/folders/1SNU_jmUrNUa7mNPZIeK-WWfKysE9GF7J?usp=sharing');
+});
+
 // Dashboard
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
