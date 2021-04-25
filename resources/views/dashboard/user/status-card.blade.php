@@ -20,10 +20,12 @@
                              background: {{ $rgba }};
                              backdrop-filter: blur(20px);
                              overflow: hidden;">
-                        <div class="flex-1 text-lg sm:text-xl">
-                            @if ($event_name == 'Paper Competition') <div><strong>{{ $batch_name }}</strong></div> @endif
-                            <div>{{ ($price != 'Rp. 0') ? $price : 'Gratis' }}</div>
-                        </div>
+                        @if ($event_name != 'Workshop Career Building')
+                            <div class="flex-1 text-lg sm:text-xl">
+                                @if ($event_name == 'Paper Competition') <div><strong>{{ $batch_name }}</strong></div> @endif
+                                <div>{{ ($price != 'Rp. 0') ? $price : 'Gratis' }}</div>
+                            </div>
+                        @endif
                         <a class="self-center flex1 font-semibold text-lg sm:text-xl">{{ $status }}</a>
                     </div>
                 </div>
