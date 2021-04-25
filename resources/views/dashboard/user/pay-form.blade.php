@@ -3,21 +3,22 @@
         <div class="md:w-full mx-auto sm:max-w-md mt-6 px-6 py-4">
             <h1 class="text-center text-gray-600 font-bold text-3xl">Silahkan Menyelesaikan Pendaftaran</h1>
             <div class="border-b-8 mt-3"></div>
-            <div class="mt-5 mx-auto">
-                <h3 class="text-xl text-gray-800">Deskripsi pembayaran</h3>
-                <ul class="mt-3 list-decimal text-gray-600">
-                    <li>Pastikan melakukan pembayaran dengan benar.</li>
-                    <li>Silahkan upload bukti pembayaran dibawah</li>
-                    <li>Tunggu konfirmasi admin</li>
-                </ul>
-            </div>
+            @if ($event->name != 'Workshop Career Building')
+                <div class="mt-5 mx-auto">
+                    <h3 class="text-xl text-gray-800">Deskripsi pembayaran</h3>
+                    <ul class="mt-3 list-decimal text-gray-600">
+                        <li>Pastikan melakukan pembayaran dengan benar.</li>
+                        <li>Silahkan upload bukti pembayaran dibawah</li>
+                        <li>Tunggu konfirmasi admin</li>
+                    </ul>
+                </div>
+            @endif
             @if ($event->name != 'Paper Competition')
                 <div class="mt-5 mx-auto">
-                    <h3 class="text-xl text-gray-800">Cara pembayaran <br> <span
+                    <h3 class="text-xl text-gray-800">Cara {{ $event->name == 'Workshop Career Building' ? 'pendaftaran' : 'pembayaran'}}<br> <span
                                 class="text-indigo-800">Event {{$event->name}}.</span></h3>
                     <ul class="mt-3 list-decimal text-gray-600">
                         @if ($event->name == 'Workshop Career Building')
-                            <li>Lakukan pembayaran.</li>
                             <li>Follow instagram @indocoritssc.</li>
                             <li>Follow instagram @icw2021.</li>
                             <li>Subscribe youtube Indocor ITS SC <a href="https://bit.ly/YOUTUBEINDOCORITSSC"
@@ -27,6 +28,7 @@
                             <li>Upload bukti-bukti di atas di link berikut  <a href="http://bit.ly/PendaftaranCareerBuildingICW"
                                                                                class="underline text-blue-600">bit.ly/PendaftaranCareerBuildingICW</a>.
                             </li>
+                            <li>Setelah mengupload bukti-bukti, klik tombol <strong>daftar</strong> dibawah ini.</li>
                         @else
                             <li>Upload bukti memfollow instagram @indocoritssc.</li>
                             <li>Upload bukti memfollow instagram @icw2021.</li>
