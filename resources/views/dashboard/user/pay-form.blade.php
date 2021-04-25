@@ -19,7 +19,6 @@
                                 class="text-indigo-800">Event {{$event->name}}.</span></h3>
                     <ul class="mt-3 list-decimal text-gray-600">
                         @if ($event->name == 'Workshop Career Building')
-                            <li>Lakukan pembayaran.</li>
                             <li>Follow instagram @indocoritssc.</li>
                             <li>Follow instagram @icw2021.</li>
                             <li>Subscribe youtube Indocor ITS SC <a href="https://bit.ly/YOUTUBEINDOCORITSSC"
