@@ -17,6 +17,7 @@
                                 class="text-indigo-800">Event {{$event->name}}.</span></h3>
                     <ul class="mt-3 list-decimal text-gray-600">
                         @if ($event->name == 'Workshop Career Building')
+                            <li>Lakukan pembayaran.</li>
                             <li>Follow instagram @indocoritssc.</li>
                             <li>Follow instagram @icw2021.</li>
                             <li>Subscribe youtube Indocor ITS SC <a href="https://bit.ly/YOUTUBEINDOCORITSSC"
@@ -57,7 +58,7 @@
                         <strong>Rp. {{ $payment_info['batch_price'] }}</strong>
                     </div>
                 </div>
-            @else
+            @elseif ($event->name != 'Workshop Career Building')
                 <div class="mb-6 text-center text-base font-medium text-gray-900">
                     <strong>
                         @if ($event->isFree())
@@ -67,9 +68,7 @@
                         @endif
                     </strong>
                     @if($event->isFree())
-                        @if ($event->name != 'Workshop Career Building')
-                            <h3 class="mt-3 animate-bounce">Upload link drive kamu dibawah!</h3>
-                        @endif
+                        <h3 class="mt-3 animate-bounce">Upload link drive kamu dibawah!</h3>
                     @endif
                 </div>
             @endif
@@ -129,8 +128,8 @@
                     </div>
                 @endif
 
-                <div class="flex items-center mt-6
-                        {{ $event->name == 'Workshop Career Building' ? 'justify-center' : 'justify-end' }}">
+                <div class="flex items-center
+                        {{ $event->name == 'Workshop Career Building' ? 'justify-center' : 'justify-end mt-6' }}">
                     <x-jet-button class="{{ $event->name == 'Workshop Career Building' ?: 'ml-4' }}">
                         {{ __('Daftar') }}
                     </x-jet-button>
