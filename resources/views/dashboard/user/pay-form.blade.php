@@ -68,7 +68,9 @@
                         @endif
                     </strong>
                     @if($event->isFree())
-                        <h3 class="mt-3 animate-bounce">Upload link drive kamu dibawah!</h3>
+                        @if ($event->name != 'Workshop Career Building')
+                            <h3 class="mt-3 animate-bounce">Upload link drive kamu dibawah!</h3>
+                        @endif
                     @endif
                 </div>
             @endif
