@@ -75,7 +75,8 @@ class EventController extends Controller
 
     public function store(Event $event)
     {
-        if ($event->name != 'Paper Competition') {
+        $input = [];
+        if ($event->name != 'Paper Competition' && $event->name != 'Workshop Career Building') {
             $input['gdrive'] = 'required|string|gdrive|max:127';
         }
         if (!$event->isFree()) {
@@ -83,7 +84,7 @@ class EventController extends Controller
         }
         $attributes = request()->validate($input);
 
-        if ($event->name != 'Paper Competition') {
+        if ($event->name != 'Paper Competition' && $event->name != 'Workshop Career Building') {
             $store_data['gdrive_path'] = $attributes['gdrive'];
         }
         if (!$event->isFree()) {

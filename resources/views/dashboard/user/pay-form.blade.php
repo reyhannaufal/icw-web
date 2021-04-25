@@ -8,7 +8,7 @@
                 <ul class="mt-3 list-decimal text-gray-600">
                     <li>Pastikan melakukan pembayaran dengan benar.</li>
                     <li>Silahkan upload bukti pembayaran dibawah</li>
-                    <li>Tunggu untuk konfirmasi admin</li>
+                    <li>Tunggu konfirmasi admin</li>
                 </ul>
             </div>
             @if ($event->name != 'Paper Competition')
@@ -16,18 +16,30 @@
                     <h3 class="text-xl text-gray-800">Cara pembayaran <br> <span
                                 class="text-indigo-800">Event {{$event->name}}.</span></h3>
                     <ul class="mt-3 list-decimal text-gray-600">
-                        <li>Upload bukti memfollow instagram @indocoritssc.</li>
-                        <li>Upload bukti memfollow instagram @icw2021.</li>
-                        <li>Upload bukti subscribe youtube Indocor ITS SC <a href="https://bit.ly/YOUTUBEINDOCORITSSC"
-                                                                             class="underline text-blue-600">bit.ly/YOUTUBEINDOCORITSSC</a>.
-                        </li>
-                        <li>Upload bukti share poster event terkait dan tag 3 teman dan tag @icw2021.</li>
-                        <li>Semua file dikumpulkan pada satu google drive.</li>
-                        <li>Link google drive harap di set untuk dapat dibuka secara umum. <br> <a
-                                    href="https://support.google.com/drive/answer/2494822?co=GENIE.Platform%3DDesktop&hl=en"
-                                    class="underline text-blue-600">Bantuan untuk membuka drive secara umum</a>.
-                        </li>
-                        <li>Upload link google drive anda dibawah.</li>
+                        @if ($event->name == 'Workshop Career Building')
+                            <li>Follow instagram @indocoritssc.</li>
+                            <li>Follow instagram @icw2021.</li>
+                            <li>Subscribe youtube Indocor ITS SC <a href="https://bit.ly/YOUTUBEINDOCORITSSC"
+                                                                     class="underline text-blue-600">bit.ly/YOUTUBEINDOCORITSSC</a>.
+                            </li>
+                            <li>Share poster event terkait dan tag 3 teman dan tag @icw2021.</li>
+                            <li>Upload bukti-bukti di atas di link berikut  <a href="http://bit.ly/PendaftaranCareerBuildingICW"
+                                                                               class="underline text-blue-600">bit.ly/PendaftaranCareerBuildingICW</a>.
+                            </li>
+                        @else
+                            <li>Upload bukti memfollow instagram @indocoritssc.</li>
+                            <li>Upload bukti memfollow instagram @icw2021.</li>
+                            <li>Upload bukti subscribe youtube Indocor ITS SC <a href="https://bit.ly/YOUTUBEINDOCORITSSC"
+                                                                                 class="underline text-blue-600">bit.ly/YOUTUBEINDOCORITSSC</a>.
+                            </li>
+                            <li>Upload bukti share poster event terkait dan tag 3 teman dan tag @icw2021.</li>
+                            <li>Semua file dikumpulkan pada satu google drive.</li>
+                            <li>Link google drive harap di set untuk dapat dibuka secara umum. <br> <a
+                                        href="https://support.google.com/drive/answer/2494822?co=GENIE.Platform%3DDesktop&hl=en"
+                                        class="underline text-blue-600">Bantuan untuk membuka drive secara umum</a>.
+                            </li>
+                            <li>Upload link google drive anda dibawah.</li>
+                        @endif
                     </ul>
                 </div>
             @endif
@@ -55,7 +67,9 @@
                         @endif
                     </strong>
                     @if($event->isFree())
-                        <h3 class="mt-3 animate-bounce">Upload link drive kamu dibawah!</h3>
+                        @if ($event->name != 'Workshop Career Building')
+                            <h3 class="mt-3 animate-bounce">Upload link drive kamu dibawah!</h3>
+                        @endif
                     @endif
                 </div>
             @endif
@@ -104,7 +118,7 @@
                     </div>
                 @endif
 
-                @if ($event->name != 'Paper Competition')
+                @if ($event->name != 'Paper Competition' && $event->name != 'Workshop Career Building')
                     <div class="{{ ($event->isFree()) ?: 'mt-4' }}">
                         <x-jet-label for="gdrive" value="{{ __('Link Google Drive') }}"/>
                         <x-jet-input id="gdrive"
@@ -115,8 +129,9 @@
                     </div>
                 @endif
 
-                <div class="flex items-center justify-end mt-6">
-                    <x-jet-button class="ml-4">
+                <div class="flex items-center mt-6
+                        {{ $event->name == 'Workshop Career Building' ? 'justify-center' : 'justify-end' }}">
+                    <x-jet-button class="{{ $event->name == 'Workshop Career Building' ?: 'ml-4' }}">
                         {{ __('Daftar') }}
                     </x-jet-button>
                 </div>
