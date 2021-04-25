@@ -15,16 +15,16 @@
                         <dt class="text-sm font-medium text-gray-500">
                             Link zoom
                         </dt>
-                        @if ($event->name == 'Paper Competition')
+{{--                        @if ($event->name == 'Paper Competition')--}}
                             -
-                        @else
-                            <a class="text-blue-500 hover:underline"
-                               href="https://www.google.com/" target="_blank">
-                                <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
-                                    google.com
-                                </dd>
-                            </a>
-                        @endif
+{{--                        @else--}}
+{{--                            <a class="text-blue-500 hover:underline"--}}
+{{--                               href="https://www.google.com/" target="_blank">--}}
+{{--                                <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">--}}
+{{--                                    google.com--}}
+{{--                                </dd>--}}
+{{--                            </a>--}}
+{{--                        @endif--}}
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">
