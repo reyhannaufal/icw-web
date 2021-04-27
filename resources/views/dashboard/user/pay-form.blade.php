@@ -21,23 +21,25 @@
                         @if ($event->name == 'Workshop Career Building')
                             <li>Follow instagram @indocoritssc.</li>
                             <li>Follow instagram @icw2021.</li>
-                            <li>Subscribe youtube Indocor ITS SC <a href="https://bit.ly/YOUTUBEINDOCORITSSC"
+                            <li>Subscribe youtube Indocor ITS SC <a target="_blank" href="https://bit.ly/YOUTUBEINDOCORITSSC"
                                                                      class="underline text-blue-600">bit.ly/YOUTUBEINDOCORITSSC</a>.
                             </li>
-                            <li>Share poster event terkait dan tag 3 teman dan tag @icw2021.</li>
-                            <li>Upload bukti-bukti di atas di link berikut  <a href="http://bit.ly/PendaftaranCareerBuildingICW"
+                            <li>Share poster event terkait dan tag 3 teman dan tag @icw2021. <a target="_blank" href="{{ URL::to('assets/img/A4-Open-Regist-Career-Building.png') }}"
+                                                                                class="underline text-blue-600">Lihat poster event ini.</a></li>
+                            <li>Upload bukti-bukti di atas di link berikut  <a target="_blank" href="http://bit.ly/PendaftaranCareerBuildingICW"
                                                                                class="underline text-blue-600">bit.ly/PendaftaranCareerBuildingICW</a>.
                             </li>
                             <li>Setelah mengupload bukti-bukti, klik tombol <strong>daftar</strong> dibawah ini.</li>
                         @else
                             <li>Upload bukti memfollow instagram @indocoritssc.</li>
                             <li>Upload bukti memfollow instagram @icw2021.</li>
-                            <li>Upload bukti subscribe youtube Indocor ITS SC <a href="https://bit.ly/YOUTUBEINDOCORITSSC"
+                            <li>Upload bukti subscribe youtube Indocor ITS SC <a target="_blank" href="https://bit.ly/YOUTUBEINDOCORITSSC"
                                                                                  class="underline text-blue-600">bit.ly/YOUTUBEINDOCORITSSC</a>.
                             </li>
                             <li>Upload bukti share poster event terkait dan tag 3 teman dan tag @icw2021.</li>
                             <li>Semua file dikumpulkan pada satu google drive.</li>
                             <li>Link google drive harap di set untuk dapat dibuka secara umum. <br> <a
+                                        target="_blank"
                                         href="https://support.google.com/drive/answer/2494822?co=GENIE.Platform%3DDesktop&hl=en"
                                         class="underline text-blue-600">Bantuan untuk membuka drive secara umum</a>.
                             </li>
