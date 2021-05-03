@@ -30,6 +30,17 @@
                                                                                class="underline text-blue-600">bit.ly/PendaftaranCareerBuildingICW</a>.
                             </li>
                             <li>Setelah mengupload bukti-bukti, klik tombol <strong>daftar</strong> dibawah ini.</li>
+                        @elseif ($event->name == 'Corrosion Workshop')
+                            <li>Upload bukti memfollow instagram @icw2021.</li>
+                            <li>Upload bukti share poster event terkait dan tag 3 teman dan tag @icw2021.</li>
+                            <li>Kedua bukti di atas dikumpulkan pada satu google drive.</li>
+                            <li>Link google drive harap di set untuk dapat dibuka secara umum. <br> <a
+                                    target="_blank"
+                                    href="https://support.google.com/drive/answer/2494822?co=GENIE.Platform%3DDesktop&hl=en"
+                                    class="underline text-blue-600">Bantuan untuk membuka drive secara umum</a>.
+                            </li>
+                            <li>Lakukan pembayaran dengan jumlah dan rekening tujuan yang tertera dibawah ini.</li>
+                            <li>Upload bukti pembayaran dan link google drive anda pada kolom dibawah.</li>
                         @else
                             <li>Upload bukti memfollow instagram @indocoritssc.</li>
                             <li>Upload bukti memfollow instagram @icw2021.</li>
@@ -68,7 +79,7 @@
                         @if ($event->isFree())
                             Event ini Gratis
                         @else
-                            Rp. {{ $event->price }}
+                            Rp. {{ number_format($event->price, 0, '.', ',') }}
                         @endif
                     </strong>
                     @if($event->isFree())

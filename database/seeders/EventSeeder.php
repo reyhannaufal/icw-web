@@ -30,7 +30,7 @@ class EventSeeder extends Seeder
                 'Indra Carllistya Pramadio', 'manamimushiiii', '085784779129', ' indra@pramadio.com', 'https://intip.in/GuidebookPaperCompICW2021/'
             ],
             [
-                'Corrosion Workshop', '0', 'non-competition', '2021/05/21', '2021/05/21', 'Program pelatihan untuk mahasiswa dalam bentuk simulasi dengan pemberian study case mengenai korosi. Selain itu, workshop ini juga memberikan tambahan kualifikasi profesi serta kecakapan diri.
+                'Corrosion Workshop', '10000', 'non-competition', '2021/05/21', '2021/05/21', 'Program pelatihan untuk mahasiswa dalam bentuk simulasi dengan pemberian study case mengenai korosi. Selain itu, workshop ini juga memberikan tambahan kualifikasi profesi serta kecakapan diri.
                 ', 'Bazighoh Fattatin' , 'zhig.aa' , '082335982156', 'bazighohfattatin@gmail.com', 'https://www.google.com/'
             ],
             [

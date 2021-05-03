@@ -43,17 +43,17 @@ class EventController extends Controller
             ];
 
             if ($payment_status == 'pending') {
-                $data['price'] = 'Rp. ' . $event->price;
+                $data['price'] = 'Rp. ' . number_format($event->price, 0, '.', ',');
                 $data['text'] = 'Pendaftaran Anda sedang diproses';
                 $data['rgba'] = 'rgba(241, 213, 168, 0.507);';
             } // Payment failed
             else if ($payment_status == 'failed') {
-                $data['price'] = 'Rp. ' . $event->price;
+                $data['price'] = 'Rp. ' . number_format($event->price, 0, '.', ',');
                 $data['text'] = 'Pendaftaran Anda ditolak, hubungi penanggung jawab event ini untuk info lebih lanjut';
                 $data['rgba'] = 'rgba(240, 174, 172, 0.6);';
             } // Payment success
             else if ($payment_status == 'success') {
-                $data['price'] = ($event->isFree()) ? 'Gratis' : 'Rp. ' . $event->price;
+                $data['price'] = ($event->isFree()) ? 'Gratis' : 'Rp. ' . number_format($event->price, 0, '.', ',');
                 $data['text'] = 'Selamat, Anda dapat mengikuti event ini. Untuk info lebih lanjut, buka menu info event.';
                 $data['rgba'] = 'rgba(183, 221, 213, 0.6);';
             } else {

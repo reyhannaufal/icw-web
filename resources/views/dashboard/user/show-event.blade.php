@@ -54,6 +54,9 @@
                                 } else {
                                     $text = '-';
                                 }
+                                if ($text == '00:00 WIB') {
+                                    $text = '-';
+                                }
                             @endphp
                             {{ $text }}
                         </dd>
@@ -74,11 +77,11 @@
                             @if ($event->name == 'Workshop Career Building')
                                 -
                             @elseif ($event->name != 'Paper Competition')
-                                {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . $event->price }}
+                                {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . number_format($event->price, 0, '.', ',') }}
                             @else
-                                <p class="py-2">Batch 1 --> Rp. 35.000</p>
-                                <p class="py-2">Batch 2 --> Rp. 40.000</p>
-                                <p class="py-2">Batch 3 --> Rp. 45.000</p>
+                                <p class="py-2">Batch 1 --> Rp. 35,000</p>
+                                <p class="py-2">Batch 2 --> Rp. 40,000</p>
+                                <p class="py-2">Batch 3 --> Rp. 45,000</p>
                             @endif
                         </dd>
                     </div>
