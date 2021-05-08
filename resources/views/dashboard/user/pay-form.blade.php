@@ -31,9 +31,8 @@
                             </li>
                             <li>Setelah mengupload bukti-bukti, klik tombol <strong>daftar</strong> dibawah ini.</li>
                         @elseif ($event->name == 'Corrosion Workshop')
-                            <li>Upload bukti memfollow instagram @icw2021.</li>
-                            <li>Upload bukti share poster event terkait dan tag 3 teman dan tag @icw2021.</li>
-                            <li>Kedua bukti di atas dikumpulkan pada satu google drive.</li>
+                            <li>Follow akun instagram @icw2021.</li>
+                            <li>Upload bukti share poster event terkait dan tag 3 teman dan tag @icw2021 di google drive.</li>
                             <li>Link google drive harap di set untuk dapat dibuka secara umum. <br> <a
                                     target="_blank"
                                     href="https://support.google.com/drive/answer/2494822?co=GENIE.Platform%3DDesktop&hl=en"
