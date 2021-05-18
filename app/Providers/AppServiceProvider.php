@@ -68,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Validator::extend('gdrive', function ($attribute, $value, $parameters, $validator) {
-            return str_contains($value,'https://drive.google.com);
+            return str_contains($value,'https://drive.google.com');
         });
     }
 }
