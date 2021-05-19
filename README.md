@@ -111,6 +111,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://cv2-whw.netlify.app/"><img src="https://avatars.githubusercontent.com/u/52129348?v=4?s=100" width="100px;" alt=""/><br /><sub><b>William Handi Wijaya</b></sub></a><br /><a href="https://github.com/reyhannaufal/icw-web/commits?author=wiliamhw" title="Code">💻</a></td>
+  </tr>
     <td align="center"><a href="http://reyhannaufal.me"><img src="https://avatars.githubusercontent.com/u/59334824?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Reyhan Naufal</b></sub></a><br /><a href="https://github.com/reyhannaufal/icw-web/commits?author=reyhannaufal" title="Code">💻</a></td>
   </tr>
 </table>
