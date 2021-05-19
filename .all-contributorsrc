@@ -1,4 +1,8 @@
 {
+  "projectName": "icw-web",
+  "projectOwner": "reyhannaufal",
+  "repoType": "github",
+  "repoHost": "https://github.com/reyhannaufal/icw-web",
   "files": [
     "README.md"
   ],
@@ -10,6 +14,13 @@
       "name": "William Handi Wijaya",
       "avatar_url": "https://avatars.githubusercontent.com/u/52129348?v=4",
       "profile": "https://cv2-whw.netlify.app/",
+      },
+      {
+      "login": "reyhannaufal",
+      "name": "Reyhan Naufal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59334824?v=4",
+      "profile": "http://reyhannaufal.me",
+      }
       "contributions": [
         "code"
       ]
@@ -20,5 +31,9 @@
   "projectOwner": "reyhannaufal",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 7
 }
