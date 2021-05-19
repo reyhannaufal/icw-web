@@ -1,0 +1,14 @@
+{
+  "projectName": "icw-web",
+  "projectOwner": "reyhannaufal",
+  "repoType": "github",
+  "repoHost": "https://github.com/reyhannaufal/icw-web",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 7
+}
