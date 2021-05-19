@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "wiliamhw",
+      "name": "William Handi Wijaya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52129348?v=4",
+      "profile": "https://cv2-whw.netlify.app/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "icw-web",
+  "projectOwner": "reyhannaufal",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
