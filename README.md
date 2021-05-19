@@ -1,4 +1,7 @@
 # icw-web ✨
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 repositori untuk web icw.
 
@@ -98,3 +101,23 @@ selalu perhatikan env.example
 * Selain itu, terdapat pula tabel `messages` dan tabel `announcements`.
 * Event paper competition ber-id 1.
 * Pada event selai paper competition, kolom `nilai paper` di excel dikosongkan.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/drigoalexander"><img src="https://avatars.githubusercontent.com/u/73428164?v=4?s=100" width="100px;" alt=""/><br /><sub><b>drigoalexander</b></sub></a><br /><a href="#design-drigoalexander" title="Design">🎨</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
