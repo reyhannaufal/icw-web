@@ -77,7 +77,7 @@
                             @if ($event->name == 'Workshop Career Building')
                                 -
                             @elseif ($event->name != 'Paper Competition')
-                                {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . number_format($event->price, 0, '.', ',') }}
+                                {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . number_format($event->price, 0, ',', '.') }}
                             @else
                                 <p class="py-2">Batch 1 --> Rp. 35,000</p>
                                 <p class="py-2">Batch 2 --> Rp. 40,000</p>

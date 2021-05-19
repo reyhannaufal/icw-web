@@ -30,7 +30,7 @@
                                                                                class="underline text-blue-600">bit.ly/PendaftaranCareerBuildingICW</a>.
                             </li>
                             <li>Setelah mengupload bukti-bukti, klik tombol <strong>daftar</strong> dibawah ini.</li>
-                        @elseif ($event->name == 'Corrosion Workshop')
+                        @elseif ($event->name == 'Corrosion Workshop' || $event->name == 'Symposium')
                             <li>Follow akun instagram @icw2021.</li>
                             <li>Upload bukti share poster event terkait dan tag 3 teman dan tag @icw2021 di google drive.</li>
                             <li>Link google drive harap di set untuk dapat dibuka secara umum. <br> <a
@@ -78,7 +78,7 @@
                         @if ($event->isFree())
                             Event ini Gratis
                         @else
-                            Rp. {{ number_format($event->price, 0, '.', ',') }}
+                            Rp. {{ number_format($event->price, 0, ',', '.') }}
                         @endif
                     </strong>
                     @if($event->isFree())

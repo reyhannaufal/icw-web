@@ -54,7 +54,7 @@
 
                                     @if($event->name != 'Paper Competition')
                                         <p class="font-medium text-base px-2">
-                                            <strong>Harga:</strong> {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . number_format($event->price, 0, '.', ',') }}
+                                            <strong>Harga:</strong> {{ ($event->price == 0) ? 'Gratis' : 'Rp. ' . number_format($event->price, 0, ',', '.') }}
                                         </p>
                                     @endif
 
