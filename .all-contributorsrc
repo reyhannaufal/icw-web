@@ -1,4 +1,8 @@
 {
+  "projectName": "icw-web",
+  "projectOwner": "reyhannaufal",
+  "repoType": "github",
+  "repoHost": "https://github.com/reyhannaufal/icw-web",
   "files": [
     "README.md"
   ],
@@ -21,4 +25,8 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 7
 }
