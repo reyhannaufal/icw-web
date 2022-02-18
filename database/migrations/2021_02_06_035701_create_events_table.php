@@ -24,6 +24,7 @@ class CreateEventsTable extends Migration
             $table->string('lead_email')->default('#');
             $table->string('guidebook')->default('#');
             $table->string('description_link')->default('#');
+            $table->string('zoom_link')->nullable();
             $table->enum('type', ['competition', 'non-competition'])->default('non-competition');
             $table->dateTime('start_at');
             $table->dateTime('end_at');

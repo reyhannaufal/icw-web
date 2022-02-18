@@ -31,26 +31,8 @@ class TestSeeder extends Seeder
         $status = ['success', 'pending', 'failed'];
         $count_event = count($events);
 
-        // Get admin account + 1 master admin accout
-        $adm_users = User::where('id', '<=', $count_event + 1)->get();
-
         // Get 20 users excluding the admin account
         $users = User::orderBy('id', 'asc')->where('id', '>', $count_event + 1)->take(20)->get();
-
-        // Update admin and master admin account with its credentials
-        for ($i = 0; $i < $count_event + 1; $i++) {
-            if ($i < $count_event) {
-                $adm_users[$i]->update([
-                    'name' => 'Admin ' . $events[$i]->name,
-                    'email' => 'admin' . ($i + 1) . '@admin.com',
-                ]);
-            } else {
-                $adm_users[$i]->update([
-                    'name' => 'Master Admin',
-                    'email' => 'masteradmin' . '@admin.com',
-                ]);
-            }
-        }
 
         // first event will have a minimum of 20 pending user
         $events->first()->users()->attach(
@@ -79,8 +61,9 @@ class TestSeeder extends Seeder
                     $events->random(rand(1, 3))->pluck('id')->toArray(), [
                         'payment_status' => $status[array_rand($status)],
                         'payment_receipt_path' => 'payment_receipts/default.png',
-                        'created_at' => Carbon::now(),
-                        'updated_at' => Carbon::now()
+                        'gdrive_path' => 'https://drive.google.com/drive/folders/1j-INK9t6Iq5RAabfM-aKuCwBLMOgi5Zm?usp=sharing',
+                        'created_at'  => Carbon::now(),
+                        'updated_at'  => Carbon::now()
                     ]
                 );
             }
